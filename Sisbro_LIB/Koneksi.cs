@@ -48,7 +48,7 @@ namespace Sisbro_LIB
         public MySqlConnection KoneksiDB { get => koneksiDB; set => koneksiDB = value; }
         #endregion
 
-        #region Class
+        #region Method
         public void Connect()
         {
             if (koneksiDB.State == System.Data.ConnectionState.Closed)

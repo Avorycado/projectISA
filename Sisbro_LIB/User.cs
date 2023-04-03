@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using Sisbro_LIB;
 
 namespace Sisbro_LIB
 {

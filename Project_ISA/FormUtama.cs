@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sisbro_LIB;
 
 namespace Project_ISA
 {
@@ -19,7 +20,17 @@ namespace Project_ISA
 
         private void FormUtama_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
+            this.IsMdiContainer = true;
+            try
+            {
+                Koneksi koneksi = new Koneksi(db.Default.DbServer, db.Default.DbName, db.Default.DbUsername, db.Default.DbPassword);
+                MessageBox.Show("Koneksi Berhasil", "Informasi");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
+            }
         }
     }
 }

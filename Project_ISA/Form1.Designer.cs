@@ -47,7 +47,7 @@ namespace Project_ISA
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(502, 151);
+            this.radioButton2.Location = new System.Drawing.Point(397, 212);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(85, 17);
             this.radioButton2.TabIndex = 1;

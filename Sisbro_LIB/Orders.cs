@@ -18,6 +18,18 @@ namespace Sisbro_LIB
         private PaymentMethod paymentMethod;
         #endregion
 
+        #region Constructors
+        public Orders(int idOrders, DateTime tanggalOrder, double totalPrice, string alamatPengiriman, User user, PaymentMethod paymentMethod)
+        {
+            this.IdOrders = idOrders;
+            this.TanggalOrder = tanggalOrder;
+            this.TotalPrice = totalPrice;
+            this.AlamatPengiriman = alamatPengiriman;
+            this.User = user;
+            this.PaymentMethod = paymentMethod;
+        }
+        #endregion
+
         #region Properties
         public int IdOrders { get => idOrders; set => idOrders = value; }
         public DateTime TanggalOrder { get => tanggalOrder; set => tanggalOrder = value; }

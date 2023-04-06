@@ -18,6 +18,27 @@ namespace Sisbro_LIB
         private string password;
         #endregion
 
+        #region Constructors
+        public Sellers()
+        {
+            IdSeller = 0;
+            Nama = "";
+            Email = "";
+            NoHp = 0;
+            Alamat = "";
+            Password = "";
+        }
+        public Sellers(int idSeller, string nama, string email, int noHp, string alamat, string password)
+        {
+            this.IdSeller = idSeller;
+            this.Nama = nama;
+            this.Email = email;
+            this.NoHp = noHp;
+            this.Alamat = alamat;
+            this.Password = password;
+        }
+        #endregion
+
         #region Properties
         public int IdSeller { get => idSeller; set => idSeller = value; }
         public string Nama { get => nama; set => nama = value; }

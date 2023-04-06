@@ -17,6 +17,26 @@ namespace Sisbro_LIB
         private string password;
         #endregion
 
+        #region Constructors
+        public Administrator()
+        {
+            IdAdministrator = 0;
+            Nama = "";
+            Email = "";
+            NoHp = 0;
+            Password = "";
+        }
+
+        public Administrator(int idAdministrator, string nama, string email, int noHp, string password)
+        {
+            this.IdAdministrator = idAdministrator;
+            this.Nama = nama;
+            this.Email = email;
+            this.NoHp = noHp;
+            this.Password = password;
+        }
+        #endregion
+
         #region Properties
         public int IdAdministrator { get => idAdministrator; set => idAdministrator = value; }
         public string Nama { get => nama; set => nama = value; }

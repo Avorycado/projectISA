@@ -19,6 +19,25 @@ namespace Sisbro_LIB
         #endregion
 
         #region Constructors
+        public User()
+        {
+            idUser = 0;
+            nama = "";
+            password = "";
+            email = "";
+            noHp = 0;
+            alamat = "";
+        }
+
+        public User(int idUser, string nama, string password, string email, int noHp, string alamat)
+        {
+            this.IdUser = idUser;
+            this.Nama = nama;
+            this.Password = password;
+            this.Email = email;
+            this.NoHp = noHp;
+            this.Alamat = alamat;
+        }
         #endregion
 
         #region Properties

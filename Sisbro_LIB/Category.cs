@@ -14,6 +14,20 @@ namespace Sisbro_LIB
         private string nama;
         #endregion
 
+        #region Constructors
+        public Category()
+        {
+            IdCategory = 0;
+            Nama = "";
+        }
+
+        public Category(int idCategory, string nama)
+        {
+            this.IdCategory = idCategory;
+            this.Nama = nama;
+        }
+        #endregion
+
         #region Properties
         public int IdCategory { get => idCategory; set => idCategory = value; }
         public string Nama { get => nama; set => nama = value; }

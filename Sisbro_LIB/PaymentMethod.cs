@@ -14,6 +14,20 @@ namespace Sisbro_LIB
         private string nama;
         #endregion
 
+        #region Constructors
+        public PaymentMethod()
+        {
+            IdPaymentMethod = 0;
+            Nama = "";
+        }
+
+        public PaymentMethod(int idPaymentMethod, string nama)
+        {
+            this.IdPaymentMethod = idPaymentMethod;
+            this.Nama = nama;
+        }
+        #endregion
+
         #region Properties
         public int IdPaymentMethod { get => idPaymentMethod; set => idPaymentMethod = value; }
         public string Nama { get => nama; set => nama = value; }

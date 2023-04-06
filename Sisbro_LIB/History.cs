@@ -15,6 +15,15 @@ namespace Sisbro_LIB
         private Orders orders;
         #endregion
 
+        #region Constructors
+        public History(int idHistory, User user, Orders orders)
+        {
+            this.IdHistory = idHistory;
+            this.User = user;
+            this.Orders = orders;
+        }
+        #endregion
+
         #region Properties
         public int IdHistory { get => idHistory; set => idHistory = value; }
         public User User { get => user; set => user = value; }

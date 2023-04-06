@@ -20,6 +20,20 @@ namespace Sisbro_LIB
         private Administrator administrator;
         #endregion
 
+        #region Constructors
+        public Product(int idProduct, string nama, double harga, string deskripsi, int jumlah, Category category, Sellers sellers, Administrator administrator)
+        {
+            this.IdProduct = idProduct;
+            this.Nama = nama;
+            this.Harga = harga;
+            this.Deskripsi = deskripsi;
+            this.Jumlah = jumlah;
+            this.Category = category;
+            this.Sellers = sellers;
+            this.Administrator = administrator;
+        }
+        #endregion
+
         #region Properties
         public int IdProduct { get => idProduct; set => idProduct = value; }
         public string Nama { get => nama; set => nama = value; }

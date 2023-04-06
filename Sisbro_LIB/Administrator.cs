@@ -7,27 +7,22 @@ using MySql.Data.MySqlClient;
 
 namespace Sisbro_LIB
 {
-    public class User
+    public class Administrator
     {
-        #region DataMember
-        private int idUser;
+        #region Data Member
+        private int idAdministrator;
         private string nama;
-        private string password;
         private string email;
         private int noHp;
-        private string alamat;
-        #endregion
-
-        #region Constructors
+        private string password;
         #endregion
 
         #region Properties
-        public int IdUser { get => idUser; set => idUser = value; }
+        public int IdAdministrator { get => idAdministrator; set => idAdministrator = value; }
         public string Nama { get => nama; set => nama = value; }
-        public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
         public int NoHp { get => noHp; set => noHp = value; }
-        public string Alamat { get => alamat; set => alamat = value; }
+        public string Password { get => password; set => password = value; }
         #endregion
 
         #region Method

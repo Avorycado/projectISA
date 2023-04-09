@@ -31,5 +31,58 @@ namespace Project_ISA
         {
 
         }
+
+        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (textBox1.Text == "Username")
+            {
+                textBox1.Text = "";
+                textBox1.BackColor = Color.White;
+            }
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "")
+            {
+                textBox1.Text = "Username";
+            }
+        }
+
+        private void textBox2_MouseLeave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "Password";
+            }
+        }
+
+        private void textBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (textBox2.Text == "Password")
+            {
+                textBox2.Text = "";
+                textBox2.BackColor = Color.White;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(textBox1.Text == "Username")
+            {
+                textBox1.BackColor = Color.IndianRed;
+            }
+            if (textBox2.Text == "Password")
+            {
+                textBox2.BackColor = Color.IndianRed;
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            FormRegist formRegist = new FormRegist();
+            formRegist.Owner = this;
+            formRegist.Show();
+        }
     }
 }

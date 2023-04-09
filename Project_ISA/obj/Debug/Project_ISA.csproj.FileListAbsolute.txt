@@ -12,3 +12,18 @@ E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\bi
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\bin\Debug\MySql.Data.dll
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\bin\Debug\Sisbro_LIB.pdb
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormUtama.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\bin\Debug\Project_ISA.exe.config
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\bin\Debug\Project_ISA.exe
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\bin\Debug\Project_ISA.pdb
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\bin\Debug\Sisbro_LIB.dll
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\bin\Debug\MySql.Data.dll
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\bin\Debug\Sisbro_LIB.pdb
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.AssemblyReference.cache
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormLogin.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormUtama.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.Properties.Resources.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.GenerateResource.cache
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CoreCompileInputs.cache
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CopyComplete
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.exe
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.pdb

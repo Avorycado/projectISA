@@ -60,6 +60,12 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegist.Designer.cs">
+      <DependentUpon>FormRegist.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -32,16 +32,12 @@ namespace Project_ISA
 
         }
 
-        private void textBox1_MouseClick(object sender, MouseEventArgs e)
+        private void textBoxUsername_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textBoxUsername.Text == "Username")
-            {
-                textBoxUsername.Text = "";
-                textBoxUsername.BackColor = Color.White;
-            }
+            
         }
 
-        private void textBox1_MouseLeave(object sender, EventArgs e)
+        private void textBoxUsername_MouseLeave(object sender, EventArgs e)
         {
             if(textBoxUsername.Text == "")
             {
@@ -49,15 +45,69 @@ namespace Project_ISA
             }
         }
 
-        private void textBox2_MouseLeave(object sender, EventArgs e)
+        private void textBoxPassword_MouseLeave(object sender, EventArgs e)
         {
-            if (textBoxPassword.Text == "")
+            
+        }
+
+        private void textBoxPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (textBoxUsername.Text == "Username")
             {
-                textBoxPassword.Text = "Password";
+                textBoxUsername.BackColor = Color.IndianRed;
+            }
+            if (textBoxPassword.Text == "Password")
+            {
+                textBoxPassword.BackColor = Color.IndianRed;
+            }
+
+            try
+            {
+                if(radioButtonUser.Checked == true)
+                {
+
+                }
+            }
+            catch
+            {
+
             }
         }
 
-        private void textBox2_MouseClick(object sender, MouseEventArgs e)
+        private void label5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void textBoxUsername_MouseClick_1(object sender, MouseEventArgs e)
+        {
+            if (textBoxUsername.Text == "Username")
+            {
+                textBoxUsername.Text = "";
+                textBoxUsername.BackColor = Color.HotPink;
+            }
+        }
+
+        private void textBoxUsername_MouseLeave_1(object sender, EventArgs e)
+        {
+            if (textBoxUsername.Text == "Username")
+            {
+                textBoxUsername.Text = "";
+                textBoxUsername.BackColor = Color.HotPink;
+            }
+        }
+
+        private void textBoxPassword_MouseClick_1(object sender, MouseEventArgs e)
         {
             if (textBoxPassword.Text == "Password")
             {
@@ -66,28 +116,19 @@ namespace Project_ISA
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void textBoxPassword_MouseLeave_1(object sender, EventArgs e)
         {
-            if(textBoxUsername.Text == "Username")
+            if (textBoxPassword.Text == "")
             {
-                textBoxUsername.BackColor = Color.IndianRed;
-            }
-            if (textBoxUsername.Text == "Password")
-            {
-                textBoxUsername.BackColor = Color.IndianRed;
+                textBoxPassword.Text = "Password";
             }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void labelDaftar_Click(object sender, EventArgs e)
         {
             FormRegist formRegist = new FormRegist();
             formRegist.Owner = this;
             formRegist.Show();
-        }
-
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-        
         }
     }
 }

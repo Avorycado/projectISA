@@ -27,3 +27,5 @@ C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.csp
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CopyComplete
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.exe
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.pdb
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormCloth.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormRegist.resources

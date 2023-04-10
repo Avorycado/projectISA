@@ -39,12 +39,16 @@ namespace Project_ISA
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.radioButtonUser = new System.Windows.Forms.RadioButton();
+            this.radioButtonSeller = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.HotPink;
+            this.panel1.Controls.Add(this.radioButtonSeller);
+            this.panel1.Controls.Add(this.radioButtonUser);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.labelDaftar);
             this.panel1.Controls.Add(this.label4);
@@ -55,7 +59,7 @@ namespace Project_ISA
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 340);
+            this.panel1.Size = new System.Drawing.Size(322, 396);
             this.panel1.TabIndex = 5;
             // 
             // label6
@@ -81,6 +85,7 @@ namespace Project_ISA
             this.labelDaftar.Size = new System.Drawing.Size(55, 25);
             this.labelDaftar.TabIndex = 49;
             this.labelDaftar.Text = "Daftar";
+            this.labelDaftar.Click += new System.EventHandler(this.labelDaftar_Click);
             // 
             // label4
             // 
@@ -112,6 +117,7 @@ namespace Project_ISA
             this.buttonLogin.TabIndex = 46;
             this.buttonLogin.Text = "Log In";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // textBoxPassword
             // 
@@ -124,6 +130,8 @@ namespace Project_ISA
             this.textBoxPassword.Size = new System.Drawing.Size(254, 27);
             this.textBoxPassword.TabIndex = 45;
             this.textBoxPassword.Text = "Password";
+            this.textBoxPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxPassword_MouseClick_1);
+            this.textBoxPassword.MouseLeave += new System.EventHandler(this.textBoxPassword_MouseLeave_1);
             // 
             // textBoxUsername
             // 
@@ -136,6 +144,8 @@ namespace Project_ISA
             this.textBoxUsername.Size = new System.Drawing.Size(254, 27);
             this.textBoxUsername.TabIndex = 44;
             this.textBoxUsername.Text = "Username";
+            this.textBoxUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxUsername_MouseClick_1);
+            this.textBoxUsername.MouseLeave += new System.EventHandler(this.textBoxUsername_MouseLeave_1);
             // 
             // label3
             // 
@@ -157,11 +167,33 @@ namespace Project_ISA
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 4;
             // 
+            // radioButtonUser
+            // 
+            this.radioButtonUser.AutoSize = true;
+            this.radioButtonUser.Location = new System.Drawing.Point(34, 337);
+            this.radioButtonUser.Name = "radioButtonUser";
+            this.radioButtonUser.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonUser.TabIndex = 51;
+            this.radioButtonUser.TabStop = true;
+            this.radioButtonUser.Text = "User";
+            this.radioButtonUser.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonSeller
+            // 
+            this.radioButtonSeller.AutoSize = true;
+            this.radioButtonSeller.Location = new System.Drawing.Point(87, 337);
+            this.radioButtonSeller.Name = "radioButtonSeller";
+            this.radioButtonSeller.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonSeller.TabIndex = 52;
+            this.radioButtonSeller.TabStop = true;
+            this.radioButtonSeller.Text = "Seller";
+            this.radioButtonSeller.UseVisualStyleBackColor = true;
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 347);
+            this.ClientSize = new System.Drawing.Size(326, 425);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "FormLogin";
@@ -186,6 +218,8 @@ namespace Project_ISA
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButtonSeller;
+        private System.Windows.Forms.RadioButton radioButtonUser;
     }
 }
 

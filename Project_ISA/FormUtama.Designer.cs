@@ -60,10 +60,9 @@ namespace Project_ISA
             this.label2.BackColor = System.Drawing.Color.Bisque;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(-104, -1);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(-139, -1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(706, 46);
+            this.label2.Size = new System.Drawing.Size(941, 57);
             this.label2.TabIndex = 41;
             this.label2.Text = "Sisbro Online Shop";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -74,6 +73,7 @@ namespace Project_ISA
             this.menuStrip1.BackColor = System.Drawing.Color.Bisque;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productsToolStripMenuItem,
             this.cartToolStripMenuItem,
@@ -82,11 +82,12 @@ namespace Project_ISA
             this.profileToolStripMenuItem,
             this.logInToolStripMenuItem,
             this.exitToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 228);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 280);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(508, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(677, 36);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -97,7 +98,7 @@ namespace Project_ISA
             this.productsToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.productsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(109, 32);
             this.productsToolStripMenuItem.Text = "Products";
             // 
             // cartToolStripMenuItem
@@ -105,112 +106,125 @@ namespace Project_ISA
             this.cartToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.cartToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.cartToolStripMenuItem.Name = "cartToolStripMenuItem";
-            this.cartToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
+            this.cartToolStripMenuItem.Size = new System.Drawing.Size(66, 32);
             this.cartToolStripMenuItem.Text = "Cart";
             // 
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(72, 25);
+            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(89, 32);
             this.ordersToolStripMenuItem.Text = "Orders";
             // 
             // historyToolStripMenuItem
             // 
             this.historyToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(78, 25);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(96, 32);
             this.historyToolStripMenuItem.Text = "History";
             // 
             // profileToolStripMenuItem
             // 
             this.profileToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            this.profileToolStripMenuItem.Size = new System.Drawing.Size(73, 25);
+            this.profileToolStripMenuItem.Size = new System.Drawing.Size(89, 32);
             this.profileToolStripMenuItem.Text = "Profile";
             // 
             // logInToolStripMenuItem
             // 
             this.logInToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.logInToolStripMenuItem.Name = "logInToolStripMenuItem";
-            this.logInToolStripMenuItem.Size = new System.Drawing.Size(69, 25);
+            this.logInToolStripMenuItem.Size = new System.Drawing.Size(84, 32);
             this.logInToolStripMenuItem.Text = "Log In";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(51, 25);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(62, 32);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 88);
+            this.label1.Location = new System.Drawing.Point(21, 108);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 43;
             this.label1.Text = "Category";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 170);
+            this.label3.Location = new System.Drawing.Point(68, 209);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.Size = new System.Drawing.Size(40, 17);
             this.label3.TabIndex = 46;
             this.label3.Text = "Cloth";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(175, 170);
+            this.label4.Location = new System.Drawing.Point(233, 209);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(48, 17);
             this.label4.TabIndex = 49;
             this.label4.Text = "Shoes";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(297, 170);
+            this.label5.Location = new System.Drawing.Point(396, 209);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(33, 17);
             this.label5.TabIndex = 50;
             this.label5.Text = "Bag";
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Location = new System.Drawing.Point(385, 114);
+            this.pictureBox4.Image = global::Project_ISA.Properties.Resources.skincare;
+            this.pictureBox4.Location = new System.Drawing.Point(513, 140);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(108, 53);
+            this.pictureBox4.Size = new System.Drawing.Size(144, 65);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 51;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(258, 114);
+            this.pictureBox3.Image = global::Project_ISA.Properties.Resources.bag_removebg_preview__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(344, 140);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(108, 53);
+            this.pictureBox3.Size = new System.Drawing.Size(144, 65);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 48;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(135, 114);
+            this.pictureBox2.Image = global::Project_ISA.Properties.Resources.sepatu;
+            this.pictureBox2.Location = new System.Drawing.Point(180, 140);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(108, 53);
+            this.pictureBox2.Size = new System.Drawing.Size(144, 65);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 47;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(19, 114);
+            this.pictureBox1.BackgroundImage = global::Project_ISA.Properties.Resources.baju;
+            this.pictureBox1.Image = global::Project_ISA.Properties.Resources.baju;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 140);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(132, 65);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
@@ -218,9 +232,10 @@ namespace Project_ISA
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(427, 170);
+            this.label6.Location = new System.Drawing.Point(569, 209);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
+            this.label6.Size = new System.Drawing.Size(63, 17);
             this.label6.TabIndex = 52;
             this.label6.Text = "Skincare";
             // 
@@ -229,20 +244,19 @@ namespace Project_ISA
             this.label7.BackColor = System.Drawing.Color.Ivory;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(68, 45);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(91, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(367, 39);
+            this.label7.Size = new System.Drawing.Size(489, 48);
             this.label7.TabIndex = 53;
             this.label7.Text = "Saldo";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormUtama
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(508, 257);
+            this.ClientSize = new System.Drawing.Size(677, 316);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox4);
@@ -256,7 +270,7 @@ namespace Project_ISA
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label2);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormUtama";
             this.Text = "FormUtama";
             this.Load += new System.EventHandler(this.FormUtama_Load);

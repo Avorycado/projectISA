@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sisbro_LIB;
 
 namespace Project_ISA
 {
@@ -68,14 +69,54 @@ namespace Project_ISA
 
             try
             {
-                if(radioButtonUser.Checked == true)
+                if (textBoxUsername.Text == "")
                 {
+                    throw new Exception("Username tidak boleh kosong");
+                }
+                if (textBoxPassword.Text == "")
+                {
+                    throw new Exception("Password tidak boleh kosong");
+                }
 
+
+                if (radioButtonUser.Checked == true)
+                {
+                    User tmp = User.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                    if (tmp != null)
+                    {
+                        this.DialogResult = DialogResult.OK;
+
+                        FormUtama form = (FormUtama)this.Owner;
+                        form.tmpUser = tmp;
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        throw new Exception("Data pengguna tidak ditemukan");
+                    }
+                }
+                else
+                {
+                    Sellers tmp = Sellers.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
+                    if (tmp != null)
+                    {
+                        this.DialogResult = DialogResult.OK;
+
+                        FormUtama form = (FormUtama)this.Owner;
+                        form.tmpSellers = tmp;
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        throw new Exception("Data pegawai tidak ditemukan");
+                    }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 

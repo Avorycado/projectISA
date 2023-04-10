@@ -1,2 +1,4 @@
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.AssemblyReference.cache
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.CoreCompileInputs.cache
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.dll
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.pdb

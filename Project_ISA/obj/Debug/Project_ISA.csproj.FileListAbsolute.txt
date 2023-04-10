@@ -29,3 +29,5 @@ C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.exe
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.pdb
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormCloth.resources
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormRegist.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormCloth.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormRegist.resources

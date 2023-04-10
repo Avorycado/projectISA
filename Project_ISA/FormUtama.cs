@@ -17,7 +17,8 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
-
+        public User tmpUser = null;
+        public Sellers tmpSellers = null;
         private void FormUtama_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;

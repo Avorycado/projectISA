@@ -16,5 +16,10 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

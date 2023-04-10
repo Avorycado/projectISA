@@ -34,47 +34,47 @@ namespace Project_ISA
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textBox1.Text == "Username")
+            if (textBoxUsername.Text == "Username")
             {
-                textBox1.Text = "";
-                textBox1.BackColor = Color.White;
+                textBoxUsername.Text = "";
+                textBoxUsername.BackColor = Color.White;
             }
         }
 
         private void textBox1_MouseLeave(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if(textBoxUsername.Text == "")
             {
-                textBox1.Text = "Username";
+                textBoxUsername.Text = "Username";
             }
         }
 
         private void textBox2_MouseLeave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (textBoxPassword.Text == "")
             {
-                textBox2.Text = "Password";
+                textBoxPassword.Text = "Password";
             }
         }
 
         private void textBox2_MouseClick(object sender, MouseEventArgs e)
         {
-            if (textBox2.Text == "Password")
+            if (textBoxPassword.Text == "Password")
             {
-                textBox2.Text = "";
-                textBox2.BackColor = Color.White;
+                textBoxPassword.Text = "";
+                textBoxPassword.BackColor = Color.White;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text == "Username")
+            if(textBoxUsername.Text == "Username")
             {
-                textBox1.BackColor = Color.IndianRed;
+                textBoxUsername.BackColor = Color.IndianRed;
             }
-            if (textBox2.Text == "Password")
+            if (textBoxUsername.Text == "Password")
             {
-                textBox2.BackColor = Color.IndianRed;
+                textBoxUsername.BackColor = Color.IndianRed;
             }
         }
 

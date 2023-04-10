@@ -182,7 +182,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql += " WHERE username ='" + userName + "' AND password = SHA2('" + password + "', 512);";
+                sql += " WHERE nama ='" + userName + "' AND password = SHA2('" + password + "', 512);";
             }
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);

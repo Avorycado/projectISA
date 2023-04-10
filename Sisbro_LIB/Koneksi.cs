@@ -19,13 +19,13 @@ namespace Sisbro_LIB
             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             ConfigurationSectionGroup configGroup = config.SectionGroups["userSettings"];
 
-            var configSections = configGroup.Sections["ProjectDB_DiBaApps.db"] as ClientSettingsSection;
+            var configSections = configGroup.Sections["sisbro_onlineshop.db"] as ClientSettingsSection;
 
             //ambil tiap variabel setting
-            string host = configSections.Settings.Get("hostName").Value.ValueXml.InnerText;
-            string db = configSections.Settings.Get("dbName").Value.ValueXml.InnerText;
-            string uid = configSections.Settings.Get("uid").Value.ValueXml.InnerText;
-            string pwd = configSections.Settings.Get("password").Value.ValueXml.InnerText;
+            string host = configSections.Settings.Get("DbServer").Value.ValueXml.InnerText;
+            string db = configSections.Settings.Get("DbName").Value.ValueXml.InnerText;
+            string uid = configSections.Settings.Get("DbUsername").Value.ValueXml.InnerText;
+            string pwd = configSections.Settings.Get("DbPassword").Value.ValueXml.InnerText;
 
             string strConn = "server=" + host + ";database=" + db + ";uid=" + uid + ";password=" + pwd;
             koneksiDB = new MySqlConnection();

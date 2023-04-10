@@ -84,5 +84,10 @@ namespace Project_ISA
             formRegist.Owner = this;
             formRegist.Show();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+        
+        }
     }
 }

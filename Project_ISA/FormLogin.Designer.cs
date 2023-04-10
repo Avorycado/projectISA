@@ -159,6 +159,7 @@ namespace Project_ISA
             this.Controls.Add(this.label1);
             this.Name = "FormLogin";
             this.Text = "Form Login";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

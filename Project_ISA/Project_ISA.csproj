@@ -54,6 +54,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>db.settings</DependentUpon>
     </Compile>
+    <Compile Include="FormBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBag.Designer.cs">
+      <DependentUpon>FormBag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBag.resx">
+      <DependentUpon>FormBag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCart.resx">
       <DependentUpon>FormCart.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,6 +244,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\convers-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\totebag-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\taspink-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backpackmen-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slingbag-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dior-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kidbag-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kidbag-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kidbag2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lvbag-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laptopbag-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

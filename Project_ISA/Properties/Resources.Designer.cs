@@ -93,6 +93,16 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backpackmen_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("backpackmen-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bag_removebg_preview__1_ {
             get {
                 object obj = ResourceManager.GetObject("bag-removebg-preview (1)", resourceCulture);
@@ -183,6 +193,16 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dior_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("dior-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flatshoes_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("flatshoes-removebg-preview", resourceCulture);
@@ -223,6 +243,36 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kidbag_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("kidbag-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kidbag_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("kidbag-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kidbag2_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("kidbag2-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kulot_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("kulot-removebg-preview", resourceCulture);
@@ -236,6 +286,26 @@ namespace Project_ISA.Properties {
         internal static System.Drawing.Bitmap kulot_removebg_preview1 {
             get {
                 object obj = ResourceManager.GetObject("kulot-removebg-preview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap laptopbag_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("laptopbag-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lvbag_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("lvbag-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +373,39 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap slingbag_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("slingbag-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sweater_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("sweater-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap taspink_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("taspink-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap totebag_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("totebag-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

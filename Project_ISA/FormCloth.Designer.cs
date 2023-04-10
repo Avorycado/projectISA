@@ -161,7 +161,7 @@ namespace Project_ISA
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.Color.Pink;
+            this.buttonBack.BackColor = System.Drawing.Color.LavenderBlush;
             this.buttonBack.BackgroundImage = global::Project_ISA.Properties.Resources.back1;
             this.buttonBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.buttonBack.Location = new System.Drawing.Point(1, 1);
@@ -337,7 +337,7 @@ namespace Project_ISA
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Pink;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(678, 537);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);

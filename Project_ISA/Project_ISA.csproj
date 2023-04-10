@@ -96,6 +96,12 @@
     <Compile Include="FormRegist.Designer.cs">
       <DependentUpon>FormRegist.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShoes.Designer.cs">
+      <DependentUpon>FormShoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCart.resx">
+      <DependentUpon>FormCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCloth.resx">
       <DependentUpon>FormCloth.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegist.resx">
       <DependentUpon>FormRegist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShoes.resx">
+      <DependentUpon>FormShoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>
@@ -196,6 +208,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\croptop-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sandals-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flatshoes-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heels-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jordan-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bootpria-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bootwanita-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\casualpria-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wedges-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\convers-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -133,6 +133,46 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bootpria_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("bootpria-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bootwanita_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("bootwanita-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap casualpria_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("casualpria-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap convers_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("convers-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap croptop_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("croptop-removebg-preview", resourceCulture);
@@ -143,9 +183,39 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap flatshoes_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("flatshoes-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap heels_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("heels-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hoodie_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("hoodie-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap jordan_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("jordan-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,6 +273,16 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sandals_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("sandals-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sepatu {
             get {
                 object obj = ResourceManager.GetObject("sepatu", resourceCulture);
@@ -236,6 +316,16 @@ namespace Project_ISA.Properties {
         internal static System.Drawing.Bitmap tunik_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("tunik-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wedges_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("wedges-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

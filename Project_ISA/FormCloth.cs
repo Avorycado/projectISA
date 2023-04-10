@@ -16,5 +16,15 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCloth_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -175,5 +175,10 @@ namespace Project_ISA
             formRegist.Owner = this;
             formRegist.Show();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

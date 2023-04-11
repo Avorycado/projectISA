@@ -23,54 +23,67 @@ namespace Project_ISA
             this.Close();
         }
 
-        private void buttonSignUp_Click(object sender, EventArgs e)
+        
+
+        private void buttonSignUp_Click_1(object sender, EventArgs e)
         {
             try
             {
-                if (textBoxUsername.Text == "Username")
+                if(checkBoxAgree.Checked == true)
                 {
-                    textBoxUsername.BackColor = Color.IndianRed;
-                }
-                if (textBoxPassword.Text == "Password")
-                {
-                    textBoxPassword.BackColor = Color.IndianRed;
-                }
-                if (textBoxConfirmPass.Text == "Confirm Password")
-                {
-                    textBoxConfirmPass.BackColor = Color.IndianRed;
-                }
-                if (textBoxEmail.Text == "E-mail")
-                {
-                    textBoxEmail.BackColor = Color.IndianRed;
-                }
-                if (textBoxNoTelp.Text == "No. Telepon")
-                {
-                    textBoxNoTelp.BackColor = Color.IndianRed;
-                }
-                if (textBoxAlamat.Text == "Alamat")
-                {
-                    textBoxAlamat.BackColor = Color.IndianRed;
-                }
+                    if (textBoxUsername.Text == "Username")
+                    {
+                        textBoxUsername.BackColor = Color.IndianRed;
+                    }
+                    if (textBoxPassword.Text == "Password")
+                    {
+                        textBoxPassword.BackColor = Color.IndianRed;
+                    }
+                    if (textBoxConfirmPass.Text == "Confirm Password")
+                    {
+                        textBoxConfirmPass.BackColor = Color.IndianRed;
+                    }
+                    if (textBoxEmail.Text == "E-mail")
+                    {
+                        textBoxEmail.BackColor = Color.IndianRed;
+                    }
+                    if (textBoxNoTelp.Text == "No. Telepon")
+                    {
+                        textBoxNoTelp.BackColor = Color.IndianRed;
+                    }
+                    if (textBoxAlamat.Text == "Alamat")
+                    {
+                        textBoxAlamat.BackColor = Color.IndianRed;
+                    }
 
-                User user = new User(0, textBoxUsername.Text, textBoxPassword.Text, textBoxEmail.Text, int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text);
-                if (user.TambahData())
-                {
-                    MessageBox.Show("Data user berhasil disimpan.");
-                    DialogResult = DialogResult.OK;
+                    User user = new User(0, textBoxUsername.Text, textBoxPassword.Text, textBoxEmail.Text, int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text);
+                    if (user.TambahData())
+                    {
+                        MessageBox.Show("Data user berhasil disimpan.");
+                        DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        throw new Exception("Tidak dapat menambahkan data");
+                    }
+
                     this.Close();
                 }
                 else
                 {
-                    throw new Exception("Tidak dapat menambahkan data");
+                    MessageBox.Show("Anda perlu terima aturan yang ditentukan terlebih dahulu!");
                 }
-
-                this.Close();
+                
             }
-            catch(Exception x)
+            catch (Exception x)
             {
                 MessageBox.Show("Error: " + x.Message);
             }
+        }
 
+        private void checkBoxAgree_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }

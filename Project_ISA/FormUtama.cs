@@ -51,86 +51,170 @@ namespace Project_ISA
 
         private void labelCloth_Click(object sender, EventArgs e)
         {
-            FormCloth frm = new FormCloth();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormCloth frm = new FormCloth();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void pictureBoxShoes_Click(object sender, EventArgs e)
         {
-            FormShoes frm = new FormShoes();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormShoes frm = new FormShoes();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void labelShoes_Click(object sender, EventArgs e)
         {
-            FormShoes frm = new FormShoes();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormShoes frm = new FormShoes();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void pictureBoxBag_Click(object sender, EventArgs e)
         {
-            FormBag frm = new FormBag();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormBag frm = new FormBag();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void labelBag_Click(object sender, EventArgs e)
         {
-            FormBag frm = new FormBag();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormBag frm = new FormBag();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void pictureBoxSkincare_Click(object sender, EventArgs e)
         {
-            FormSkincare frm = new FormSkincare();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormSkincare frm = new FormSkincare();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void labelSkincare_Click(object sender, EventArgs e)
         {
-            FormSkincare frm = new FormSkincare();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormSkincare frm = new FormSkincare();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void productsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProduct frm = new FormProduct();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormProduct frm = new FormProduct();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void cartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCart frm = new FormCart();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormCart frm = new FormCart();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void ordersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormOrder frm = new FormOrder();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormOrder frm = new FormOrder();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void historyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormHistory frm = new FormHistory();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormHistory frm = new FormHistory();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormProfile frm = new FormProfile();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormProfile frm = new FormProfile();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)

@@ -50,6 +50,23 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+
+        public static string GenerateIdUser(string iduser)
+        {
+            string sql = "SELECT MAX(iduser) " +
+                         "FROM user " +
+                         "WHERE iduser = '" + iduser + "';";
+
+            string hasilIdUser = "";
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+
+                int hasilKode = int.Parse(hasil.GetValue(0).ToString()) + 1;
+               
+            }
+             return hasilIdUser;
+        }
         public override string ToString()
         {
             return nama;
@@ -91,7 +108,7 @@ namespace Sisbro_LIB
         public bool TambahData()
         {
             string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat) VALUES ('" +
-                         this.IdUser + "', '" +
+                         User.GenerateIdUser(this.idUser.ToString()) + "', '" +
                          this.Nama.Replace("'", "\\'") + "', SHA2('" +
                          this.Password.Replace("'", "\\'") + "', 512), '" +
                          this.Email.Replace("'", "\\'") + "', '" +

@@ -154,5 +154,10 @@ namespace Project_ISA
             frm.Owner = this;
             frm.ShowDialog();
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

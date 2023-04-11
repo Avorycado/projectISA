@@ -52,3 +52,7 @@ C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\pr
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\bin\Debug\Sisbro_LIB.pdb
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CopyComplete
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormSkincare.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormBag.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormCart.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormShoes.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormSkincare.resources

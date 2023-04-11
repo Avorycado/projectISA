@@ -58,9 +58,9 @@ namespace Project_ISA
             this.panel1.Controls.Add(this.textBoxUsername);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(3, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(429, 486);
+            this.panel1.Size = new System.Drawing.Size(429, 417);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -69,7 +69,7 @@ namespace Project_ISA
             this.radioButtonSeller.AutoSize = true;
             this.radioButtonSeller.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonSeller.Location = new System.Drawing.Point(232, 120);
-            this.radioButtonSeller.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonSeller.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonSeller.Name = "radioButtonSeller";
             this.radioButtonSeller.Size = new System.Drawing.Size(79, 26);
             this.radioButtonSeller.TabIndex = 52;
@@ -82,22 +82,23 @@ namespace Project_ISA
             this.radioButtonUser.AutoSize = true;
             this.radioButtonUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonUser.Location = new System.Drawing.Point(125, 120);
-            this.radioButtonUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButtonUser.Margin = new System.Windows.Forms.Padding(4);
             this.radioButtonUser.Name = "radioButtonUser";
             this.radioButtonUser.Size = new System.Drawing.Size(68, 26);
             this.radioButtonUser.TabIndex = 51;
             this.radioButtonUser.TabStop = true;
             this.radioButtonUser.Text = "User";
             this.radioButtonUser.UseVisualStyleBackColor = true;
+            this.radioButtonUser.CheckedChanged += new System.EventHandler(this.radioButtonUser_CheckedChanged_1);
             // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.DeepPink;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label6.Location = new System.Drawing.Point(11, 6);
+            this.label6.Location = new System.Drawing.Point(0, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(405, 57);
+            this.label6.Size = new System.Drawing.Size(429, 57);
             this.label6.TabIndex = 50;
             this.label6.Text = "Sisbro Online Shop";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,9 +142,9 @@ namespace Project_ISA
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.Location = new System.Drawing.Point(12, 246);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(404, 44);
             this.buttonLogin.TabIndex = 46;
@@ -158,7 +159,7 @@ namespace Project_ISA
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxPassword.ForeColor = System.Drawing.Color.LavenderBlush;
             this.textBoxPassword.Location = new System.Drawing.Point(17, 198);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(399, 26);
             this.textBoxPassword.TabIndex = 45;
@@ -173,7 +174,7 @@ namespace Project_ISA
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.LavenderBlush;
             this.textBoxUsername.Location = new System.Drawing.Point(17, 157);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(399, 26);
             this.textBoxUsername.TabIndex = 44;
@@ -189,7 +190,7 @@ namespace Project_ISA
             this.label3.Location = new System.Drawing.Point(157, 63);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 38);
+            this.label3.Size = new System.Drawing.Size(112, 37);
             this.label3.TabIndex = 43;
             this.label3.Text = "Log In";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -210,7 +211,7 @@ namespace Project_ISA
             this.ClientSize = new System.Drawing.Size(435, 417);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.Text = "Form Login";
             this.Load += new System.EventHandler(this.FormLogin_Load);

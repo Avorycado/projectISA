@@ -46,6 +46,7 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+
         public static Product AmbilDataByKode(int idproduct)
         {
             string sql = "SELECT idproduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator " +

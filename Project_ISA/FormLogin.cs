@@ -190,5 +190,10 @@ namespace Project_ISA
         {
             this.Close();
         }
+
+        private void radioButtonUser_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

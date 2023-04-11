@@ -87,10 +87,11 @@ namespace Project_ISA
                     {
                         this.DialogResult = DialogResult.OK;
 
-                        //FormUtama form = (FormUtama)this.Owner;
-                        FormUtama form = new FormUtama();
-                        form.ShowDialog();
+                        FormUtama form = (FormUtama)this.Owner;
+                        //FormUtama form = new FormUtama();
+                        //form.ShowDialog();
                         form.tmpUser = tmp;
+                        form.FormUtama_Load(this, e, tmp);
 
                         this.Close();
                     }

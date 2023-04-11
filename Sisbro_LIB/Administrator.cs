@@ -46,7 +46,28 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static Administrator AmbilDataByKode(string idadministrator)
+        {
+            string sql = "SELECT idadministrator, nama, email, no_hp, password " +
+                         "FROM administrator " +
+                         "WHERE idadministrator = '" + idadministrator + "'";
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            if (hasil.Read())
+            {
+                Administrator admin = new Administrator(int.Parse(hasil.GetValue(0).ToString()),
+                                                 hasil.GetValue(1).ToString(),
+                                                 hasil.GetValue(2).ToString(),
+                                                 int.Parse(hasil.GetValue(3).ToString()),
+                                                 hasil.GetValue(4).ToString());
+                return admin;
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

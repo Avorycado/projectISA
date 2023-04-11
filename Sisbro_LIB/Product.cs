@@ -46,7 +46,35 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static Product AmbilDataByKode(int idproduct)
+        {
+            string sql = "SELECT idproduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator " +
+                         "FROM product " +
+                         "WHERE idproduct = '" + idproduct + "'";
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            while(hasil.Read() == true)
+            {
+                Category kategori = Category.AmbilDataByKode(hasil.GetValue(0).ToString());
+                Sellers sellers = Sellers.AmbilDataByKode(hasil.GetValue(1).ToString());
+                Administrator admin = Administrator.AmbilDataByKode(hasil.GetValue(2).ToString());
+                if (hasil.Read())
+                {
+                    Product produk = new Product(int.Parse(hasil.GetValue(0).ToString()),
+                                                     hasil.GetValue(1).ToString(),
+                                                     double.Parse(hasil.GetValue(2).ToString()),
+                                                     hasil.GetValue(3).ToString(),
+                                                     int.Parse(hasil.GetValue(4).ToString()),
+                                                     kategori, sellers, admin);
+                    return produk;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            return null;
+        }
         #endregion
     }
 }

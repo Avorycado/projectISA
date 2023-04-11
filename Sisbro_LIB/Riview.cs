@@ -31,7 +31,36 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static List<Riview> BacaData(string kriteria, string nilai)
+        {
+            string sql;
+            if (kriteria == "")
+            {
+                sql = "SELECT r.idriview, r.deskripsi, r.product_idproduct " +
+                      "FROM riview r inner join product p on p.idproduct = r.product_idproduct";
+            }
+            else
+            {
+                sql = "r.idriview, r.deskripsi, r.product_idproduct " +
+                      "FROM riview r inner join product p on p.idproduct = r.product_idproduct " +
+                      "WHERE " + kriteria + " like '%" + nilai + "%'";
+            }
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            //buat list untuk menampung data
+            List<Riview> listriview = new List<Riview>();
+            while (hasil.Read() == true) //selama masih ada data
+            {
+                Product produk = Product.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                //baca data dr MySqlDataReader dan simpan di objek
+                Riview riview = new Riview(int.Parse(hasil.GetValue(0).ToString()),
+                                           hasil.GetValue(1).ToString(),
+                                           produk);
+                listriview.Add(riview);
+            }
+            return listriview;
+        }
         #endregion
     }
 }

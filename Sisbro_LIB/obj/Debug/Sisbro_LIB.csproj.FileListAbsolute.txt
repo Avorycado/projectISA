@@ -4,7 +4,6 @@ E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\obj
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.pdb
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\bin\Debug\Sisbro_LIB.dll
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\bin\Debug\Sisbro_LIB.pdb
-C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\bin\Debug\MySql.Data.dll
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.AssemblyReference.cache
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.CoreCompileInputs.cache
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.CopyComplete

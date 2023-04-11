@@ -34,7 +34,25 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static Category AmbilDataByKode(string idcategory)
+        {
+            string sql = "SELECT idcategory, nama " +
+                         "FROM category " +
+                         "WHERE idcategory = '" + idcategory + "'";
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            if (hasil.Read())
+            {
+                Category kategori = new Category(int.Parse(hasil.GetValue(0).ToString()),
+                                                 hasil.GetValue(1).ToString());
+                return kategori;
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

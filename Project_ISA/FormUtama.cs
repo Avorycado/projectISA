@@ -144,5 +144,10 @@ namespace Project_ISA
         {
             this.Close();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

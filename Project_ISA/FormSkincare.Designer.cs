@@ -78,6 +78,7 @@ namespace Project_ISA
             this.label18.Size = new System.Drawing.Size(64, 13);
             this.label18.TabIndex = 84;
             this.label18.Text = "Add To Cart";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -87,6 +88,7 @@ namespace Project_ISA
             this.label17.Size = new System.Drawing.Size(64, 13);
             this.label17.TabIndex = 83;
             this.label17.Text = "Add To Cart";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label16
             // 
@@ -96,6 +98,7 @@ namespace Project_ISA
             this.label16.Size = new System.Drawing.Size(64, 13);
             this.label16.TabIndex = 82;
             this.label16.Text = "Add To Cart";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label15
             // 
@@ -105,6 +108,7 @@ namespace Project_ISA
             this.label15.Size = new System.Drawing.Size(64, 13);
             this.label15.TabIndex = 81;
             this.label15.Text = "Add To Cart";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // label14
             // 
@@ -114,6 +118,7 @@ namespace Project_ISA
             this.label14.Size = new System.Drawing.Size(64, 13);
             this.label14.TabIndex = 80;
             this.label14.Text = "Add To Cart";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label13
             // 
@@ -123,6 +128,7 @@ namespace Project_ISA
             this.label13.Size = new System.Drawing.Size(64, 13);
             this.label13.TabIndex = 79;
             this.label13.Text = "Add To Cart";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -132,6 +138,7 @@ namespace Project_ISA
             this.label12.Size = new System.Drawing.Size(64, 13);
             this.label12.TabIndex = 78;
             this.label12.Text = "Add To Cart";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label11
             // 
@@ -141,6 +148,7 @@ namespace Project_ISA
             this.label11.Size = new System.Drawing.Size(64, 13);
             this.label11.TabIndex = 77;
             this.label11.Text = "Add To Cart";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -150,6 +158,7 @@ namespace Project_ISA
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 76;
             this.label10.Text = "Add To Cart";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -159,6 +168,7 @@ namespace Project_ISA
             this.label9.Size = new System.Drawing.Size(58, 13);
             this.label9.TabIndex = 75;
             this.label9.Text = "Check Out";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -168,6 +178,7 @@ namespace Project_ISA
             this.label8.Size = new System.Drawing.Size(58, 13);
             this.label8.TabIndex = 74;
             this.label8.Text = "Check Out";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label7
             // 
@@ -177,6 +188,7 @@ namespace Project_ISA
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 73;
             this.label7.Text = "Check Out";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -186,6 +198,7 @@ namespace Project_ISA
             this.label6.Size = new System.Drawing.Size(58, 13);
             this.label6.TabIndex = 72;
             this.label6.Text = "Check Out";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -195,6 +208,7 @@ namespace Project_ISA
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 71;
             this.label5.Text = "Check Out";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -204,6 +218,7 @@ namespace Project_ISA
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 70;
             this.label4.Text = "Check Out";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -213,6 +228,7 @@ namespace Project_ISA
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 69;
             this.label3.Text = "Check Out";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -222,6 +238,7 @@ namespace Project_ISA
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 68;
             this.label2.Text = "Check Out";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -231,6 +248,7 @@ namespace Project_ISA
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 67;
             this.label1.Text = "Check Out";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox10
             // 
@@ -342,6 +360,7 @@ namespace Project_ISA
             this.buttonBack.Size = new System.Drawing.Size(70, 48);
             this.buttonBack.TabIndex = 57;
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // FormSkincare
             // 

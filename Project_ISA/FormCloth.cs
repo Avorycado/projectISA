@@ -115,7 +115,7 @@ namespace Project_ISA
         {
             FormCart frm = new FormCart();
             frm.Owner = this;
-            frm.ShowDialog();v
+            frm.ShowDialog();
         }
 
         private void label15_Click(object sender, EventArgs e)

@@ -147,5 +147,12 @@ namespace Project_ISA
             frm.Owner = this;
             frm.ShowDialog();
         }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            FormUtama frm = new FormUtama();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
     }
 }

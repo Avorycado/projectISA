@@ -348,6 +348,7 @@ namespace Project_ISA
             this.buttonBack.Size = new System.Drawing.Size(70, 48);
             this.buttonBack.TabIndex = 28;
             this.buttonBack.UseVisualStyleBackColor = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // FormBag
             // 

@@ -61,6 +61,37 @@ namespace Sisbro_LIB
             }
             return listriview;
         }
+
+        public bool TambahData()
+        {
+            string sql = "INSERT INTO riview(idriview, deskripsi, product_idproduct) VALUES ('" +
+                         this.idRiview + "', '" +
+                         this.deskripsi  + "', '" +
+                         this.product;
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
+        public bool UbahData()
+        {
+            string sql = "UPDATE riview " +
+                         "SET " +
+                         "idriview = '" + this.idRiview + "', " +
+                         "deskripsi = '" + this.deskripsi + "', " +
+                         "product_idproduct = '" + this.product + "', " +
+                         "WHERE idriview = '" + this.idRiview + "';";
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
+        public bool HapusData()
+        {
+            string sql = "DELETE FROM riview WHERE idriview ='" + this.idRiview + "'";
+            bool result = Koneksi.ExecuteDML(sql);
+            return true;
+        }
         #endregion
     }
 }

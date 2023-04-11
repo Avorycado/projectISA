@@ -91,7 +91,7 @@ namespace Project_ISA
                         //FormUtama form = new FormUtama();
                         //form.ShowDialog();
                         form.tmpUser = tmp;
-                        form.FormUtama_Load(this, e, tmp);
+                        form.FormUtama_Load(this, e);
 
                         this.Close();
                     }
@@ -174,6 +174,11 @@ namespace Project_ISA
             FormRegist formRegist = new FormRegist();
             formRegist.Owner = this;
             formRegist.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -63,6 +63,16 @@ namespace Project_ISA.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _261420_200 {
+            get {
+                object obj = ResourceManager.GetObject("261420-200", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avoserum_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("avoserum-removebg-preview", resourceCulture);

@@ -21,7 +21,7 @@ namespace Project_ISA
         public Sellers tmpSellers = null;
         public void FormUtama_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            //this.WindowState = FormWindowState.Maximized;
             this.IsMdiContainer = true;
             try
             {
@@ -29,22 +29,6 @@ namespace Project_ISA
                 //MessageBox.Show("Koneksi Berhasil", "Informasi");
             }
             catch(Exception ex)
-            {
-                MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
-            }
-        }
-
-        public void FormUtama_Load(object sender, EventArgs e, User u)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            this.IsMdiContainer = true;
-            tmpUser = u;
-            try
-            {
-                Koneksi koneksi = new Koneksi(db.Default.DbServer, db.Default.DbName, db.Default.DbUsername, db.Default.DbPassword);
-                //MessageBox.Show("Koneksi Berhasil", "Informasi");
-            }
-            catch (Exception ex)
             {
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
             }
@@ -154,6 +138,16 @@ namespace Project_ISA
             FormLogin frm = new FormLogin();
             frm.Owner = this;
             frm.ShowDialog();
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

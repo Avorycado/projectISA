@@ -323,5 +323,8 @@
   <ItemGroup>
     <None Include="Resources\cosrx-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\261420-200.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

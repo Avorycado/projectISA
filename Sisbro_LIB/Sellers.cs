@@ -95,8 +95,8 @@ namespace Sisbro_LIB
                          this.nama.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
-                         this.Alamat.Replace("'", "\\'") +
-                         this.Password.Replace("'", "\\'") + "', 512), SHA2('" + "');";
+                         this.Alamat.Replace("'", "\\'") + ", SHA2('" +
+                         this.Password.Replace("'", "\\'") + "', 512);";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;

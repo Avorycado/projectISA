@@ -337,6 +337,7 @@ namespace Project_ISA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(678, 537);
+            this.ControlBox = false;
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -367,7 +368,6 @@ namespace Project_ISA
             this.Controls.Add(this.buttonBack);
             this.Name = "FormBag";
             this.ShowInTaskbar = false;
-            this.Text = "FormBag";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

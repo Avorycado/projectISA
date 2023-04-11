@@ -108,6 +108,12 @@
     <Compile Include="FormShoes.Designer.cs">
       <DependentUpon>FormShoes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSkincare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSkincare.Designer.cs">
+      <DependentUpon>FormSkincare.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormShoes.resx">
       <DependentUpon>FormShoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSkincare.resx">
+      <DependentUpon>FormSkincare.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>
@@ -274,6 +283,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\laptopbag-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avoserum-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\serumavoskin-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noera-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skintific.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mugwort-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yuja-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elformula-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\elformula-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cetaphil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cetaphil-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cosrx-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

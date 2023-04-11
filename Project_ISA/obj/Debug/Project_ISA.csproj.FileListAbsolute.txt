@@ -51,3 +51,4 @@ C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\pr
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\bin\Debug\MySql.Data.dll
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\bin\Debug\Sisbro_LIB.pdb
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CopyComplete
+C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormSkincare.resources

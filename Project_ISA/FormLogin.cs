@@ -81,12 +81,15 @@ namespace Project_ISA
 
                 if (radioButtonUser.Checked == true)
                 {
+                    
                     User tmp = User.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
                         this.DialogResult = DialogResult.OK;
 
-                        FormUtama form = (FormUtama)this.Owner;
+                        //FormUtama form = (FormUtama)this.Owner;
+                        FormUtama form = new FormUtama();
+                        form.ShowDialog();
                         form.tmpUser = tmp;
 
                         this.Close();

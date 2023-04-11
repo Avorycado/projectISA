@@ -30,6 +30,8 @@ namespace Project_ISA
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButtonSeller = new System.Windows.Forms.RadioButton();
+            this.radioButtonUser = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.labelDaftar = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,8 +41,6 @@ namespace Project_ISA
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButtonUser = new System.Windows.Forms.RadioButton();
-            this.radioButtonSeller = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,28 @@ namespace Project_ISA
             this.panel1.Size = new System.Drawing.Size(322, 396);
             this.panel1.TabIndex = 5;
             // 
+            // radioButtonSeller
+            // 
+            this.radioButtonSeller.AutoSize = true;
+            this.radioButtonSeller.Location = new System.Drawing.Point(87, 337);
+            this.radioButtonSeller.Name = "radioButtonSeller";
+            this.radioButtonSeller.Size = new System.Drawing.Size(51, 17);
+            this.radioButtonSeller.TabIndex = 52;
+            this.radioButtonSeller.TabStop = true;
+            this.radioButtonSeller.Text = "Seller";
+            this.radioButtonSeller.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonUser
+            // 
+            this.radioButtonUser.AutoSize = true;
+            this.radioButtonUser.Location = new System.Drawing.Point(34, 337);
+            this.radioButtonUser.Name = "radioButtonUser";
+            this.radioButtonUser.Size = new System.Drawing.Size(47, 17);
+            this.radioButtonUser.TabIndex = 51;
+            this.radioButtonUser.TabStop = true;
+            this.radioButtonUser.Text = "User";
+            this.radioButtonUser.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.DeepPink;
@@ -78,11 +100,11 @@ namespace Project_ISA
             // labelDaftar
             // 
             this.labelDaftar.AutoSize = true;
-            this.labelDaftar.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Underline);
+            this.labelDaftar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Underline);
             this.labelDaftar.ForeColor = System.Drawing.Color.LavenderBlush;
             this.labelDaftar.Location = new System.Drawing.Point(173, 298);
             this.labelDaftar.Name = "labelDaftar";
-            this.labelDaftar.Size = new System.Drawing.Size(55, 25);
+            this.labelDaftar.Size = new System.Drawing.Size(47, 17);
             this.labelDaftar.TabIndex = 49;
             this.labelDaftar.Text = "Daftar";
             this.labelDaftar.Click += new System.EventHandler(this.labelDaftar_Click);
@@ -90,11 +112,11 @@ namespace Project_ISA
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 10F);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label4.ForeColor = System.Drawing.Color.LavenderBlush;
             this.label4.Location = new System.Drawing.Point(70, 298);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 25);
+            this.label4.Size = new System.Drawing.Size(106, 17);
             this.label4.TabIndex = 48;
             this.label4.Text = "Baru di SisBro?";
             // 
@@ -123,11 +145,11 @@ namespace Project_ISA
             // 
             this.textBoxPassword.BackColor = System.Drawing.Color.HotPink;
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxPassword.Font = new System.Drawing.Font("Poppins", 10F);
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxPassword.ForeColor = System.Drawing.Color.LavenderBlush;
             this.textBoxPassword.Location = new System.Drawing.Point(34, 152);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(254, 27);
+            this.textBoxPassword.Size = new System.Drawing.Size(254, 23);
             this.textBoxPassword.TabIndex = 45;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxPassword_MouseClick_1);
@@ -137,11 +159,11 @@ namespace Project_ISA
             // 
             this.textBoxUsername.BackColor = System.Drawing.Color.HotPink;
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxUsername.Font = new System.Drawing.Font("Poppins", 10F);
+            this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.LavenderBlush;
             this.textBoxUsername.Location = new System.Drawing.Point(34, 119);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(254, 27);
+            this.textBoxUsername.Size = new System.Drawing.Size(254, 23);
             this.textBoxUsername.TabIndex = 44;
             this.textBoxUsername.Text = "Username";
             this.textBoxUsername.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxUsername_MouseClick_1);
@@ -166,28 +188,6 @@ namespace Project_ISA
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 4;
-            // 
-            // radioButtonUser
-            // 
-            this.radioButtonUser.AutoSize = true;
-            this.radioButtonUser.Location = new System.Drawing.Point(34, 337);
-            this.radioButtonUser.Name = "radioButtonUser";
-            this.radioButtonUser.Size = new System.Drawing.Size(47, 17);
-            this.radioButtonUser.TabIndex = 51;
-            this.radioButtonUser.TabStop = true;
-            this.radioButtonUser.Text = "User";
-            this.radioButtonUser.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSeller
-            // 
-            this.radioButtonSeller.AutoSize = true;
-            this.radioButtonSeller.Location = new System.Drawing.Point(87, 337);
-            this.radioButtonSeller.Name = "radioButtonSeller";
-            this.radioButtonSeller.Size = new System.Drawing.Size(51, 17);
-            this.radioButtonSeller.TabIndex = 52;
-            this.radioButtonSeller.TabStop = true;
-            this.radioButtonSeller.Text = "Seller";
-            this.radioButtonSeller.UseVisualStyleBackColor = true;
             // 
             // FormLogin
             // 

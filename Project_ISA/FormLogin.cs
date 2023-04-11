@@ -91,7 +91,7 @@ namespace Project_ISA
                         //FormUtama form = new FormUtama();
                         //form.ShowDialog();
                         form.tmpUser = tmp;
-                        form.FormUtama_Load(this, e, tmp);
+                        form.FormUtama_Load(this, e);
 
                         this.Close();
                     }

@@ -131,7 +131,7 @@ namespace Project_ISA
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-        
+            radioButtonUser.Checked = true;
         }
 
         private void textBoxUsername_MouseClick_1(object sender, MouseEventArgs e)
@@ -157,7 +157,7 @@ namespace Project_ISA
             if (textBoxPassword.Text == "Password")
             {
                 textBoxPassword.Text = "";
-                textBoxPassword.BackColor = Color.White;
+                textBoxPassword.BackColor = Color.HotPink;
             }
         }
 
@@ -179,6 +179,16 @@ namespace Project_ISA
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void radioButtonUser_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

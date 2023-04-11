@@ -135,12 +135,39 @@ namespace Project_ISA
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormLogin frm = new FormLogin();
-            frm.Owner = this;
-            frm.ShowDialog();
+            if(tmpUser != null)
+            {
+                if(logInToolStripMenuItem.Enabled == true)
+                {
+                    MessageBox.Show("Anda sudah login.");
+                    logInToolStripMenuItem.Dispose();
+                    logInToolStripMenuItem.Enabled = false;
+                }
+            }
+            else
+            {
+                FormLogin frm = new FormLogin();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
 
         private void labelClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void labelClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

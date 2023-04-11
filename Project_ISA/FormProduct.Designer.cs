@@ -1,4 +1,5 @@
-﻿namespace Project_ISA
+﻿
+namespace Project_ISA
 {
     partial class FormProduct
     {

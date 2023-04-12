@@ -26,6 +26,8 @@ namespace Project_ISA
             try
             {
                 Koneksi koneksi = new Koneksi(db.Default.DbServer, db.Default.DbName, db.Default.DbUsername, db.Default.DbPassword);
+                //labelUser.Text = tmpUser.Nama;
+                //labelStatus.Text = "Log In";
                 //MessageBox.Show("Koneksi Berhasil", "Informasi");
             }
             catch(Exception ex)
@@ -241,16 +243,6 @@ namespace Project_ISA
             this.Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void labelClose_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -259,6 +251,31 @@ namespace Project_ISA
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if(tmpUser != null)
+            {
+                tmpUser = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+            }
+            else
+            {
+                MessageBox.Show("Akun anda tidak sedang Log In!");
+            }
+            if(tmpSellers != null)
+            {
+                tmpSellers = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+            }
+        }
+
+        private void labelUser_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

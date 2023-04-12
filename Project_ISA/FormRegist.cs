@@ -17,19 +17,16 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
-
         private void labelClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        
-
         private void buttonSignUp_Click_1(object sender, EventArgs e)
         {
             try
             {
-                if(checkBoxAgree.Checked == true)
+                if (checkBoxAgree.Checked == true)
                 {
                     if (textBoxUsername.Text == "Username")
                     {
@@ -56,35 +53,44 @@ namespace Project_ISA
                         textBoxAlamat.BackColor = Color.IndianRed;
                     }
 
-                    User user = new User(0, textBoxUsername.Text, textBoxPassword.Text, textBoxEmail.Text, int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text);
+                    User user = new User();
+                    user.IdUser = int.Parse(textBoxId.Text);
+                    user.Nama = textBoxUsername.Text;
+                    user.Password = textBoxPassword.Text;
+                    user.Email = textBoxEmail.Text;
+                    user.NoHp = int.Parse(textBoxNoTelp.Text);
+                    user.Alamat = textBoxAlamat.Text;
+
                     if (user.TambahData())
                     {
-                        MessageBox.Show("Data user berhasil disimpan.");
-                        DialogResult = DialogResult.OK;
-                        this.Close();
+                        MessageBox.Show("Data berhasil disimpan");
                     }
                     else
                     {
                         throw new Exception("Tidak dapat menambahkan data");
+                        
                     }
-
-                    this.Close();
                 }
-                else
-                {
-                    MessageBox.Show("Anda perlu terima aturan yang ditentukan terlebih dahulu!");
-                }
-                
             }
-            catch (Exception x)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error: " + x.Message);
-            }
+                MessageBox.Show(ex.Message, "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
-        private void checkBoxAgree_CheckedChanged(object sender, EventArgs e)
+        private void FormRegist_Load(object sender, EventArgs e)
         {
+            try
+            {
+                int idBaru = User.GenerateIdUser();
+                textBoxId.Text = idBaru.ToString();
 
+                textBoxId.Enabled = false;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -50,8 +50,8 @@ namespace Project_ISA
             this.pictureBoxShoes = new System.Windows.Forms.PictureBox();
             this.pictureBoxCloth = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelUser = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSkincare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBag)).BeginInit();
@@ -294,24 +294,24 @@ namespace Project_ISA
             this.panel1.Size = new System.Drawing.Size(585, 159);
             this.panel1.TabIndex = 54;
             // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(77, 0);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(35, 13);
+            this.labelStatus.TabIndex = 55;
+            this.labelStatus.Text = "status";
+            // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(440, 0);
+            this.labelUser.Location = new System.Drawing.Point(12, 0);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(27, 13);
             this.labelUser.TabIndex = 54;
             this.labelUser.Text = "user";
             this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(521, -1);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(35, 13);
-            this.labelStatus.TabIndex = 55;
-            this.labelStatus.Text = "status";
             // 
             // FormUtama
             // 
@@ -364,7 +364,7 @@ namespace Project_ISA
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.Label labelUser;
+        public System.Windows.Forms.Label labelStatus;
+        public System.Windows.Forms.Label labelUser;
     }
 }

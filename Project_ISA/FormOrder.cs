@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sisbro_LIB;
 
 namespace Project_ISA
 {
@@ -15,6 +16,11 @@ namespace Project_ISA
         public FormOrder()
         {
             InitializeComponent();
+        }
+        public User u;
+        private void FormOrder_Load(object sender, EventArgs e)
+        {
+            labelAlamat.Text = "Alamat Pengiriman: " + u.Alamat;
         }
     }
 }

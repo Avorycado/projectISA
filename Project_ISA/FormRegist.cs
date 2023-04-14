@@ -63,19 +63,26 @@ namespace Project_ISA
 
                     if (user.TambahData())
                     {
-                        MessageBox.Show("Data berhasil disimpan");
+                        DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                        if(hasil == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
                     }
                     else
                     {
                         throw new Exception("Tidak dapat menambahkan data");
-                        
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Setujui Term and Conditions");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Eror", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }    
+            }
         }
 
         private void FormRegist_Load(object sender, EventArgs e)

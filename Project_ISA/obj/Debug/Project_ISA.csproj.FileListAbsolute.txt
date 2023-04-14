@@ -59,3 +59,8 @@ E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\ob
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormOrder.resources
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormOrder.resources
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CopyComplete
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormBag.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormCart.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormOrder.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormShoes.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormSkincare.resources

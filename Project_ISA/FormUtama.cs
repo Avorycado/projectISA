@@ -221,13 +221,11 @@ namespace Project_ISA
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(tmpUser != null)
+            if(tmpUser != null || tmpSellers != null)
             {
                 if(logInToolStripMenuItem.Enabled == true)
                 {
                     MessageBox.Show("Anda sudah login.");
-                    logInToolStripMenuItem.Dispose();
-                    logInToolStripMenuItem.Enabled = false;
                 }
             }
             else
@@ -235,6 +233,19 @@ namespace Project_ISA
                 FormLogin frm = new FormLogin();
                 frm.Owner = this;
                 frm.ShowDialog();
+
+                if(frm.ShowDialog() == DialogResult.OK)
+                {
+                    labelUser.Text = "User: " + tmpUser.Nama;
+                    if(tmpUser != null)
+                    {
+                        labelStatus.Text = "Status: Log In";
+                    }
+                    else
+                    {
+                        labelStatus.Text = "Status: Log In";
+                    }
+                }
             }
         }
 
@@ -260,16 +271,23 @@ namespace Project_ISA
                 tmpUser = null;
                 FormUtama_Load(this, e);
                 MessageBox.Show("Anda berhasil Log Out!");
+
+                labelUser.Text = "User: ";
+                labelStatus.Text = "Status: Not in Account";
             }
             else
             {
                 MessageBox.Show("Akun anda tidak sedang Log In!");
             }
+
             if(tmpSellers != null)
             {
                 tmpSellers = null;
                 FormUtama_Load(this, e);
                 MessageBox.Show("Anda berhasil Log Out!");
+
+                labelUser.Text = "User: ";
+                labelStatus.Text = "Status: Not in Account";
             }
         }
 

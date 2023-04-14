@@ -41,7 +41,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql = "r.idriview, r.deskripsi, r.product_idproduct " +
+                sql = "SELECT r.idriview, r.deskripsi, r.product_idproduct " +
                       "FROM riview r inner join product p on p.idproduct = r.product_idproduct " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
@@ -65,9 +65,9 @@ namespace Sisbro_LIB
         public bool TambahData()
         {
             string sql = "INSERT INTO riview(idriview, deskripsi, product_idproduct) VALUES ('" +
-                         this.idRiview + "', '" +
-                         this.deskripsi  + "', '" +
-                         this.product;
+                         this.IdRiview + "', '" +
+                         this.Deskripsi  + "', '" +
+                         this.Product.IdProduct + ";";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -77,10 +77,10 @@ namespace Sisbro_LIB
         {
             string sql = "UPDATE riview " +
                          "SET " +
-                         "idriview = '" + this.idRiview + "', " +
-                         "deskripsi = '" + this.deskripsi + "', " +
-                         "product_idproduct = '" + this.product + "', " +
-                         "WHERE idriview = '" + this.idRiview + "';";
+                         "idriview = '" + this.IdRiview + "', " +
+                         "deskripsi = '" + this.Deskripsi + "', " +
+                         "product_idproduct = '" + this.Product.IdProduct + "', " +
+                         "WHERE idriview = '" + this.IdRiview + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -88,7 +88,7 @@ namespace Sisbro_LIB
 
         public bool HapusData()
         {
-            string sql = "DELETE FROM riview WHERE idriview ='" + this.idRiview + "'";
+            string sql = "DELETE FROM riview WHERE idriview ='" + this.IdRiview + ";";
             bool result = Koneksi.ExecuteDML(sql);
             return true;
         }

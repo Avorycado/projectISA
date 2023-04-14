@@ -97,10 +97,10 @@ namespace Sisbro_LIB
             while (hasil.Read() == true) //selama masih ada data
             {
                 //baca data dr MySqlDataReader dan simpan di objek
-                User user = new User(int.Parse(hasil.GetValue(0).ToString()), 
-                    hasil.GetValue(1).ToString(), 
-                    hasil.GetValue(2).ToString(), 
-                    hasil.GetValue(3).ToString(), 
+                User user = new User(int.Parse(hasil.GetValue(0).ToString()),
+                    hasil.GetValue(1).ToString(),
+                    hasil.GetValue(2).ToString(),
+                    hasil.GetValue(3).ToString(),
                     int.Parse(hasil.GetValue(4).ToString()),
                     hasil.GetValue(5).ToString());
                 listUser.Add(user);
@@ -139,7 +139,7 @@ namespace Sisbro_LIB
         public bool HapusData()
         {
             string sql = "DELETE FROM user WHERE idUser='" + this.IdUser + "'";
-            bool result = Koneksi.ExecuteDML(sql);  
+            bool result = Koneksi.ExecuteDML(sql);
             return true;
         }
 
@@ -218,7 +218,8 @@ namespace Sisbro_LIB
                 return result;
             }
             return null;
+
+            #endregion
         }
-        #endregion
     }
 }

@@ -34,7 +34,25 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static PaymentMethod AmbilDataByKode(string idPaymentMethod)
+        {
+            string sql = "SELECT idpayment_method, nama " +
+                         "FROM payment_method " +
+                         "WHERE idpayment_method = '" + idPaymentMethod + "'";
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            if (hasil.Read())
+            {
+                PaymentMethod payment = new PaymentMethod(int.Parse(hasil.GetValue(0).ToString()),
+                                        hasil.GetValue(1).ToString());
+                return payment;
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

@@ -17,10 +17,36 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
-        public User u;
+        public User user;
+        public Sellers sellers;
+        public Product product;
         private void FormOrder_Load(object sender, EventArgs e)
         {
-            labelAlamat.Text = "Alamat Pengiriman: " + u.Alamat;
+            labelAlamat.Text = "Alamat Pengiriman: " + user.Alamat;
+            labelInfoToko.Text = sellers.Nama + "\n" + product.Nama + "\n" + product.Jumlah + " " + product.Harga;
         }
+
+        private void buttonCheckOut_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void comboBoxInfoPengiriman_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            User pengirimanDipilih = (User)comboBoxInfoPengiriman.SelectedItem;
+        }
+
+        private void comboBoxMetodePembayaran_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            PaymentMethod pembayaranDipilih = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
+        }
+
     }
 }

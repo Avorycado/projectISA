@@ -218,8 +218,7 @@ namespace Sisbro_LIB
                 return result;
             }
             return null;
-
-            #endregion
         }
+        #endregion
     }
 }

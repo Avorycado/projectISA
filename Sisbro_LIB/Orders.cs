@@ -111,6 +111,31 @@ namespace Sisbro_LIB
             bool result = Koneksi.ExecuteDML(sql);
             return true;
         }
+
+        public static Orders AmbilDataByKode(int idOrders)
+        {
+            string sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, u.iduser, p.idpayment_method " +
+                           "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" + ";";
+
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            if (hasil.Read())
+            {
+                User user = User.AmbilDataByKode(hasil.GetValue(0).ToString());
+                PaymentMethod paymentMethod = PaymentMethod.AmbilDataByKode(hasil.GetValue(0).ToString());
+                Orders orders = new Orders(int.Parse(hasil.GetValue(0).ToString()),
+                                (DateTime)hasil.GetValue(1),
+                                double.Parse(hasil.GetValue(2).ToString()),
+                                hasil.GetValue(3).ToString(),
+                                user,
+                                paymentMethod);
+                return orders;
+            }
+            else
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

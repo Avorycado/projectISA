@@ -119,7 +119,7 @@ namespace Sisbro_LIB
             return result;
         }
 
-        public static Administrator AmbilDataByKode(string idadministrator)
+        public static Administrator AmbilDataByKode(int idadministrator)
         {
             string sql = "SELECT idadministrator, nama, email, no_hp, password " +
                          "FROM administrator " +

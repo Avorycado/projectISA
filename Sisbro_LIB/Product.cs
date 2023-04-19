@@ -46,7 +46,43 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static List<Product> BacaData(string kriteria, string nilai)
+        {
+            string sql;
+            if (kriteria == "")
+            {
+                sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator " +
+                      "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellersinner join administrator a on p.administrator_idadministrator = a.idadministrator ";
+            }
+            else
+            {
+                sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator " +
+                      "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellersinner join administrator a on p.administrator_idadministrator = a.idadministrator " +
+                      "WHERE " + kriteria + " like '%" + nilai + "%'";
+            }
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            //buat list untuk menampung data
+            List<Product> listProduct = new List<Product>();
+            while (hasil.Read() == true) //selama masih ada data
+            {
+                //baca data dr MySqlDataReader dan simpan di objek
+                Category category = Category.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Administrator administrator = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Product product = new Product(int.Parse(hasil.GetValue(0).ToString()),
+                    hasil.GetValue(1).ToString(),
+                    double.Parse(hasil.GetValue(2).ToString()),
+                    hasil.GetValue(3).ToString(),
+                    int.Parse(hasil.GetValue(4).ToString()),
+                    category, 
+                    sellers,
+                    administrator);
+                listProduct.Add(product);
+            }
+            return listProduct;
+        }
         public static Product AmbilDataByKode(int idproduct)
         {
             string sql = "SELECT idproduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator " +
@@ -56,9 +92,9 @@ namespace Sisbro_LIB
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
             while(hasil.Read() == true)
             {
-                Category kategori = Category.AmbilDataByKode(hasil.GetValue(0).ToString());
-                Sellers sellers = Sellers.AmbilDataByKode(hasil.GetValue(1).ToString());
-                Administrator admin = Administrator.AmbilDataByKode(hasil.GetValue(2).ToString());
+                Category kategori = Category.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Administrator admin = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
                 if (hasil.Read())
                 {
                     Product produk = new Product(int.Parse(hasil.GetValue(0).ToString()),

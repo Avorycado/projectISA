@@ -34,7 +34,7 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
-        public static Category AmbilDataByKode(string idcategory)
+        public static Category AmbilDataByKode(int idcategory)
         {
             string sql = "SELECT idcategory, nama " +
                          "FROM category " +

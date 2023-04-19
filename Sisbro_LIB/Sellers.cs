@@ -132,7 +132,7 @@ namespace Sisbro_LIB
             return result;
         }
 
-        public static Sellers AmbilDataByKode(string idSellers)
+        public static Sellers AmbilDataByKode(int idSellers)
         {
             string sql = "SELECT idSellers, nama, email, no_hp, alamat, password " +
                          "FROM sellers " +

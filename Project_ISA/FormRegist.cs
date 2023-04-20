@@ -53,13 +53,13 @@ namespace Project_ISA
                         textBoxAlamat.BackColor = Color.IndianRed;
                     }
 
-                    User user = new User();
-                    user.IdUser = int.Parse(textBoxId.Text);
-                    user.Nama = textBoxUsername.Text;
-                    user.Password = textBoxPassword.Text;
-                    user.Email = textBoxEmail.Text;
-                    user.NoHp = int.Parse(textBoxNoTelp.Text);
-                    user.Alamat = textBoxAlamat.Text;
+                    User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text, textBoxPassword.Text, textBoxEmail.Text, int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text);
+                    //user.IdUser = int.Parse(textBoxId.Text);
+                    //user.Nama = textBoxUsername.Text;
+                    //user.Password = textBoxPassword.Text;
+                    //user.Email = textBoxEmail.Text;
+                    //user.NoHp = int.Parse(textBoxNoTelp.Text);
+                    //user.Alamat = textBoxAlamat.Text;
 
                     if (user.TambahData())
                     {

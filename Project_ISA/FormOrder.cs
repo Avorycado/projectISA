@@ -22,8 +22,10 @@ namespace Project_ISA
         public Product product;
         private void FormOrder_Load(object sender, EventArgs e)
         {
-            labelAlamat.Text = "Alamat Pengiriman: " + user.Alamat;
-            labelInfoToko.Text = sellers.Nama + "\n" + product.Nama + "\n" + product.Jumlah + " " + product.Harga;
+            FormUtama formUtama = (FormUtama)this.Owner;
+
+            labelAlamat.Text = "Alamat Pengiriman: " + formUtama.tmpUser.Alamat;
+            //labelInfoToko.Text = sellers.Nama + "\n" + product.Nama + "\n" + product.Jumlah + " " + product.Harga;
         }
 
         private void buttonCheckOut_Click(object sender, EventArgs e)

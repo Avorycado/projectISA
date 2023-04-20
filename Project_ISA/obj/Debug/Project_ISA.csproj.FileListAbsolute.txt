@@ -64,3 +64,5 @@ C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.For
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormOrder.resources
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormShoes.resources
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormSkincare.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProduct.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProfile.resources

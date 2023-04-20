@@ -19,15 +19,6 @@ namespace Sisbro_LIB
         #endregion
 
         #region Constructors
-        public User()
-        {
-            idUser = 0;
-            nama = "";
-            password = "";
-            email = "";
-            noHp = 0;
-            alamat = "";
-        }
 
         public User(int idUser, string nama, string password, string email, int noHp, string alamat)
         {
@@ -207,7 +198,7 @@ namespace Sisbro_LIB
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
-            if (hasil.Read() == true)
+            while (hasil.Read() == true)
             {
                 User result = new User(int.Parse(hasil.GetValue(0).ToString()),
                                         hasil.GetValue(1).ToString(),

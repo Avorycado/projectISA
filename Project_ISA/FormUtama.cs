@@ -232,11 +232,11 @@ namespace Project_ISA
             {
                 FormLogin frm = new FormLogin();
                 frm.Owner = this;
-                frm.ShowDialog();
+                //frm.ShowDialog();
 
                 if(frm.ShowDialog() == DialogResult.OK)
                 {
-                    labelUser.Text = "User: " + tmpUser.Nama;
+                    labelUser.Text = "User: " + tmpUser.Alamat;
                     if(tmpUser != null)
                     {
                         labelStatus.Text = "Status: Log In";

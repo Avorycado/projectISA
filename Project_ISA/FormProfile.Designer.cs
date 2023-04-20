@@ -34,7 +34,6 @@ namespace Project_ISA
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelNoTelp = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +58,7 @@ namespace Project_ISA
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(296, 96);
+            this.labelEmail.Location = new System.Drawing.Point(296, 63);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(38, 13);
             this.labelEmail.TabIndex = 2;
@@ -68,7 +67,7 @@ namespace Project_ISA
             // labelNoTelp
             // 
             this.labelNoTelp.AutoSize = true;
-            this.labelNoTelp.Location = new System.Drawing.Point(296, 128);
+            this.labelNoTelp.Location = new System.Drawing.Point(296, 99);
             this.labelNoTelp.Name = "labelNoTelp";
             this.labelNoTelp.Size = new System.Drawing.Size(72, 13);
             this.labelNoTelp.TabIndex = 3;
@@ -77,20 +76,11 @@ namespace Project_ISA
             // labelAlamat
             // 
             this.labelAlamat.AutoSize = true;
-            this.labelAlamat.Location = new System.Drawing.Point(296, 164);
+            this.labelAlamat.Location = new System.Drawing.Point(296, 134);
             this.labelAlamat.Name = "labelAlamat";
             this.labelAlamat.Size = new System.Drawing.Size(45, 13);
             this.labelAlamat.TabIndex = 4;
             this.labelAlamat.Text = "Alamat: ";
-            // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(296, 64);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(59, 13);
-            this.labelPassword.TabIndex = 5;
-            this.labelPassword.Text = "Password: ";
             // 
             // FormProfile
             // 
@@ -98,7 +88,6 @@ namespace Project_ISA
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(536, 223);
-            this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelAlamat);
             this.Controls.Add(this.labelNoTelp);
             this.Controls.Add(this.labelEmail);
@@ -120,6 +109,5 @@ namespace Project_ISA
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelNoTelp;
         private System.Windows.Forms.Label labelAlamat;
-        private System.Windows.Forms.Label labelPassword;
     }
 }

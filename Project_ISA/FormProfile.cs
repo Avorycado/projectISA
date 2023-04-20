@@ -24,7 +24,7 @@ namespace Project_ISA
         {
             FormUtama fu = (FormUtama)this.Owner;
 
-            labelNama.Text = "Nama: " + user.Nama;
+            labelNama.Text = "Nama: " + fu.tmpUser.Nama;
             labelEmail.Text = "Email: " + fu.tmpUser.Email;
             labelNoTelp.Text = "No. Telepon: " + fu.tmpUser.NoHp;
             labelAlamat.Text = "Alamat: " + fu.tmpUser.Alamat;

@@ -26,64 +26,82 @@ namespace Project_ISA
 
         private void label1_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label7_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
             FormOrder frm = new FormOrder();
-            frm.Owner = this;
+            frm.Owner = formUtama;
             frm.ShowDialog();
         }
 

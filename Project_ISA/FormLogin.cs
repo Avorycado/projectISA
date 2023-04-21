@@ -108,6 +108,7 @@ namespace Project_ISA
 
                         FormUtama form = (FormUtama)this.Owner;
                         form.tmpSellers = tmp;
+                        form.FormUtama_Load(this, e);
 
                         this.Close();
                     }

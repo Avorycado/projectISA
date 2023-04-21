@@ -34,6 +34,29 @@ namespace Project_ISA
             {
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
             }
+
+            menuStripUser.Visible = true;
+            menuStripUser.Enabled = true;
+
+            menuStripSellers.Visible = false;
+            menuStripSellers.Enabled = false;
+
+            if(tmpSellers != null)
+            {
+                menuStripUser.Visible = false;
+                menuStripUser.Enabled = false;
+
+                menuStripSellers.Visible = true;
+                menuStripSellers.Enabled = true;
+            }
+            else
+            {
+                menuStripSellers.Visible = false;
+                menuStripSellers.Enabled = false;
+
+                menuStripUser.Visible = true;
+                menuStripUser.Enabled = true;
+            }
         }
 
         private void pictureBoxCloth_Click(object sender, EventArgs e)
@@ -236,13 +259,15 @@ namespace Project_ISA
 
                 if(frm.ShowDialog() == DialogResult.OK)
                 {
-                    labelUser.Text = "User: " + tmpUser.Alamat;
+                    
                     if(tmpUser != null)
                     {
+                        labelUser.Text = "User: " + tmpUser.Nama;
                         labelStatus.Text = "Status: Log In";
                     }
                     else
                     {
+                        labelUser.Text = "User: " + tmpSellers.Nama;
                         labelStatus.Text = "Status: Log In";
                     }
                 }
@@ -299,6 +324,31 @@ namespace Project_ISA
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+
+        private void toolStripMenuItemExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripMenuItemProduct_Click(object sender, EventArgs e)
+        {
+            if (tmpSellers == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormTambahProduct frm = new FormTambahProduct();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
     }
 }

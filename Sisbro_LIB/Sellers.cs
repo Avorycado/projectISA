@@ -172,8 +172,7 @@ namespace Sisbro_LIB
 
         public static Sellers CekLogin(string userName, string password)
         {
-            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password "
-                          + " FROM sellers ";
+            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password FROM sellers ";
 
             if (userName == "" || password == "")
             {
@@ -181,7 +180,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql += " WHERE username ='" + userName + "' AND password = SHA2('" + password + "', 512);";
+                sql += " WHERE nama ='" + userName + "' AND password = SHA2('" + password + "', 512);";
             }
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
@@ -197,6 +196,25 @@ namespace Sisbro_LIB
                 return result;
             }
             return null;
+        }
+        public static string AmbilNamaLengkap(int idSeller)
+        {
+            string sql = "SELECT nama FROM sellers WHERE idSellers = '" + idSeller + "'";
+
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            string hasilAmbil = "";
+
+            if (hasil.Read() == true)
+            {
+                hasilAmbil = hasil.GetString(0);
+
+                return hasilAmbil;
+            }
+            else
+            {
+                return null;
+            }
         }
         #endregion
     }

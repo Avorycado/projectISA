@@ -112,6 +112,26 @@ namespace Sisbro_LIB
             }
             return null;
         }
+        public static int GenerateIdProduct()
+        {
+            string sql = "SELECT MAX(idproduct) " +
+                         "FROM product " + ";";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
+        }
         #endregion
     }
 }

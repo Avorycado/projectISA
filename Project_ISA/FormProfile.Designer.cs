@@ -29,22 +29,13 @@ namespace Project_ISA
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelNama = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelNoTelp = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(255, 195);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // labelNama
             // 
@@ -82,11 +73,20 @@ namespace Project_ISA
             this.labelAlamat.TabIndex = 4;
             this.labelAlamat.Text = "Alamat: ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(255, 195);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Pink;
+            this.BackColor = System.Drawing.Color.HotPink;
             this.ClientSize = new System.Drawing.Size(536, 223);
             this.Controls.Add(this.labelAlamat);
             this.Controls.Add(this.labelNoTelp);

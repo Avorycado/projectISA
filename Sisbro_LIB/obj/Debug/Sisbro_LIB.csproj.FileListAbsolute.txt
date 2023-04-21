@@ -11,3 +11,10 @@ C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\pr
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.pdb
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\bin\Debug\Sisbro_LIB.dll
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Sisbro_LIB\bin\Debug\Sisbro_LIB.pdb
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\bin\Debug\Sisbro_LIB.dll
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\bin\Debug\Sisbro_LIB.pdb
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.AssemblyReference.cache
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.CoreCompileInputs.cache
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.CopyComplete
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.dll
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.pdb

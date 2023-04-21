@@ -88,7 +88,7 @@ namespace Sisbro_LIB
         }
         public bool TambahData()
         {
-            string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
+            string sql = "SET FOREIGN_KEY_CHECKS=0; INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
                          this.IdProduct + "', '" +
                          this.Nama.Replace("'", "\\'") + "', '" +
                          this.Harga + "', '" +
@@ -96,7 +96,7 @@ namespace Sisbro_LIB
                          this.Jumlah + "', '" +
                          this.Category.IdCategory + "', '" +
                          this.Sellers.IdSeller + "', '" +
-                         this.Administrator.IdAdministrator + "', '" +
+                         null + "', '" +
                          this.Foto + "');";
 
             bool result = Koneksi.ExecuteDML(sql);

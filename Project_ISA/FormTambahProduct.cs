@@ -85,6 +85,8 @@ namespace Project_ISA
                     Product product = new Product(int.Parse(textBoxId.Text), textBoxNamaProduk.Text, double.Parse(textBoxHarga.Text), textBoxDeskripsi.Text,
                         int.Parse(textBoxJumlah.Text), category, formUtama.tmpSellers, null, foto);
 
+                    MessageBox.Show(category.IdCategory.ToString(), formUtama.tmpSellers.IdSeller.ToString());
+
                     if (product.TambahData())
                     {
                         DialogResult hasil2 = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);

@@ -90,10 +90,10 @@ namespace Sisbro_LIB
         {
             string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
                          this.IdProduct + "', '" +
-                         this.Nama.Replace("'", "\\'") +
+                         this.Nama.Replace("'", "\\'") + "', '" +
                          this.Harga + "', '" +
                          this.Deskripsi.Replace("'", "\\'") + "', '" +
-                         this.Jumlah +
+                         this.Jumlah + "', '" +
                          this.Category.IdCategory + "', '" +
                          this.Sellers.IdSeller + "', '" +
                          this.Administrator.IdAdministrator + "', '" +

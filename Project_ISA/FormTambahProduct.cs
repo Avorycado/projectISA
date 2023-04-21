@@ -19,6 +19,7 @@ namespace Project_ISA
             InitializeComponent();
         }
         string foto = "";
+        public List<Category> listCategory = new List<Category>();
         private void button1_Click(object sender, EventArgs e)
         {
             int size = -1;
@@ -58,7 +59,14 @@ namespace Project_ISA
                 MessageBox.Show(ex.Message);
             }
 
+            listCategory = Category.BacaData("", "");
 
+            comboBoxCategory.DataSource = listCategory;
+            comboBoxCategory.DisplayMember = "nama";
+
+            FormUtama formUtama = (FormUtama)this.Owner;
+            textBoxNamaToko.Text = formUtama.tmpSellers.Nama;
+            textBoxNamaToko.Enabled = false;
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -72,9 +80,10 @@ namespace Project_ISA
                 if(hasil == DialogResult.Yes)
                 {
                     Category category = (Category)comboBoxCategory.SelectedItem;
+                    FormUtama formUtama = (FormUtama)this.Owner;
 
                     Product product = new Product(int.Parse(textBoxId.Text), textBoxNamaProduk.Text, double.Parse(textBoxHarga.Text), textBoxDeskripsi.Text,
-                        int.Parse(textBoxJumlah.Text), category, Sellers.AmbilNamaToko(textBoxNamaToko.Text), null, foto);
+                        int.Parse(textBoxJumlah.Text), category, formUtama.tmpSellers, null, foto);
 
                     if (product.TambahData())
                     {

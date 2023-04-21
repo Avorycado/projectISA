@@ -34,6 +34,7 @@ namespace Project_ISA
             this.labelNoTelp = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonProfile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,12 +83,23 @@ namespace Project_ISA
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonProfile
+            // 
+            this.buttonProfile.Location = new System.Drawing.Point(299, 165);
+            this.buttonProfile.Name = "buttonProfile";
+            this.buttonProfile.Size = new System.Drawing.Size(128, 23);
+            this.buttonProfile.TabIndex = 5;
+            this.buttonProfile.Text = "Ubah Foto Profile";
+            this.buttonProfile.UseVisualStyleBackColor = true;
+            this.buttonProfile.Click += new System.EventHandler(this.buttonProfile_Click);
+            // 
             // FormProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.HotPink;
             this.ClientSize = new System.Drawing.Size(536, 223);
+            this.Controls.Add(this.buttonProfile);
             this.Controls.Add(this.labelAlamat);
             this.Controls.Add(this.labelNoTelp);
             this.Controls.Add(this.labelEmail);
@@ -109,5 +121,6 @@ namespace Project_ISA
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelNoTelp;
         private System.Windows.Forms.Label labelAlamat;
+        private System.Windows.Forms.Button buttonProfile;
     }
 }

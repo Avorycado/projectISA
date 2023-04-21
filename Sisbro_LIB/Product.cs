@@ -72,17 +72,54 @@ namespace Sisbro_LIB
                 Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
                 Administrator administrator = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
                 Product product = new Product(int.Parse(hasil.GetValue(0).ToString()),
-                    hasil.GetValue(1).ToString(),
-                    double.Parse(hasil.GetValue(2).ToString()),
-                    hasil.GetValue(3).ToString(),
-                    int.Parse(hasil.GetValue(4).ToString()),
-                    category, 
-                    sellers,
-                    administrator);
+                                                hasil.GetValue(1).ToString(),
+                                                double.Parse(hasil.GetValue(2).ToString()),
+                                                hasil.GetValue(3).ToString(),
+                                                int.Parse(hasil.GetValue(4).ToString()),
+                                                category, 
+                                                sellers,
+                                                administrator);
                 listProduct.Add(product);
             }
             return listProduct;
         }
+        public bool TambahData()
+        {
+            string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator) VALUES ('" +
+                         this.IdProduct + "', '" +
+                         this.Nama.Replace("'", "\\'") + 
+                         this.Harga + "', '" +
+                         this.Deskripsi.Replace("'", "\\'") + "', '" +
+                         this.Jumlah +
+                         this.Category.IdCategory + "', '" +
+                         this.Sellers.IdSeller + "', '"+ 
+                         this.Administrator.IdAdministrator +"');";
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
+        public bool UbahData()
+        {
+            string sql = "UPDATE product " +
+                         "SET " +
+                         "nama = '" + this.Nama.Replace("'", "\\'") + "', " + 
+                         "harga = '" + this.Harga + "', " +
+                         "deskripsi = '" + this.Deskripsi.Replace("'", "\\'") + "', " +
+                         "alamat = '" + this.Jumlah+ "', " +
+                         "WHERE idProduct = '" + this.IdProduct + "';";
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
+        public bool HapusData()
+        {
+            string sql = "DELETE FROM product WHERE idProduct='" + this.IdProduct + "'";
+            bool result = Koneksi.ExecuteDML(sql);
+            return true;
+        }
+
         public static Product AmbilDataByKode(int idproduct)
         {
             string sql = "SELECT idproduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator " +
@@ -112,6 +149,7 @@ namespace Sisbro_LIB
             }
             return null;
         }
+
         public static int GenerateIdProduct()
         {
             string sql = "SELECT MAX(idproduct) " +

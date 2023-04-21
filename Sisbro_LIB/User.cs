@@ -101,7 +101,7 @@ namespace Sisbro_LIB
 
         public bool TambahData()
         {
-            string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat) VALUES ('" +
+            string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat, category_idcategory, sellers_idsellers) VALUES ('" +
                          this.IdUser + "', '" +
                          this.Nama.Replace("'", "\\'") + "', SHA2('" +
                          this.Password.Replace("'", "\\'") + "', 512), '" +

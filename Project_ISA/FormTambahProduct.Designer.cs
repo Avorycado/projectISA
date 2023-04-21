@@ -148,9 +148,6 @@ namespace Project_ISA
             this.comboBoxCategory.BackColor = System.Drawing.Color.HotPink;
             this.comboBoxCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCategory.FormattingEnabled = true;
-            this.comboBoxCategory.Items.AddRange(new object[] {
-            "Sepatu",
-            "Baju"});
             this.comboBoxCategory.Location = new System.Drawing.Point(56, 456);
             this.comboBoxCategory.Name = "comboBoxCategory";
             this.comboBoxCategory.Size = new System.Drawing.Size(273, 28);

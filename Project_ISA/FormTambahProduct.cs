@@ -18,6 +18,7 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
+        string foto = "";
         private void button1_Click(object sender, EventArgs e)
         {
             int size = -1;
@@ -29,9 +30,12 @@ namespace Project_ISA
                 try
                 {
                     string text = File.ReadAllText(file);
+                    foto = file;
                     size = text.Length;
                     pictureBox1.BackgroundImage = Image.FromFile(file);
                     pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+
+                    MessageBox.Show(foto);
                 }
                 catch (IOException)
                 {
@@ -53,6 +57,8 @@ namespace Project_ISA
             {
                 MessageBox.Show(ex.Message);
             }
+
+
         }
 
         private void buttonSubmit_Click(object sender, EventArgs e)
@@ -68,7 +74,7 @@ namespace Project_ISA
                     Category category = (Category)comboBoxCategory.SelectedItem;
 
                     Product product = new Product(int.Parse(textBoxId.Text), textBoxNamaProduk.Text, double.Parse(textBoxHarga.Text), textBoxDeskripsi.Text,
-                        int.Parse(textBoxJumlah.Text), category, Sellers.AmbilNamaToko(textBoxNamaToko.Text), null);
+                        int.Parse(textBoxJumlah.Text), category, Sellers.AmbilNamaToko(textBoxNamaToko.Text), null, foto);
 
                     if (product.TambahData())
                     {

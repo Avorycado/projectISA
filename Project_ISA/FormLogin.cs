@@ -104,7 +104,6 @@ namespace Project_ISA
                     Sellers tmp = Sellers.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
-                        this.DialogResult = DialogResult.OK;
 
                         FormUtama form = (FormUtama)this.Owner;
                         form.tmpSellers = tmp;

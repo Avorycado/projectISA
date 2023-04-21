@@ -49,6 +49,7 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+
         public static int GenerateIdSeller()
         {
             string sql = "SELECT MAX(idSellers) " +
@@ -116,7 +117,7 @@ namespace Sisbro_LIB
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
                          this.Alamat.Replace("'", "\\'") + "', SHA2('" +
-                         this.Password.Replace("'", "\\'") + "', 512');";
+                         this.Password.Replace("'", "\\'") + "', 512));";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;

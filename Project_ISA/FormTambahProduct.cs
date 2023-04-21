@@ -18,9 +18,6 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
-
-        Sellers s;
-
         private void button1_Click(object sender, EventArgs e)
         {
             int size = -1;

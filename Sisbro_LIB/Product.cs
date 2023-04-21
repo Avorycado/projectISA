@@ -18,10 +18,11 @@ namespace Sisbro_LIB
         private Category category;
         private Sellers sellers;
         private Administrator administrator;
+        private string foto;
         #endregion
 
         #region Constructors
-        public Product(int idProduct, string nama, double harga, string deskripsi, int jumlah, Category category, Sellers sellers, Administrator administrator)
+        public Product(int idProduct, string nama, double harga, string deskripsi, int jumlah, Category category, Sellers sellers, Administrator administrator, string foto)
         {
             this.IdProduct = idProduct;
             this.Nama = nama;
@@ -31,6 +32,7 @@ namespace Sisbro_LIB
             this.Category = category;
             this.Sellers = sellers;
             this.Administrator = administrator;
+            this.Foto = foto;
         }
         #endregion
 
@@ -43,6 +45,7 @@ namespace Sisbro_LIB
         public Category Category { get => category; set => category = value; }
         public Sellers Sellers { get => sellers; set => sellers = value; }
         public Administrator Administrator { get => administrator; set => administrator = value; }
+        public string Foto { get => foto; set => foto = value; }
         #endregion
 
         #region Method
@@ -51,12 +54,12 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator " +
+                sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator, p.foto_product " +
                       "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellersinner join administrator a on p.administrator_idadministrator = a.idadministrator ";
             }
             else
             {
-                sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator " +
+                sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator, p.foto_product " +
                       "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellersinner join administrator a on p.administrator_idadministrator = a.idadministrator " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
@@ -78,14 +81,14 @@ namespace Sisbro_LIB
                                                 int.Parse(hasil.GetValue(4).ToString()),
                                                 category, 
                                                 sellers,
-                                                administrator);
+                                                administrator, hasil.GetValue(8).ToString());
                 listProduct.Add(product);
             }
             return listProduct;
         }
         public bool TambahData()
         {
-            string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator) VALUES ('" +
+            string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
                          this.IdProduct + "', '" +
                          this.Nama.Replace("'", "\\'") + 
                          this.Harga + "', '" +

@@ -90,13 +90,14 @@ namespace Sisbro_LIB
         {
             string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
                          this.IdProduct + "', '" +
-                         this.Nama.Replace("'", "\\'") + 
+                         this.Nama.Replace("'", "\\'") +
                          this.Harga + "', '" +
                          this.Deskripsi.Replace("'", "\\'") + "', '" +
                          this.Jumlah +
                          this.Category.IdCategory + "', '" +
-                         this.Sellers.IdSeller + "', '"+ 
-                         this.Administrator.IdAdministrator +"');";
+                         this.Sellers.IdSeller + "', '" +
+                         this.Administrator.IdAdministrator + "', '" +
+                         this.Foto + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -125,7 +126,7 @@ namespace Sisbro_LIB
 
         public static Product AmbilDataByKode(int idproduct)
         {
-            string sql = "SELECT idproduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator " +
+            string sql = "SELECT idproduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product " +
                          "FROM product " +
                          "WHERE idproduct = '" + idproduct + "'";
 
@@ -142,7 +143,7 @@ namespace Sisbro_LIB
                                                      double.Parse(hasil.GetValue(2).ToString()),
                                                      hasil.GetValue(3).ToString(),
                                                      int.Parse(hasil.GetValue(4).ToString()),
-                                                     kategori, sellers, admin);
+                                                     kategori, sellers, admin, hasil.GetValue(8).ToString());
                     return produk;
                 }
                 else

@@ -34,6 +34,44 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static List<Category> BacaData(string kriteria, string nilai)
+        {
+            string sql;
+            if (kriteria == "")
+            {
+                sql = "SELECT idcategory, nama " +
+                      "FROM category ";
+            }
+            else
+            {
+                sql = "SELECT idcategory, nama " +
+                      "FROM category " +
+                      "WHERE " + kriteria + " like '%" + nilai + "%'";
+            }
+
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            //buat list untuk menampung data
+            List<Category> listCategory= new List<Category>();
+            while (hasil.Read() == true) //selama masih ada data
+            {
+                Category category = new Category(int.Parse(hasil.GetValue(0).ToString()),
+                                           hasil.GetValue(1).ToString());
+                listCategory.Add(category);
+            }
+            return listCategory;
+        }
+
+        public bool TambahData()
+        {
+            string sql = "INSERT INTO category(idCategory, nama) VALUES ('" +
+                         this.IdCategory + "', '" +
+                         this.Nama + ";";
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
         public static Category AmbilDataByKode(int idcategory)
         {
             string sql = "SELECT idcategory, nama " +

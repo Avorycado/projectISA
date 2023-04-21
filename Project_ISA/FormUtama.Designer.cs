@@ -58,6 +58,7 @@ namespace Project_ISA
             this.toolStripMenuItemLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSlripMenuItemLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripUser.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).BeginInit();
@@ -330,6 +331,7 @@ namespace Project_ISA
             this.menuStripSellers.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripSellers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItemProduct,
+            this.orderToolStripMenuItem,
             this.toolStripMenuItemProfile,
             this.toolStripMenuItemLogin,
             this.toolSlripMenuItemLogOut,
@@ -382,6 +384,13 @@ namespace Project_ISA
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(51, 25);
             this.toolStripMenuItemExit.Text = "Exit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
+            // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(65, 25);
+            this.orderToolStripMenuItem.Text = "Order";
             // 
             // FormUtama
             // 
@@ -445,5 +454,6 @@ namespace Project_ISA
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLogin;
         private System.Windows.Forms.ToolStripMenuItem toolSlripMenuItemLogOut;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemExit;
+        private System.Windows.Forms.ToolStripMenuItem orderToolStripMenuItem;
     }
 }

@@ -49,6 +49,26 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static int GenerateIdSeller()
+        {
+            string sql = "SELECT MAX(idSellers) " +
+                         "FROM sellers " + ";";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
+        }
         public override string ToString()
         {
             return nama;
@@ -95,8 +115,8 @@ namespace Sisbro_LIB
                          this.nama.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
-                         this.Alamat.Replace("'", "\\'") + ", SHA2('" +
-                         this.Password.Replace("'", "\\'") + "', 512);";
+                         this.Alamat.Replace("'", "\\'") + "', SHA2('" +
+                         this.Password.Replace("'", "\\'") + "', 512');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -132,11 +152,11 @@ namespace Sisbro_LIB
             return result;
         }
 
-        public static Sellers AmbilDataByKode(int idSellers)
+        public static Sellers AmbilDataByKode(int idSeller)
         {
             string sql = "SELECT idSellers, nama, email, no_hp, alamat, password " +
                          "FROM sellers " +
-                         "WHERE idSellers = '" + idSellers + "'";
+                         "WHERE idSellers = '" + idSeller + "'";
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
@@ -197,19 +217,23 @@ namespace Sisbro_LIB
             }
             return null;
         }
-        public static string AmbilNamaLengkap(int idSeller)
+        public static Sellers AmbilNamaToko(string nama)
         {
-            string sql = "SELECT nama FROM sellers WHERE idSellers = '" + idSeller + "'";
+            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password " +
+                         "FROM sellers " +
+                         "WHERE nama = '" + nama + "'";
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
-            string hasilAmbil = "";
-
-            if (hasil.Read() == true)
+            if (hasil.Read())
             {
-                hasilAmbil = hasil.GetString(0);
-
-                return hasilAmbil;
+                Sellers seller = new Sellers(int.Parse(hasil.GetValue(0).ToString()),
+                                        hasil.GetValue(1).ToString(),
+                                        hasil.GetValue(2).ToString(),
+                                        int.Parse(hasil.GetValue(3).ToString()),
+                                        hasil.GetValue(4).ToString(),
+                                        hasil.GetValue(5).ToString());
+                return seller;
             }
             else
             {

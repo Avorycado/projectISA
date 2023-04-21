@@ -35,13 +35,15 @@ namespace Project_ISA
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
             }
 
+
+
             menuStripUser.Visible = true;
             menuStripUser.Enabled = true;
 
             menuStripSellers.Visible = false;
             menuStripSellers.Enabled = false;
 
-            if(tmpSellers != null)
+            if (tmpSellers != null)
             {
                 menuStripUser.Visible = false;
                 menuStripUser.Enabled = false;

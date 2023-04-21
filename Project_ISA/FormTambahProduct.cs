@@ -68,16 +68,24 @@ namespace Project_ISA
 
                 if(hasil == DialogResult.Yes)
                 {
-                    Category c = (Category)comboBoxCategory.SelectedItem;
-                    Sellers s = (Sellers)textBoxNamaToko.SelectedText;
+                    Category category = (Category)comboBoxCategory.SelectedItem;
 
-                    Product p = new Product(int.Parse(textBoxId.Text), textBoxNamaProduk.Text, double.Parse(textBoxHarga.Text), textBoxDeskripsi.Text,
-                        int.Parse(textBoxJumlah.Text), c, namat, )
+                    Product product = new Product(int.Parse(textBoxId.Text), textBoxNamaProduk.Text, double.Parse(textBoxHarga.Text), textBoxDeskripsi.Text,
+                        int.Parse(textBoxJumlah.Text), category, Sellers.AmbilNamaToko(textBoxNamaToko.Text), null);
+
+                    if (product.TambahData())
+                    {
+                        DialogResult hasil2 = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                        if (hasil2 == DialogResult.OK)
+                        {
+                            this.Close();
+                        }
+                    }
                 }
             }
-            catch ()
+            catch (Exception x)
             {
-
+                throw new Exception(x.Message);
             }
         }
     }

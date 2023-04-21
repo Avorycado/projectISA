@@ -44,6 +44,8 @@ namespace Project_ISA
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.radioButtonPenjual = new System.Windows.Forms.RadioButton();
+            this.radioButtonPembeli = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -57,10 +59,9 @@ namespace Project_ISA
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 524);
+            this.panel1.Size = new System.Drawing.Size(776, 475);
             this.panel1.TabIndex = 2;
             // 
             // labelClose
@@ -69,10 +70,9 @@ namespace Project_ISA
             this.labelClose.BackColor = System.Drawing.Color.HotPink;
             this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClose.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.labelClose.Location = new System.Drawing.Point(988, 16);
-            this.labelClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelClose.Location = new System.Drawing.Point(741, 13);
             this.labelClose.Name = "labelClose";
-            this.labelClose.Size = new System.Drawing.Size(26, 25);
+            this.labelClose.Size = new System.Drawing.Size(20, 20);
             this.labelClose.TabIndex = 6;
             this.labelClose.Text = "X";
             this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
@@ -82,10 +82,9 @@ namespace Project_ISA
             this.checkBoxAgree.AutoSize = true;
             this.checkBoxAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.checkBoxAgree.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.checkBoxAgree.Location = new System.Drawing.Point(572, 294);
-            this.checkBoxAgree.Margin = new System.Windows.Forms.Padding(4);
+            this.checkBoxAgree.Location = new System.Drawing.Point(429, 277);
             this.checkBoxAgree.Name = "checkBoxAgree";
-            this.checkBoxAgree.Size = new System.Drawing.Size(244, 21);
+            this.checkBoxAgree.Size = new System.Drawing.Size(186, 17);
             this.checkBoxAgree.TabIndex = 5;
             this.checkBoxAgree.Text = "I agree with Terms and Conditions";
             this.checkBoxAgree.UseVisualStyleBackColor = true;
@@ -94,10 +93,9 @@ namespace Project_ISA
             // 
             this.buttonSignUp.BackColor = System.Drawing.Color.White;
             this.buttonSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignUp.Location = new System.Drawing.Point(572, 322);
-            this.buttonSignUp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSignUp.Location = new System.Drawing.Point(429, 300);
             this.buttonSignUp.Name = "buttonSignUp";
-            this.buttonSignUp.Size = new System.Drawing.Size(349, 49);
+            this.buttonSignUp.Size = new System.Drawing.Size(262, 40);
             this.buttonSignUp.TabIndex = 4;
             this.buttonSignUp.Text = "Sign Up";
             this.buttonSignUp.UseVisualStyleBackColor = false;
@@ -108,10 +106,9 @@ namespace Project_ISA
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label3.Location = new System.Drawing.Point(567, 228);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(425, 223);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(305, 17);
+            this.label3.Size = new System.Drawing.Size(227, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Aplikasi berbelanja yang aman dan terpercaya.";
             // 
@@ -120,16 +117,17 @@ namespace Project_ISA
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label2.Location = new System.Drawing.Point(563, 124);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(422, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(333, 72);
+            this.label2.Size = new System.Drawing.Size(275, 58);
             this.label2.TabIndex = 2;
             this.label2.Text = "Sudah siap berbelanja\r\ndengan SisBro?";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.HotPink;
+            this.panel2.Controls.Add(this.radioButtonPenjual);
+            this.panel2.Controls.Add(this.radioButtonPembeli);
             this.panel2.Controls.Add(this.textBoxId);
             this.panel2.Controls.Add(this.textBoxAlamat);
             this.panel2.Controls.Add(this.textBoxNoTelp);
@@ -138,10 +136,9 @@ namespace Project_ISA
             this.panel2.Controls.Add(this.textBoxPassword);
             this.panel2.Controls.Add(this.textBoxUsername);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(17, 16);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(13, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(493, 494);
+            this.panel2.Size = new System.Drawing.Size(370, 448);
             this.panel2.TabIndex = 1;
             // 
             // textBoxId
@@ -151,10 +148,9 @@ namespace Project_ISA
             this.textBoxId.Enabled = false;
             this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxId.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxId.Location = new System.Drawing.Point(33, 111);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxId.Location = new System.Drawing.Point(26, 131);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(363, 30);
+            this.textBoxId.Size = new System.Drawing.Size(273, 26);
             this.textBoxId.TabIndex = 7;
             // 
             // textBoxAlamat
@@ -163,10 +159,9 @@ namespace Project_ISA
             this.textBoxAlamat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAlamat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAlamat.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxAlamat.Location = new System.Drawing.Point(33, 428);
-            this.textBoxAlamat.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAlamat.Location = new System.Drawing.Point(26, 389);
             this.textBoxAlamat.Name = "textBoxAlamat";
-            this.textBoxAlamat.Size = new System.Drawing.Size(363, 30);
+            this.textBoxAlamat.Size = new System.Drawing.Size(273, 26);
             this.textBoxAlamat.TabIndex = 6;
             this.textBoxAlamat.Text = "Alamat";
             // 
@@ -176,10 +171,9 @@ namespace Project_ISA
             this.textBoxNoTelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxNoTelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNoTelp.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxNoTelp.Location = new System.Drawing.Point(33, 378);
-            this.textBoxNoTelp.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNoTelp.Location = new System.Drawing.Point(26, 348);
             this.textBoxNoTelp.Name = "textBoxNoTelp";
-            this.textBoxNoTelp.Size = new System.Drawing.Size(363, 30);
+            this.textBoxNoTelp.Size = new System.Drawing.Size(273, 26);
             this.textBoxNoTelp.TabIndex = 5;
             this.textBoxNoTelp.Text = "No. Telepon";
             // 
@@ -189,10 +183,9 @@ namespace Project_ISA
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxEmail.Location = new System.Drawing.Point(33, 325);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEmail.Location = new System.Drawing.Point(26, 305);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(363, 30);
+            this.textBoxEmail.Size = new System.Drawing.Size(273, 26);
             this.textBoxEmail.TabIndex = 4;
             this.textBoxEmail.Text = "E-mail";
             // 
@@ -202,10 +195,9 @@ namespace Project_ISA
             this.textBoxConfirmPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxConfirmPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxConfirmPass.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxConfirmPass.Location = new System.Drawing.Point(33, 271);
-            this.textBoxConfirmPass.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxConfirmPass.Location = new System.Drawing.Point(26, 261);
             this.textBoxConfirmPass.Name = "textBoxConfirmPass";
-            this.textBoxConfirmPass.Size = new System.Drawing.Size(363, 30);
+            this.textBoxConfirmPass.Size = new System.Drawing.Size(273, 26);
             this.textBoxConfirmPass.TabIndex = 3;
             this.textBoxConfirmPass.Text = "Confirm Password";
             // 
@@ -215,10 +207,9 @@ namespace Project_ISA
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxPassword.Location = new System.Drawing.Point(33, 215);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Location = new System.Drawing.Point(26, 216);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(363, 30);
+            this.textBoxPassword.Size = new System.Drawing.Size(273, 26);
             this.textBoxPassword.TabIndex = 2;
             this.textBoxPassword.Text = "Password";
             // 
@@ -228,10 +219,9 @@ namespace Project_ISA
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.textBoxUsername.Location = new System.Drawing.Point(33, 161);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUsername.Location = new System.Drawing.Point(26, 172);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(363, 30);
+            this.textBoxUsername.Size = new System.Drawing.Size(273, 26);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Text = "Username";
             // 
@@ -240,21 +230,45 @@ namespace Project_ISA
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(25, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(19, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 46);
+            this.label1.Size = new System.Drawing.Size(138, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign Up";
             // 
+            // radioButtonPenjual
+            // 
+            this.radioButtonPenjual.AutoSize = true;
+            this.radioButtonPenjual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonPenjual.Location = new System.Drawing.Point(166, 93);
+            this.radioButtonPenjual.Name = "radioButtonPenjual";
+            this.radioButtonPenjual.Size = new System.Drawing.Size(79, 24);
+            this.radioButtonPenjual.TabIndex = 8;
+            this.radioButtonPenjual.TabStop = true;
+            this.radioButtonPenjual.Text = "Penjual";
+            this.radioButtonPenjual.UseVisualStyleBackColor = true;
+            this.radioButtonPenjual.CheckedChanged += new System.EventHandler(this.radioButtonPenjual_CheckedChanged);
+            // 
+            // radioButtonPembeli
+            // 
+            this.radioButtonPembeli.AutoSize = true;
+            this.radioButtonPembeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonPembeli.Location = new System.Drawing.Point(26, 93);
+            this.radioButtonPembeli.Name = "radioButtonPembeli";
+            this.radioButtonPembeli.Size = new System.Drawing.Size(83, 24);
+            this.radioButtonPembeli.TabIndex = 9;
+            this.radioButtonPembeli.TabStop = true;
+            this.radioButtonPembeli.Text = "Pembeli";
+            this.radioButtonPembeli.UseVisualStyleBackColor = true;
+            this.radioButtonPembeli.CheckedChanged += new System.EventHandler(this.radioButtonPembeli_CheckedChanged);
+            // 
             // FormRegist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 499);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormRegist";
             this.Text = "FormRegist";
             this.Load += new System.EventHandler(this.FormRegist_Load);
@@ -283,5 +297,7 @@ namespace Project_ISA
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.RadioButton radioButtonPenjual;
+        private System.Windows.Forms.RadioButton radioButtonPembeli;
     }
 }

@@ -18,14 +18,14 @@ namespace Sisbro_LIB
         #endregion
 
         #region Constructors
-        public Administrator()
-        {
-            IdAdministrator = 0;
-            Nama = "";
-            Email = "";
-            NoHp = 0;
-            Password = "";
-        }
+        //public Administrator()
+        //{
+        //    IdAdministrator = 0;
+        //    Nama = "";
+        //    Email = "";
+        //    NoHp = 0;
+        //    Password = "";
+        //}
 
         public Administrator(int idAdministrator, string nama, string email, int noHp, string password)
         {
@@ -69,10 +69,10 @@ namespace Sisbro_LIB
             {
                 //baca data dr MySqlDataReader dan simpan di objek
                 Administrator administrator = new Administrator(int.Parse(hasil.GetValue(0).ToString()),
-                    hasil.GetValue(1).ToString(),
-                    hasil.GetValue(2).ToString(),
-                    int.Parse(hasil.GetValue(3).ToString()),
-                    hasil.GetValue(4).ToString());
+                                                                hasil.GetValue(1).ToString(),
+                                                                hasil.GetValue(2).ToString(),
+                                                                int.Parse(hasil.GetValue(3).ToString()),
+                                                                hasil.GetValue(4).ToString());
                 listAdminitartor.Add(administrator);
             }
             return listAdminitartor;

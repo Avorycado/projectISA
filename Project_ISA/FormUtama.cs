@@ -19,6 +19,7 @@ namespace Project_ISA
         }
         public User tmpUser = null;
         public Sellers tmpSellers = null;
+        public Administrator tmpAdministrator = null;
         public void FormUtama_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
@@ -246,7 +247,7 @@ namespace Project_ISA
 
         private void logInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(tmpUser != null || tmpSellers != null)
+            if(tmpUser != null || tmpSellers != null || tmpAdministrator != null)
             {
                 if(logInToolStripMenuItem.Enabled == true)
                 {
@@ -267,9 +268,14 @@ namespace Project_ISA
                         labelUser.Text = "User: " + tmpUser.Nama;
                         labelStatus.Text = "Status: Log In";
                     }
-                    else
+                    else if(tmpSellers != null)
                     {
                         labelUser.Text = "User: " + tmpSellers.Nama;
+                        labelStatus.Text = "Status: Log In";
+                    }
+                    else
+                    {
+                        labelUser.Text = "Administrator: " + tmpAdministrator.Nama;
                         labelStatus.Text = "Status: Log In";
                     }
                 }
@@ -314,6 +320,16 @@ namespace Project_ISA
                 MessageBox.Show("Anda berhasil Log Out!");
 
                 labelUser.Text = "User: ";
+                labelStatus.Text = "Status: Not in Account";
+            }
+
+            if (tmpAdministrator != null)
+            {
+                tmpAdministrator = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+
+                labelUser.Text = "Administrator: ";
                 labelStatus.Text = "Status: Not in Account";
             }
         }

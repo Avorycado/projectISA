@@ -73,3 +73,4 @@ E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\ob
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProduct.resources
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProfile.resources
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormTambahProduct.resources
+C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormHistory.resources

@@ -16,28 +16,28 @@ namespace Sisbro_LIB
         private string email;
         private int noHp;
         private string alamat;
+        private int saldo;
         #endregion
-
-        #region Constructors
-
-        public User(int idUser, string nama, string password, string email, int noHp, string alamat)
+        #region Properties
+        public User(int idUser, string nama, string password, string email, int noHp, string alamat, int saldo)
         {
-            this.IdUser = idUser;
-            this.Nama = nama;
-            this.Password = password;
-            this.Email = email;
-            this.NoHp = noHp;
-            this.Alamat = alamat;
+            IdUser = idUser;
+            Nama = nama;
+            Password = password;
+            Email = email;
+            NoHp = noHp;
+            Alamat = alamat;
+            Saldo = saldo;
         }
         #endregion
-
-        #region Properties
+        #region Constructors
         public int IdUser { get => idUser; set => idUser = value; }
         public string Nama { get => nama; set => nama = value; }
         public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
         public int NoHp { get => noHp; set => noHp = value; }
         public string Alamat { get => alamat; set => alamat = value; }
+        public int Saldo { get => saldo; set => saldo = value; } 
         #endregion
 
         #region Method
@@ -63,7 +63,7 @@ namespace Sisbro_LIB
         }
         public override string ToString()
         {
-            return nama;
+            return Nama;
         }
 
         public static List<User> BacaData(string kriteria, string nilai)
@@ -71,12 +71,12 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT idUser, nama, password, email, no_hp, alamat " +
+                sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo " +
                       "FROM user ";
             }
             else
             {
-                sql = "SELECT idUser, nama, password, email, no_hp, alamat " +
+                sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo " +
                       "FROM user " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
@@ -93,7 +93,8 @@ namespace Sisbro_LIB
                     hasil.GetValue(2).ToString(),
                     hasil.GetValue(3).ToString(),
                     int.Parse(hasil.GetValue(4).ToString()),
-                    hasil.GetValue(5).ToString());
+                    hasil.GetValue(5).ToString(),
+                    int.Parse(hasil.GetValue(6).ToString()));
                 listUser.Add(user);
             }
             return listUser;
@@ -158,7 +159,8 @@ namespace Sisbro_LIB
                                         hasil.GetValue(2).ToString(),
                                         hasil.GetValue(3).ToString(),
                                         int.Parse(hasil.GetValue(4).ToString()),
-                                        hasil.GetValue(5).ToString());
+                                        hasil.GetValue(5).ToString(),
+                                        int.Parse(hasil.GetValue(6).ToString()));
                 return user;
             }
             else
@@ -184,7 +186,7 @@ namespace Sisbro_LIB
 
         public static User CekLogin(string userName, string password)
         {
-            string sql = "SELECT idUser, nama, password, email, no_hp, alamat "
+            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo "
                           + " FROM user ";
 
             if (userName == "" || password == "")
@@ -205,7 +207,8 @@ namespace Sisbro_LIB
                                         hasil.GetValue(2).ToString(),
                                         hasil.GetValue(3).ToString(),
                                         int.Parse(hasil.GetValue(4).ToString()),
-                                        hasil.GetValue(5).ToString());
+                                        hasil.GetValue(5).ToString(),
+                                        int.Parse(hasil.GetValue(6).ToString()));
                 return result;
             }
             return null;

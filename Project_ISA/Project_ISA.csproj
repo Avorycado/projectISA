@@ -143,6 +143,9 @@
     <EmbeddedResource Include="FormCloth.resx">
       <DependentUpon>FormCloth.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHistory.resx">
+      <DependentUpon>FormHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>

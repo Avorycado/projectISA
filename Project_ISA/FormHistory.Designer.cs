@@ -53,6 +53,7 @@ namespace Project_ISA
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(590, 224);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -76,6 +77,7 @@ namespace Project_ISA
             this.Controls.Add(this.label1);
             this.Name = "FormHistory";
             this.Text = "FormHistory";
+            this.Load += new System.EventHandler(this.FormHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

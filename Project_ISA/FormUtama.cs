@@ -36,26 +36,44 @@ namespace Project_ISA
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
             }
 
-
-
             menuStripUser.Visible = true;
             menuStripUser.Enabled = true;
 
             menuStripSellers.Visible = false;
             menuStripSellers.Enabled = false;
 
+            menuStripAdmin.Visible = false;
+            menuStripAdmin.Enabled = false;
+
             if (tmpSellers != null)
             {
                 menuStripUser.Visible = false;
                 menuStripUser.Enabled = false;
 
+                menuStripAdmin.Visible = false;
+                menuStripAdmin.Enabled = false;
+
                 menuStripSellers.Visible = true;
                 menuStripSellers.Enabled = true;
+            }
+            else if(tmpAdministrator != null)
+            {
+                menuStripUser.Visible = false;
+                menuStripUser.Enabled = false;
+
+                menuStripSellers.Visible = false;
+                menuStripSellers.Enabled = false;
+
+                menuStripAdmin.Visible = true;
+                menuStripAdmin.Enabled = true;
             }
             else
             {
                 menuStripSellers.Visible = false;
                 menuStripSellers.Enabled = false;
+
+                menuStripAdmin.Visible = false;
+                menuStripAdmin.Enabled = false;
 
                 menuStripUser.Visible = true;
                 menuStripUser.Enabled = true;
@@ -370,6 +388,16 @@ namespace Project_ISA
                 labelUser.Text = "Administrator: ";
                 labelStatus.Text = "Status: Not in Account";
             }
+        }
+
+        private void menuStripSellers_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void labelSaldo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

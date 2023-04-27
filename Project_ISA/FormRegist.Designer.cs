@@ -36,6 +36,8 @@ namespace Project_ISA
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.radioButtonPenjual = new System.Windows.Forms.RadioButton();
+            this.radioButtonPembeli = new System.Windows.Forms.RadioButton();
             this.textBoxId = new System.Windows.Forms.TextBox();
             this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.textBoxNoTelp = new System.Windows.Forms.TextBox();
@@ -44,8 +46,7 @@ namespace Project_ISA
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButtonPenjual = new System.Windows.Forms.RadioButton();
-            this.radioButtonPembeli = new System.Windows.Forms.RadioButton();
+            this.textBoxSaldo = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -59,9 +60,9 @@ namespace Project_ISA
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(776, 475);
+            this.panel1.Size = new System.Drawing.Size(788, 498);
             this.panel1.TabIndex = 2;
             // 
             // labelClose
@@ -126,6 +127,7 @@ namespace Project_ISA
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.HotPink;
+            this.panel2.Controls.Add(this.textBoxSaldo);
             this.panel2.Controls.Add(this.radioButtonPenjual);
             this.panel2.Controls.Add(this.radioButtonPembeli);
             this.panel2.Controls.Add(this.textBoxId);
@@ -138,8 +140,34 @@ namespace Project_ISA
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(13, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(370, 448);
+            this.panel2.Size = new System.Drawing.Size(370, 472);
             this.panel2.TabIndex = 1;
+            // 
+            // radioButtonPenjual
+            // 
+            this.radioButtonPenjual.AutoSize = true;
+            this.radioButtonPenjual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonPenjual.Location = new System.Drawing.Point(166, 93);
+            this.radioButtonPenjual.Name = "radioButtonPenjual";
+            this.radioButtonPenjual.Size = new System.Drawing.Size(79, 24);
+            this.radioButtonPenjual.TabIndex = 8;
+            this.radioButtonPenjual.TabStop = true;
+            this.radioButtonPenjual.Text = "Penjual";
+            this.radioButtonPenjual.UseVisualStyleBackColor = true;
+            this.radioButtonPenjual.CheckedChanged += new System.EventHandler(this.radioButtonPenjual_CheckedChanged);
+            // 
+            // radioButtonPembeli
+            // 
+            this.radioButtonPembeli.AutoSize = true;
+            this.radioButtonPembeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButtonPembeli.Location = new System.Drawing.Point(26, 93);
+            this.radioButtonPembeli.Name = "radioButtonPembeli";
+            this.radioButtonPembeli.Size = new System.Drawing.Size(83, 24);
+            this.radioButtonPembeli.TabIndex = 9;
+            this.radioButtonPembeli.TabStop = true;
+            this.radioButtonPembeli.Text = "Pembeli";
+            this.radioButtonPembeli.UseVisualStyleBackColor = true;
+            this.radioButtonPembeli.CheckedChanged += new System.EventHandler(this.radioButtonPembeli_CheckedChanged);
             // 
             // textBoxId
             // 
@@ -236,31 +264,17 @@ namespace Project_ISA
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign Up";
             // 
-            // radioButtonPenjual
+            // textBoxSaldo
             // 
-            this.radioButtonPenjual.AutoSize = true;
-            this.radioButtonPenjual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButtonPenjual.Location = new System.Drawing.Point(166, 93);
-            this.radioButtonPenjual.Name = "radioButtonPenjual";
-            this.radioButtonPenjual.Size = new System.Drawing.Size(79, 24);
-            this.radioButtonPenjual.TabIndex = 8;
-            this.radioButtonPenjual.TabStop = true;
-            this.radioButtonPenjual.Text = "Penjual";
-            this.radioButtonPenjual.UseVisualStyleBackColor = true;
-            this.radioButtonPenjual.CheckedChanged += new System.EventHandler(this.radioButtonPenjual_CheckedChanged);
-            // 
-            // radioButtonPembeli
-            // 
-            this.radioButtonPembeli.AutoSize = true;
-            this.radioButtonPembeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButtonPembeli.Location = new System.Drawing.Point(26, 93);
-            this.radioButtonPembeli.Name = "radioButtonPembeli";
-            this.radioButtonPembeli.Size = new System.Drawing.Size(83, 24);
-            this.radioButtonPembeli.TabIndex = 9;
-            this.radioButtonPembeli.TabStop = true;
-            this.radioButtonPembeli.Text = "Pembeli";
-            this.radioButtonPembeli.UseVisualStyleBackColor = true;
-            this.radioButtonPembeli.CheckedChanged += new System.EventHandler(this.radioButtonPembeli_CheckedChanged);
+            this.textBoxSaldo.BackColor = System.Drawing.Color.HotPink;
+            this.textBoxSaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSaldo.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.textBoxSaldo.Location = new System.Drawing.Point(26, 433);
+            this.textBoxSaldo.Name = "textBoxSaldo";
+            this.textBoxSaldo.Size = new System.Drawing.Size(273, 26);
+            this.textBoxSaldo.TabIndex = 10;
+            this.textBoxSaldo.Text = "Saldo";
             // 
             // FormRegist
             // 
@@ -299,5 +313,6 @@ namespace Project_ISA
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.RadioButton radioButtonPenjual;
         private System.Windows.Forms.RadioButton radioButtonPembeli;
+        private System.Windows.Forms.TextBox textBoxSaldo;
     }
 }

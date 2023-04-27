@@ -31,7 +31,36 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public static List<History> BacaData(string kriteria, string nilai)
+        {
+            string sql;
+            if (kriteria == "")
+            {
+                sql = "SELECT idhistory, user_iduser, order_idorder " +
+                      "FROM history ";
+            }
+            else
+            {
+                sql = "SELECT idhistory, user_iduser, order_idorder " +
+                      "FROM history " +
+                      "WHERE " + kriteria + " like '%" + nilai + "%'";
+            }
 
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            //buat list untuk menampung data
+            List<History> listHistory = new List<History>();
+            while (hasil.Read() == true) //selama masih ada data
+            {
+                User user = User.AmbilDataByKode(hasil.GetValue(0).ToString());
+                Orders order = Orders.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                //baca data dr MySqlDataReader dan simpan di objek
+                History history = new History(int.Parse(hasil.GetValue(0).ToString()),
+                                              user, order);
+                listHistory.Add(history);
+            }
+            return listHistory;
+        }
         #endregion
     }
 }

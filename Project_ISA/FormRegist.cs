@@ -30,7 +30,10 @@ namespace Project_ISA
                 {
                     if (radioButtonPembeli.Checked == true)
                     {
-                        User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text, textBoxPassword.Text, textBoxEmail.Text, int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text);
+                        User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text, 
+                                             textBoxPassword.Text, textBoxEmail.Text, 
+                                             int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text,
+                                             int.Parse(textBoxSaldo.Text));
                         //user.IdUser = int.Parse(textBoxId.Text);
                         //user.Nama = textBoxUsername.Text;
                         //user.Password = textBoxPassword.Text;

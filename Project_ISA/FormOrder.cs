@@ -32,7 +32,7 @@ namespace Project_ISA
         {
             try
             {
-                
+                //Orders order = new Orders(int.Parse)
             }
             catch(Exception ex)
             {
@@ -50,5 +50,9 @@ namespace Project_ISA
             PaymentMethod pembayaranDipilih = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
         }
 
+        private void labelAlamat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

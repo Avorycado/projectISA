@@ -311,27 +311,7 @@ namespace Project_ISA
             else
             {
                 MessageBox.Show("Akun anda tidak sedang Log In!");
-            }
-
-            if(tmpSellers != null)
-            {
-                tmpSellers = null;
-                FormUtama_Load(this, e);
-                MessageBox.Show("Anda berhasil Log Out!");
-
-                labelUser.Text = "User: ";
-                labelStatus.Text = "Status: Not in Account";
-            }
-
-            if (tmpAdministrator != null)
-            {
-                tmpAdministrator = null;
-                FormUtama_Load(this, e);
-                MessageBox.Show("Anda berhasil Log Out!");
-
-                labelUser.Text = "Administrator: ";
-                labelStatus.Text = "Status: Not in Account";
-            }
+            }            
         }
 
         private void labelUser_Click(object sender, EventArgs e)
@@ -366,6 +346,29 @@ namespace Project_ISA
                 FormTambahProduct frm = new FormTambahProduct();
                 frm.Owner = this;
                 frm.ShowDialog();
+            }
+        }
+
+        private void toolSlripMenuItemLogOut_Click(object sender, EventArgs e)
+        {
+            if (tmpSellers != null)
+            {
+                tmpSellers = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+
+                labelUser.Text = "User: ";
+                labelStatus.Text = "Status: Not in Account";
+            }
+
+            if (tmpAdministrator != null)
+            {
+                tmpAdministrator = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+
+                labelUser.Text = "Administrator: ";
+                labelStatus.Text = "Status: Not in Account";
             }
         }
     }

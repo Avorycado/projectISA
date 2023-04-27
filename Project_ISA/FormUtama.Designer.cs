@@ -54,11 +54,11 @@ namespace Project_ISA
             this.pictureBoxBag = new System.Windows.Forms.PictureBox();
             this.menuStripSellers = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemProfile = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSlripMenuItemLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripUser.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).BeginInit();
@@ -356,6 +356,13 @@ namespace Project_ISA
             this.toolStripMenuItemProduct.Text = "Products";
             this.toolStripMenuItemProduct.Click += new System.EventHandler(this.toolStripMenuItemProduct_Click);
             // 
+            // orderToolStripMenuItem
+            // 
+            this.orderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(65, 25);
+            this.orderToolStripMenuItem.Text = "Order";
+            // 
             // toolStripMenuItemProfile
             // 
             this.toolStripMenuItemProfile.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
@@ -376,6 +383,7 @@ namespace Project_ISA
             this.toolSlripMenuItemLogOut.Name = "toolSlripMenuItemLogOut";
             this.toolSlripMenuItemLogOut.Size = new System.Drawing.Size(82, 25);
             this.toolSlripMenuItemLogOut.Text = "Log Out";
+            this.toolSlripMenuItemLogOut.Click += new System.EventHandler(this.toolSlripMenuItemLogOut_Click);
             // 
             // toolStripMenuItemExit
             // 
@@ -384,13 +392,6 @@ namespace Project_ISA
             this.toolStripMenuItemExit.Size = new System.Drawing.Size(51, 25);
             this.toolStripMenuItemExit.Text = "Exit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
-            // 
-            // orderToolStripMenuItem
-            // 
-            this.orderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(65, 25);
-            this.orderToolStripMenuItem.Text = "Order";
             // 
             // FormUtama
             // 

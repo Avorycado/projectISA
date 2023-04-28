@@ -30,10 +30,9 @@ namespace Project_ISA
                 {
                     if (radioButtonPembeli.Checked == true)
                     {
-                        User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text, 
-                                             textBoxPassword.Text, textBoxEmail.Text, 
-                                             int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text,
-                                             int.Parse(textBoxSaldo.Text));
+                        User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
+                                             textBoxPassword.Text, textBoxEmail.Text,
+                                             int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0);
                         //user.IdUser = int.Parse(textBoxId.Text);
                         //user.Nama = textBoxUsername.Text;
                         //user.Password = textBoxPassword.Text;
@@ -54,10 +53,14 @@ namespace Project_ISA
                             throw new Exception("Tidak dapat menambahkan data");
                         }
                     }
-                    else
+                    else if(radioButtonPenjual.Checked == true)
                     {
-                        Sellers seller = new Sellers(int.Parse(textBoxId.Text), textBoxUsername.Text, textBoxEmail.Text, int.Parse(textBoxNoTelp.Text),
-                            textBoxAlamat.Text, textBoxPassword.Text);
+                        Sellers seller = new Sellers(int.Parse(textBoxId.Text), 
+                                                    textBoxUsername.Text, 
+                                                    textBoxEmail.Text, 
+                                                    int.Parse(textBoxNoTelp.Text),
+                                                    textBoxAlamat.Text, 
+                                                    textBoxPassword.Text);
 
                         if (seller.TambahData())
                         {
@@ -72,6 +75,26 @@ namespace Project_ISA
                             throw new Exception("Tidak dapat menambahkan data");
                         }
 
+                    }
+                    else
+                    {
+                        Administrator administrator = new Administrator(int.Parse(textBoxId.Text), 
+                                                                        textBoxUsername.Text, 
+                                                                        textBoxEmail.Text, 
+                                                                        int.Parse(textBoxNoTelp.Text), 
+                                                                        textBoxPassword.Text);
+                        if (administrator.TambahData())
+                        {
+                            DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                            if (hasil == DialogResult.OK)
+                            {
+                                this.Close();
+                            }
+                            else
+                            {
+                                throw new Exception("Tidak dapat menambahkan data");
+                            }
+                        }
                     }
                 }
                 else
@@ -101,11 +124,25 @@ namespace Project_ISA
                     MessageBox.Show(ex.Message);
                 }
             }
-            else
+            else if(radioButtonPenjual.Checked == true)
             {
                 try
                 {
                     int idBaru = Sellers.GenerateIdSeller();
+                    textBoxId.Text = idBaru.ToString();
+
+                    textBoxId.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                try
+                {
+                    int idBaru = Administrator.GenerateIdAdmin();
                     textBoxId.Text = idBaru.ToString();
 
                     textBoxId.Enabled = false;
@@ -137,6 +174,21 @@ namespace Project_ISA
             try
             {
                 int idBaru = Sellers.GenerateIdSeller();
+                textBoxId.Text = idBaru.ToString();
+
+                textBoxId.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void radioButtonAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idBaru = Administrator.GenerateIdAdmin();
                 textBoxId.Text = idBaru.ToString();
 
                 textBoxId.Enabled = false;

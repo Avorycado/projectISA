@@ -69,8 +69,8 @@ C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.For
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProduct.resources
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProfile.resources
 E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormTambahProduct.resources
-E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.csproj.CopyComplete
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProduct.resources
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormProfile.resources
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormTambahProduct.resources
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormHistory.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormHistory.resources

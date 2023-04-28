@@ -89,12 +89,12 @@ namespace Sisbro_LIB
             {
                 //baca data dr MySqlDataReader dan simpan di objek
                 User user = new User(int.Parse(hasil.GetValue(0).ToString()),
-                    hasil.GetValue(1).ToString(),
-                    hasil.GetValue(2).ToString(),
-                    hasil.GetValue(3).ToString(),
-                    int.Parse(hasil.GetValue(4).ToString()),
-                    hasil.GetValue(5).ToString(),
-                    int.Parse(hasil.GetValue(6).ToString()));
+                                    hasil.GetValue(1).ToString(),
+                                    hasil.GetValue(2).ToString(),
+                                    hasil.GetValue(3).ToString(),
+                                    int.Parse(hasil.GetValue(4).ToString()),
+                                    hasil.GetValue(5).ToString(),
+                                    int.Parse(hasil.GetValue(6).ToString()));
                 listUser.Add(user);
             }
             return listUser;
@@ -102,13 +102,14 @@ namespace Sisbro_LIB
 
         public bool TambahData()
         {
-            string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat) VALUES ('" +
+            string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat, saldo) VALUES ('" +
                          this.IdUser + "', '" +
                          this.Nama.Replace("'", "\\'") + "', SHA2('" +
                          this.Password.Replace("'", "\\'") + "', 512), '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
-                         this.Alamat.Replace("'", "\\'") + "');";
+                         this.Alamat.Replace("'", "\\'") + "', '" +
+                         this.Saldo + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -122,6 +123,7 @@ namespace Sisbro_LIB
                          "email = '" + this.Email.Replace("'", "\\'") + "', " +
                          "no_telepon = '" + this.NoHp + "', " +
                          "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
+                         "saldo = '" + this.Saldo + "'," +
                          "WHERE idUser = '" + this.IdUser + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
@@ -146,7 +148,7 @@ namespace Sisbro_LIB
 
         public static User AmbilDataByKode(string idUser)
         {
-            string sql = "SELECT idUser, nama, password, email, no_hp, alamat " +
+            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo " +
                          "FROM user " +
                          "WHERE idUser = '" + idUser + "'";
 
@@ -171,7 +173,7 @@ namespace Sisbro_LIB
 
         public static bool CekPassword(User user, string password)
         {
-            string sql = "SELECT idUser, nama, password, email, no_hp, alamat" +
+            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo" +
                          "FROM user " +
                          "WHERE idUser = '" + user.IdUser + "' AND password = SHA2('" + password + "', 512);";
 

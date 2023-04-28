@@ -85,7 +85,7 @@ namespace Sisbro_LIB
                          this.Nama.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp +  "', SHA2('" +
-                         this.Password.Replace("'", "\\'") + "', 512), '" + "');";
+                         this.Password.Replace("'", "\\'") + "', 512));";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -182,6 +182,27 @@ namespace Sisbro_LIB
                 return result;
             }
             return null;
+        }
+
+        public static int GenerateIdAdmin()
+        {
+            string sql = "SELECT MAX(idAdministrator) " +
+                         "FROM administrator " + ";";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
         }
         #endregion
     }

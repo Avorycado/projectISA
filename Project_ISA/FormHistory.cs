@@ -32,5 +32,10 @@ namespace Project_ISA
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             listHistory = History.BacaData("", "");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

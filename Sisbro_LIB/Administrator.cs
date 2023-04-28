@@ -18,14 +18,14 @@ namespace Sisbro_LIB
         #endregion
 
         #region Constructors
-        //public Administrator()
-        //{
-        //    IdAdministrator = 0;
-        //    Nama = "";
-        //    Email = "";
-        //    NoHp = 0;
-        //    Password = "";
-        //}
+        public Administrator()
+        {
+            IdAdministrator = 0;
+            Nama = "";
+            Email = "";
+            NoHp = 0;
+            Password = "";
+        }
 
         public Administrator(int idAdministrator, string nama, string email, int noHp, string password)
         {

@@ -88,7 +88,7 @@ namespace Sisbro_LIB
         }
         public bool TambahData()
         {
-            string sql = "INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
+            string sql = "SET FOREIGN_KEY_CHECKS=0; INSERT INTO product(idProduct, nama, harga, deskripsi, jumlah, category_idcategory, sellers_idsellers, administrator_idadministrator, foto_product) VALUES ('" +
                          this.IdProduct + "', '" +
                          this.Nama.Replace("'", "\\'") + "', '" +
                          this.Harga + "', '" +
@@ -96,8 +96,8 @@ namespace Sisbro_LIB
                          this.Jumlah + "', '" +
                          this.Category.IdCategory + "', '" +
                          this.Sellers.IdSeller + "', '" +
-                         this.Administrator.IdAdministrator + "', '" +
-                         this.Foto + "');";
+                         null + "', '" +
+                         this.Foto.Replace(@"\", @"\\") + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -173,6 +173,41 @@ namespace Sisbro_LIB
                 }
             }
             return hasilId;
+        }
+
+        public static List<Product> AmbilFoto()
+        {
+            string sql = "SELECT * FROM product;";
+
+            //string hasil = "";
+            List<Product> arr = new List<Product>();
+            MySqlDataReader result = Koneksi.AmbilData(sql);
+            while (result.Read())
+            {
+                arr.Add(new Product(
+                    int.Parse(result.GetValue(0).ToString()),
+                    result.GetString(1),
+                    double.Parse(result.GetValue(2).ToString()),
+                    result.GetString(3),
+                    int.Parse(result.GetValue(4).ToString()),
+                    new Category(),
+                    new Sellers(),
+                    new Administrator(),
+                    result.GetString(8)
+                    ));
+            }
+            //if (result.Read())
+            //{
+            //    if (result.GetValue(0).ToString() != "")
+            //    {
+            //        hasil = result.GetValue(0).ToString();
+            //    }
+            //    else
+            //    {
+            //        hasil = "";
+            //    }
+            //}
+            return arr;
         }
         #endregion
     }

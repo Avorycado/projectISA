@@ -17,13 +17,17 @@ namespace Sisbro_LIB
         #region Constructors
         public PaymentMethod()
         {
-            IdPaymentMethod = 0;
+            IdPaymentMethod = 1;
             Nama = "";
         }
 
         public PaymentMethod(int idPaymentMethod, string nama)
         {
             this.IdPaymentMethod = idPaymentMethod;
+            this.Nama = nama;
+        }
+        public PaymentMethod(string nama)
+        {
             this.Nama = nama;
         }
         #endregion
@@ -81,6 +85,12 @@ namespace Sisbro_LIB
                 listPayment.Add(payment);
             }
             return listPayment ;
+        }
+
+        public static void Create(PaymentMethod pm, Koneksi cdb)
+        {
+            string sql = "insert into payment_method (nama) values ('" + pm.Nama.Replace("'", "\\'") + "')";
+            Koneksi.ExecuteDML(sql, cdb);
         }
         #endregion
     }

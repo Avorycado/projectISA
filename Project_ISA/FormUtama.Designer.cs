@@ -46,6 +46,15 @@ namespace Project_ISA
             this.labelSkincare = new System.Windows.Forms.Label();
             this.labelSaldo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.pictureBoxCloth = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSkincare = new System.Windows.Forms.PictureBox();
+            this.pictureBoxShoes = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBag = new System.Windows.Forms.PictureBox();
+            this.menuStripAdmin = new System.Windows.Forms.MenuStrip();
+            this.menustripaccproduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPaymentMethodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripSellers = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItemProduct = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,22 +62,14 @@ namespace Project_ISA
             this.toolStripMenuItemLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSlripMenuItemLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBoxCloth = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSkincare = new System.Windows.Forms.PictureBox();
-            this.pictureBoxShoes = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBag = new System.Windows.Forms.PictureBox();
-            this.menuStripAdmin = new System.Windows.Forms.MenuStrip();
-            this.menustripaccproduct = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelStatus = new System.Windows.Forms.Label();
-            this.labelUser = new System.Windows.Forms.Label();
             this.menuStripUser.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuStripSellers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSkincare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBag)).BeginInit();
             this.menuStripAdmin.SuspendLayout();
+            this.menuStripSellers.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -260,9 +261,103 @@ namespace Project_ISA
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 200);
+            this.panel1.Size = new System.Drawing.Size(585, 179);
             this.panel1.TabIndex = 54;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(77, 0);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(35, 13);
+            this.labelStatus.TabIndex = 55;
+            this.labelStatus.Text = "status";
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(12, 0);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(27, 13);
+            this.labelUser.TabIndex = 54;
+            this.labelUser.Text = "user";
+            this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
+            // 
+            // pictureBoxCloth
+            // 
+            this.pictureBoxCloth.BackgroundImage = global::Project_ISA.Properties.Resources.baju;
+            this.pictureBoxCloth.Image = global::Project_ISA.Properties.Resources.baju;
+            this.pictureBoxCloth.Location = new System.Drawing.Point(41, 69);
+            this.pictureBoxCloth.Name = "pictureBoxCloth";
+            this.pictureBoxCloth.Size = new System.Drawing.Size(99, 53);
+            this.pictureBoxCloth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCloth.TabIndex = 45;
+            this.pictureBoxCloth.TabStop = false;
+            this.pictureBoxCloth.Click += new System.EventHandler(this.pictureBoxCloth_Click);
+            // 
+            // pictureBoxSkincare
+            // 
+            this.pictureBoxSkincare.Image = global::Project_ISA.Properties.Resources.skincare;
+            this.pictureBoxSkincare.Location = new System.Drawing.Point(407, 69);
+            this.pictureBoxSkincare.Name = "pictureBoxSkincare";
+            this.pictureBoxSkincare.Size = new System.Drawing.Size(108, 53);
+            this.pictureBoxSkincare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSkincare.TabIndex = 51;
+            this.pictureBoxSkincare.TabStop = false;
+            this.pictureBoxSkincare.Click += new System.EventHandler(this.pictureBoxSkincare_Click);
+            // 
+            // pictureBoxShoes
+            // 
+            this.pictureBoxShoes.Image = global::Project_ISA.Properties.Resources.sepatu;
+            this.pictureBoxShoes.Location = new System.Drawing.Point(157, 69);
+            this.pictureBoxShoes.Name = "pictureBoxShoes";
+            this.pictureBoxShoes.Size = new System.Drawing.Size(108, 53);
+            this.pictureBoxShoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxShoes.TabIndex = 47;
+            this.pictureBoxShoes.TabStop = false;
+            this.pictureBoxShoes.Click += new System.EventHandler(this.pictureBoxShoes_Click);
+            // 
+            // pictureBoxBag
+            // 
+            this.pictureBoxBag.Image = global::Project_ISA.Properties.Resources.bag_removebg_preview__1_;
+            this.pictureBoxBag.Location = new System.Drawing.Point(280, 69);
+            this.pictureBoxBag.Name = "pictureBoxBag";
+            this.pictureBoxBag.Size = new System.Drawing.Size(108, 53);
+            this.pictureBoxBag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBag.TabIndex = 48;
+            this.pictureBoxBag.TabStop = false;
+            this.pictureBoxBag.Click += new System.EventHandler(this.pictureBoxBag_Click);
+            // 
+            // menuStripAdmin
+            // 
+            this.menuStripAdmin.BackColor = System.Drawing.Color.DeepPink;
+            this.menuStripAdmin.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStripAdmin.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menustripaccproduct,
+            this.addPaymentMethodsToolStripMenuItem});
+            this.menuStripAdmin.Location = new System.Drawing.Point(0, 147);
+            this.menuStripAdmin.Name = "menuStripAdmin";
+            this.menuStripAdmin.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menuStripAdmin.Size = new System.Drawing.Size(321, 29);
+            this.menuStripAdmin.TabIndex = 56;
+            this.menuStripAdmin.Text = "menuStrip1";
+            // 
+            // menustripaccproduct
+            // 
+            this.menustripaccproduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.menustripaccproduct.Name = "menustripaccproduct";
+            this.menustripaccproduct.Size = new System.Drawing.Size(113, 25);
+            this.menustripaccproduct.Text = "Acc Product";
+            // 
+            // addPaymentMethodsToolStripMenuItem
+            // 
+            this.addPaymentMethodsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.addPaymentMethodsToolStripMenuItem.Name = "addPaymentMethodsToolStripMenuItem";
+            this.addPaymentMethodsToolStripMenuItem.Size = new System.Drawing.Size(196, 25);
+            this.addPaymentMethodsToolStripMenuItem.Text = "Add Payment Methods";
+            this.addPaymentMethodsToolStripMenuItem.Click += new System.EventHandler(this.addPaymentMethodsToolStripMenuItem_Click);
             // 
             // menuStripSellers
             // 
@@ -335,91 +430,6 @@ namespace Project_ISA
             this.toolStripMenuItemExit.Text = "Exit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
-            // pictureBoxCloth
-            // 
-            this.pictureBoxCloth.BackgroundImage = global::Project_ISA.Properties.Resources.baju;
-            this.pictureBoxCloth.Image = global::Project_ISA.Properties.Resources.baju;
-            this.pictureBoxCloth.Location = new System.Drawing.Point(41, 69);
-            this.pictureBoxCloth.Name = "pictureBoxCloth";
-            this.pictureBoxCloth.Size = new System.Drawing.Size(99, 53);
-            this.pictureBoxCloth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCloth.TabIndex = 45;
-            this.pictureBoxCloth.TabStop = false;
-            this.pictureBoxCloth.Click += new System.EventHandler(this.pictureBoxCloth_Click);
-            // 
-            // pictureBoxSkincare
-            // 
-            this.pictureBoxSkincare.Image = global::Project_ISA.Properties.Resources.skincare;
-            this.pictureBoxSkincare.Location = new System.Drawing.Point(407, 69);
-            this.pictureBoxSkincare.Name = "pictureBoxSkincare";
-            this.pictureBoxSkincare.Size = new System.Drawing.Size(108, 53);
-            this.pictureBoxSkincare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSkincare.TabIndex = 51;
-            this.pictureBoxSkincare.TabStop = false;
-            this.pictureBoxSkincare.Click += new System.EventHandler(this.pictureBoxSkincare_Click);
-            // 
-            // pictureBoxShoes
-            // 
-            this.pictureBoxShoes.Image = global::Project_ISA.Properties.Resources.sepatu;
-            this.pictureBoxShoes.Location = new System.Drawing.Point(157, 69);
-            this.pictureBoxShoes.Name = "pictureBoxShoes";
-            this.pictureBoxShoes.Size = new System.Drawing.Size(108, 53);
-            this.pictureBoxShoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxShoes.TabIndex = 47;
-            this.pictureBoxShoes.TabStop = false;
-            this.pictureBoxShoes.Click += new System.EventHandler(this.pictureBoxShoes_Click);
-            // 
-            // pictureBoxBag
-            // 
-            this.pictureBoxBag.Image = global::Project_ISA.Properties.Resources.bag_removebg_preview__1_;
-            this.pictureBoxBag.Location = new System.Drawing.Point(280, 69);
-            this.pictureBoxBag.Name = "pictureBoxBag";
-            this.pictureBoxBag.Size = new System.Drawing.Size(108, 53);
-            this.pictureBoxBag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxBag.TabIndex = 48;
-            this.pictureBoxBag.TabStop = false;
-            this.pictureBoxBag.Click += new System.EventHandler(this.pictureBoxBag_Click);
-            // 
-            // menuStripAdmin
-            // 
-            this.menuStripAdmin.BackColor = System.Drawing.Color.DeepPink;
-            this.menuStripAdmin.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStripAdmin.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menustripaccproduct});
-            this.menuStripAdmin.Location = new System.Drawing.Point(0, 147);
-            this.menuStripAdmin.Name = "menuStripAdmin";
-            this.menuStripAdmin.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStripAdmin.Size = new System.Drawing.Size(125, 29);
-            this.menuStripAdmin.TabIndex = 56;
-            this.menuStripAdmin.Text = "menuStrip1";
-            // 
-            // menustripaccproduct
-            // 
-            this.menustripaccproduct.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.menustripaccproduct.Name = "menustripaccproduct";
-            this.menustripaccproduct.Size = new System.Drawing.Size(113, 25);
-            this.menustripaccproduct.Text = "Acc Product";
-            // 
-            // labelStatus
-            // 
-            this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(77, 0);
-            this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(35, 13);
-            this.labelStatus.TabIndex = 55;
-            this.labelStatus.Text = "status";
-            // 
-            // labelUser
-            // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(12, 0);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(27, 13);
-            this.labelUser.TabIndex = 54;
-            this.labelUser.Text = "user";
-            this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
-            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,14 +450,14 @@ namespace Project_ISA
             this.menuStripUser.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStripSellers.ResumeLayout(false);
-            this.menuStripSellers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSkincare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBag)).EndInit();
             this.menuStripAdmin.ResumeLayout(false);
             this.menuStripAdmin.PerformLayout();
+            this.menuStripSellers.ResumeLayout(false);
+            this.menuStripSellers.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,5 +497,6 @@ namespace Project_ISA
         private System.Windows.Forms.ToolStripMenuItem menustripaccproduct;
         public System.Windows.Forms.Label labelStatus;
         public System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.ToolStripMenuItem addPaymentMethodsToolStripMenuItem;
     }
 }

@@ -399,5 +399,19 @@ namespace Project_ISA
         {
 
         }
+
+        private void addPaymentMethodsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpAdministrator == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormAddPaymentMethods frm = new FormAddPaymentMethods();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
     }
 }

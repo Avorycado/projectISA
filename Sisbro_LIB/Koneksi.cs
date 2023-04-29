@@ -88,6 +88,21 @@ namespace Sisbro_LIB
                 return false;
             }
         }
+        public static bool ExecuteDML(string sql, Koneksi db)
+        {
+            Koneksi connection = new Koneksi();
+            MySqlCommand command = new MySqlCommand(sql, connection.KoneksiDB);
+            int result = command.ExecuteNonQuery();
+
+            if (result > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         #endregion
     }
 }

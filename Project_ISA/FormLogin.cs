@@ -13,6 +13,7 @@ namespace Project_ISA
 {
     public partial class FormLogin : Form
     {
+        public static Koneksi cdb;
         public FormLogin()
         {
             InitializeComponent();

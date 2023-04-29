@@ -40,15 +40,15 @@ namespace Project_ISA
 
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Orders order = new Orders(DateTime.Now, totalPrice,
-                    comboBoxInfoPengiriman.Text, user,);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    Orders order = new Orders(DateTime.Now, totalPrice,
+            //        comboBoxInfoPengiriman.Text, user,);
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void comboBoxInfoPengiriman_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,6 +67,11 @@ namespace Project_ISA
         }
 
         private void labelInfoToko_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

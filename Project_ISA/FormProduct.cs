@@ -20,9 +20,12 @@ namespace Project_ISA
 
         PictureBox pbox;
         Product p;
+        public List<Product> listProduct = new List<Product>();
 
         private void FormProduct_Load(object sender, EventArgs e)
         {
+            listProduct = Product.AmbilFoto();
+            MessageBox.Show(listProduct.Count().ToString());
 
             //List<string> poto = Product.AmbilFoto();
 
@@ -68,6 +71,30 @@ namespace Project_ISA
 
                     if (pmbt < product.Count)
                     {
+                        MessageBox.Show(product[pmbt].Status.ToString());
+                        if (product[pmbt].Status == "Verified")
+                        {
+                            Panel pnl = new Panel();
+                            pnl.Size = new Size(172, 225);
+                            pnl.Anchor = AnchorStyles.Top;
+                            pnl.BackColor = Color.Red;
+
+                            pbox = new PictureBox();
+                            pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
+                            pbox.Size = new Size(90, 90);
+                            pbox.Location = new Point(41, 17);
+                            pbox.SizeMode = PictureBoxSizeMode.StretchImage;
+                            //pbox.Anchor = AnchorStyles.Top;
+                            pnl.Controls.Add(pbox);
+
+                            Label lbel = new Label();
+                            lbel.Text = product[pmbt].Nama;
+                            lbel.Location = new Point(41, pbox.Height + 20);
+                            lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                            pnl.Controls.Add(lbel);
+
+                            tableLayoutPanel1.Controls.Add(pnl, j, i);
+                        }
                         //pbox = new PictureBox();
                         //pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
                         //pbox.Size = new Size(172, 125);
@@ -80,28 +107,6 @@ namespace Project_ISA
                         //productName.Text = product[pmbt].Nama;
                         //productName.Anchor = AnchorStyles.Bottom;
                         //tableLayoutPanel1.Controls.Add(productName, j, i);
-
-                        Panel pnl = new Panel();
-                        pnl.Size = new Size(172, 225);
-                        pnl.Anchor = AnchorStyles.Top;
-                        pnl.BackColor = Color.Red;
-
-                        pbox = new PictureBox();
-                        pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
-                        pbox.Size = new Size(90, 90);
-                        pbox.Location = new Point(41, 17);
-                        pbox.SizeMode = PictureBoxSizeMode.StretchImage;
-                        //pbox.Anchor = AnchorStyles.Top;
-                        pnl.Controls.Add(pbox);
-
-                        Label lbel = new Label();
-                        lbel.Text = product[pmbt].Nama;
-                        lbel.Location = new Point(41, pbox.Height + 20);
-                        lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
-                        pnl.Controls.Add(lbel);
-
-                        tableLayoutPanel1.Controls.Add(pnl, j, i);
-
                     }
                     pmbt++;
 

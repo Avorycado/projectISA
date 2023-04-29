@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.buttonCheckOut = new System.Windows.Forms.Button();
             this.comboBoxMetodePembayaran = new System.Windows.Forms.ComboBox();
@@ -38,7 +39,6 @@
             this.labelInfoToko = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 498);
             this.panel1.TabIndex = 6;
+            // 
+            // textBoxAlamat
+            // 
+            this.textBoxAlamat.Location = new System.Drawing.Point(151, 62);
+            this.textBoxAlamat.Multiline = true;
+            this.textBoxAlamat.Name = "textBoxAlamat";
+            this.textBoxAlamat.Size = new System.Drawing.Size(156, 58);
+            this.textBoxAlamat.TabIndex = 61;
             // 
             // dataGridViewOrder
             // 
@@ -171,14 +179,7 @@
             this.label6.TabIndex = 50;
             this.label6.Text = "Order";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxAlamat
-            // 
-            this.textBoxAlamat.Location = new System.Drawing.Point(151, 62);
-            this.textBoxAlamat.Multiline = true;
-            this.textBoxAlamat.Name = "textBoxAlamat";
-            this.textBoxAlamat.Size = new System.Drawing.Size(156, 58);
-            this.textBoxAlamat.TabIndex = 61;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // FormOrder
             // 

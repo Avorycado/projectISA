@@ -58,12 +58,12 @@ namespace Sisbro_LIB
             if (kriteria == "")
             {
                 sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator, p.foto_product, p.status " +
-                      "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellersinner join administrator a on p.administrator_idadministrator = a.idadministrator ";
+                      "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellers inner join administrator a on p.administrator_idadministrator = a.idadministrator ";
             }
             else
             {
                 sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, p.sellers_idsellers, p.administrator_idadministrator, p.foto_product, p.status " +
-                      "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellersinner join administrator a on p.administrator_idadministrator = a.idadministrator " +
+                      "FROM product p inner join category c on p.category_idcategory=c.idcategory inner join sellers s on p.sellers_idsellers = s.idsellers inner join administrator a on p.administrator_idadministrator = a.idadministrator " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
 
@@ -200,7 +200,9 @@ namespace Sisbro_LIB
                     new Category(),
                     new Sellers(),
                     new Administrator(),
-                    result.GetString(8), result.GetValue(9).ToString()));
+                    result.GetString(8), 
+                    result.GetString(9)
+                    ));
             }
             //if (result.Read())
             //{

@@ -42,7 +42,6 @@ namespace Project_ISA
         {
             try
             {
-
                 Orders order = new Orders(DateTime.Now, totalPrice,
                     comboBoxInfoPengiriman.Text, user,);
             }

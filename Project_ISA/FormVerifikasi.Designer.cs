@@ -29,12 +29,37 @@ namespace Project_ISA
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.dataGridViewVerifikasi = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVerifikasi)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridViewVerifikasi
+            // 
+            this.dataGridViewVerifikasi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewVerifikasi.Location = new System.Drawing.Point(0, -1);
+            this.dataGridViewVerifikasi.Name = "dataGridViewVerifikasi";
+            this.dataGridViewVerifikasi.RowHeadersWidth = 51;
+            this.dataGridViewVerifikasi.RowTemplate.Height = 24;
+            this.dataGridViewVerifikasi.Size = new System.Drawing.Size(799, 341);
+            this.dataGridViewVerifikasi.TabIndex = 1;
+            this.dataGridViewVerifikasi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVerifikasi_CellContentClick);
+            // 
+            // FormVerifikasi
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 340);
+            this.Controls.Add(this.dataGridViewVerifikasi);
+            this.Name = "FormVerifikasi";
             this.Text = "FormVerifikasi";
+            this.Load += new System.EventHandler(this.FormVerifikasi_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVerifikasi)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridViewVerifikasi;
     }
 }

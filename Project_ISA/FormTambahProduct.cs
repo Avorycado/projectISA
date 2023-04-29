@@ -83,7 +83,7 @@ namespace Project_ISA
                     FormUtama formUtama = (FormUtama)this.Owner;
 
                     Product product = new Product(int.Parse(textBoxId.Text), textBoxNamaProduk.Text, double.Parse(textBoxHarga.Text), textBoxDeskripsi.Text,
-                        int.Parse(textBoxJumlah.Text), category, formUtama.tmpSellers, null, foto);
+                        int.Parse(textBoxJumlah.Text), category, formUtama.tmpSellers, null, foto, "");
 
                     MessageBox.Show(category.IdCategory.ToString(), formUtama.tmpSellers.IdSeller.ToString());
 

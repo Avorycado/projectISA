@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sisbro_LIB;
 
 namespace Project_ISA
 {
@@ -15,6 +16,21 @@ namespace Project_ISA
         public FormVerifikasi()
         {
             InitializeComponent();
+        }
+        public List<Product> listProduct = new List<Product>();
+        public Product product;
+        private void dataGridViewVerifikasi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FormVerifikasi_Load(object sender, EventArgs e)
+        {
+            listProduct = Product.BacaData("", "");
+            if(product.Status == "Unverified")
+            {
+
+            }
         }
     }
 }

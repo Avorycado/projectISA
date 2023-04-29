@@ -38,6 +38,7 @@
             this.labelInfoToko = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.HotPink;
+            this.panel1.Controls.Add(this.textBoxAlamat);
             this.panel1.Controls.Add(this.dataGridViewOrder);
             this.panel1.Controls.Add(this.buttonCheckOut);
             this.panel1.Controls.Add(this.comboBoxMetodePembayaran);
@@ -56,15 +58,15 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(-8, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 459);
+            this.panel1.Size = new System.Drawing.Size(322, 498);
             this.panel1.TabIndex = 6;
             // 
             // dataGridViewOrder
             // 
             this.dataGridViewOrder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrder.Location = new System.Drawing.Point(15, 236);
-            this.dataGridViewOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewOrder.Location = new System.Drawing.Point(15, 264);
+            this.dataGridViewOrder.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewOrder.Name = "dataGridViewOrder";
             this.dataGridViewOrder.RowHeadersWidth = 51;
             this.dataGridViewOrder.RowTemplate.Height = 24;
@@ -74,8 +76,8 @@
             // buttonCheckOut
             // 
             this.buttonCheckOut.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCheckOut.Location = new System.Drawing.Point(225, 423);
-            this.buttonCheckOut.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonCheckOut.Location = new System.Drawing.Point(225, 451);
+            this.buttonCheckOut.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCheckOut.Name = "buttonCheckOut";
             this.buttonCheckOut.Size = new System.Drawing.Size(80, 26);
             this.buttonCheckOut.TabIndex = 59;
@@ -90,8 +92,8 @@
             "SisBroPay",
             "COD",
             "Transfer Bank"});
-            this.comboBoxMetodePembayaran.Location = new System.Drawing.Point(151, 196);
-            this.comboBoxMetodePembayaran.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxMetodePembayaran.Location = new System.Drawing.Point(151, 224);
+            this.comboBoxMetodePembayaran.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMetodePembayaran.Name = "comboBoxMetodePembayaran";
             this.comboBoxMetodePembayaran.Size = new System.Drawing.Size(156, 21);
             this.comboBoxMetodePembayaran.TabIndex = 57;
@@ -101,7 +103,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 197);
+            this.label3.Location = new System.Drawing.Point(11, 225);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 19);
@@ -115,8 +117,8 @@
             "JNE - Rp. 8000",
             "JNT - Rp. 10.000",
             "SiCepat - Rp. 12.000"});
-            this.comboBoxInfoPengiriman.Location = new System.Drawing.Point(120, 150);
-            this.comboBoxInfoPengiriman.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxInfoPengiriman.Location = new System.Drawing.Point(120, 178);
+            this.comboBoxInfoPengiriman.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxInfoPengiriman.Name = "comboBoxInfoPengiriman";
             this.comboBoxInfoPengiriman.Size = new System.Drawing.Size(156, 21);
             this.comboBoxInfoPengiriman.TabIndex = 55;
@@ -126,7 +128,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 150);
+            this.label2.Location = new System.Drawing.Point(10, 178);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 19);
@@ -137,12 +139,13 @@
             // 
             this.labelInfoToko.AutoSize = true;
             this.labelInfoToko.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfoToko.Location = new System.Drawing.Point(10, 101);
+            this.labelInfoToko.Location = new System.Drawing.Point(14, 129);
             this.labelInfoToko.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelInfoToko.Name = "labelInfoToko";
             this.labelInfoToko.Size = new System.Drawing.Size(73, 19);
             this.labelInfoToko.TabIndex = 53;
             this.labelInfoToko.Text = "Info Toko ";
+            this.labelInfoToko.Click += new System.EventHandler(this.labelInfoToko_Click);
             // 
             // labelAlamat
             // 
@@ -169,13 +172,21 @@
             this.label6.Text = "Order";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBoxAlamat
+            // 
+            this.textBoxAlamat.Location = new System.Drawing.Point(151, 62);
+            this.textBoxAlamat.Multiline = true;
+            this.textBoxAlamat.Name = "textBoxAlamat";
+            this.textBoxAlamat.Size = new System.Drawing.Size(156, 58);
+            this.textBoxAlamat.TabIndex = 61;
+            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 459);
+            this.ClientSize = new System.Drawing.Size(307, 493);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormOrder";
             this.Text = "FormOrder";
             this.Load += new System.EventHandler(this.FormOrder_Load);
@@ -198,5 +209,6 @@
         private System.Windows.Forms.Label labelInfoToko;
         private System.Windows.Forms.Button buttonCheckOut;
         private System.Windows.Forms.DataGridView dataGridViewOrder;
+        private System.Windows.Forms.TextBox textBoxAlamat;
     }
 }

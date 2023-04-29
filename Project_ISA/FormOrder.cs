@@ -17,14 +17,24 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
+       
         public User user;
+        public PaymentMethod paymentMethod;
         public Sellers sellers;
+        public double totalPrice;
+        public string namaProduct;
         public Product product;
+        public List<PaymentMethod> listPayment = new List<PaymentMethod>();
         private void FormOrder_Load(object sender, EventArgs e)
         {
             FormUtama formUtama = (FormUtama)this.Owner;
 
             labelAlamat.Text = "Alamat Pengiriman: " + formUtama.tmpUser.Alamat;
+            labelInfoToko.Text = product.Sellers.Nama;
+            string payment = comboBoxMetodePembayaran.Text;
+            listPayment = PaymentMethod.BacaData("nama", payment);
+
+            
             //labelInfoToko.Text = sellers.Nama + "\n" + product.Nama + "\n" + product.Jumlah + " " + product.Harga;
         }
 
@@ -32,7 +42,9 @@ namespace Project_ISA
         {
             try
             {
-                //Orders order = new Orders(int.Parse)
+
+                Orders order = new Orders(DateTime.Now, totalPrice,
+                    comboBoxInfoPengiriman.Text, user,);
             }
             catch(Exception ex)
             {
@@ -51,6 +63,11 @@ namespace Project_ISA
         }
 
         private void labelAlamat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelInfoToko_Click(object sender, EventArgs e)
         {
 
         }

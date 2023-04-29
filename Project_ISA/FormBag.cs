@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Sisbro_LIB;
 namespace Project_ISA
 {
+   
     public partial class FormBag : Form
     {
+        public List<Product> listProduct = new List<Product>();
+
         public FormBag()
         {
             InitializeComponent();
@@ -176,6 +179,22 @@ namespace Project_ISA
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+       
+
+        private void labelCheckoutDior_Click_1(object sender, EventArgs e)
+        {
+            listProduct = Product.BacaData("nama", labelDiorBag.Text);
+            FormOrder formOrder = new FormOrder();
+            formOrder.Owner = this;
+            formOrder.product = listProduct[0];
+            formOrder.ShowDialog();
+        }
+
+        private void labelDiorBag_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -53,6 +53,35 @@ namespace Sisbro_LIB
                 return null;
             }
         }
+
+        public static List<PaymentMethod> BacaData(string kriteria, string nilai)
+        {
+            string sql;
+            if (kriteria == "")
+            {
+                sql = "SELECT idpayment_method, nama " +
+                      "FROM payment_method ";
+            }
+            else
+            {
+                sql = "SELECT idpayment_method, nama " +
+                      "FROM payment_method " +
+                      "WHERE " + kriteria + " like '%" + nilai + "%'";
+            }
+
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            //buat list untuk menampung data
+            List<PaymentMethod> listPayment = new List<PaymentMethod>();
+            while (hasil.Read() == true) //selama masih ada data
+            {
+                //baca data dr MySqlDataReader dan simpan di objek
+                PaymentMethod payment = new PaymentMethod(int.Parse(hasil.GetValue(0).ToString()),
+                                                hasil.GetValue(1).ToString());
+                listPayment.Add(payment);
+            }
+            return listPayment ;
+        }
         #endregion
     }
 }

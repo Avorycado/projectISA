@@ -46,7 +46,7 @@ namespace Project_ISA
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelHargaDior = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -57,6 +57,8 @@ namespace Project_ISA
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.labelCheckoutDior = new System.Windows.Forms.Label();
+            this.labelDiorBag = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -151,7 +153,7 @@ namespace Project_ISA
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(162, 198);
+            this.label10.Location = new System.Drawing.Point(23, 198);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 47;
@@ -238,15 +240,15 @@ namespace Project_ISA
             this.label2.Text = "Check Out";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label1
+            // labelHargaDior
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Check Out";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.labelHargaDior.AutoSize = true;
+            this.labelHargaDior.Location = new System.Drawing.Point(183, 49);
+            this.labelHargaDior.Name = "labelHargaDior";
+            this.labelHargaDior.Size = new System.Drawing.Size(43, 13);
+            this.labelHargaDior.TabIndex = 38;
+            this.labelHargaDior.Text = "150000";
+            this.labelHargaDior.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox9
             // 
@@ -350,6 +352,26 @@ namespace Project_ISA
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
+            // labelCheckoutDior
+            // 
+            this.labelCheckoutDior.AutoSize = true;
+            this.labelCheckoutDior.Location = new System.Drawing.Point(168, 196);
+            this.labelCheckoutDior.Name = "labelCheckoutDior";
+            this.labelCheckoutDior.Size = new System.Drawing.Size(58, 13);
+            this.labelCheckoutDior.TabIndex = 88;
+            this.labelCheckoutDior.Text = "Check Out";
+            this.labelCheckoutDior.Click += new System.EventHandler(this.labelCheckoutDior_Click_1);
+            // 
+            // labelDiorBag
+            // 
+            this.labelDiorBag.AutoSize = true;
+            this.labelDiorBag.Location = new System.Drawing.Point(21, 49);
+            this.labelDiorBag.Name = "labelDiorBag";
+            this.labelDiorBag.Size = new System.Drawing.Size(49, 13);
+            this.labelDiorBag.TabIndex = 89;
+            this.labelDiorBag.Text = "DIor Bag";
+            this.labelDiorBag.Click += new System.EventHandler(this.labelDiorBag_Click);
+            // 
             // FormBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +379,8 @@ namespace Project_ISA
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(678, 537);
             this.ControlBox = false;
+            this.Controls.Add(this.labelDiorBag);
+            this.Controls.Add(this.labelCheckoutDior);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -375,7 +399,7 @@ namespace Project_ISA
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelHargaDior);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
@@ -421,7 +445,7 @@ namespace Project_ISA
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelHargaDior;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -432,5 +456,7 @@ namespace Project_ISA
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.Label labelCheckoutDior;
+        private System.Windows.Forms.Label labelDiorBag;
     }
 }

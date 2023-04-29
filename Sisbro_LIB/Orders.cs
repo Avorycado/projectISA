@@ -28,6 +28,15 @@ namespace Sisbro_LIB
             this.User = user;
             this.PaymentMethod = paymentMethod;
         }
+
+        public Orders(DateTime tanggalOrder, double totalPrice, string alamatPengiriman, User user, PaymentMethod paymentMethod)
+        {
+            this.TanggalOrder = tanggalOrder;
+            this.TotalPrice = totalPrice;
+            this.AlamatPengiriman = alamatPengiriman;
+            this.User = user;
+            this.PaymentMethod = paymentMethod;
+        }
         #endregion
 
         #region Properties

@@ -30,9 +30,13 @@ namespace Project_ISA
             FormUtama formUtama = (FormUtama)this.Owner;
 
             labelAlamat.Text = "Alamat Pengiriman: " + formUtama.tmpUser.Alamat;
-            labelInfoToko.Text = product.Sellers.Nama;
-            string payment = comboBoxMetodePembayaran.Text;
-            listPayment = PaymentMethod.BacaData("nama", payment);
+            //labelInfoToko.Text = product.Sellers.Nama;
+            //string payment = comboBoxMetodePembayaran.Text;
+            listPayment = PaymentMethod.BacaData("", "");
+
+            comboBoxMetodePembayaran.DataSource = listPayment;
+            comboBoxMetodePembayaran.DisplayMember = "nama";
+            comboBoxMetodePembayaran.DropDownStyle = ComboBoxStyle.DropDownList;
 
             
             //labelInfoToko.Text = sellers.Nama + "\n" + product.Nama + "\n" + product.Jumlah + " " + product.Harga;

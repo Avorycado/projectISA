@@ -96,10 +96,6 @@
             // comboBoxMetodePembayaran
             // 
             this.comboBoxMetodePembayaran.FormattingEnabled = true;
-            this.comboBoxMetodePembayaran.Items.AddRange(new object[] {
-            "SisBroPay",
-            "COD",
-            "Transfer Bank"});
             this.comboBoxMetodePembayaran.Location = new System.Drawing.Point(151, 224);
             this.comboBoxMetodePembayaran.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxMetodePembayaran.Name = "comboBoxMetodePembayaran";

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sisbro_LIB;
+
 namespace Project_ISA
 {
     public partial class FormAddPaymentMethods : Form
@@ -23,8 +24,8 @@ namespace Project_ISA
             {
                 if (textBoxPaymentMethod.Text != "" && textBoxPaymentMethod.Text != null)
                 {
-                    PaymentMethod pm = new PaymentMethod(textBoxPaymentMethod.Text);
-                    PaymentMethod.Create(pm, FormLogin.cdb);
+                    int id = PaymentMethod.GenerateIdProduct();
+                    PaymentMethod.TambahData(id, textBoxPaymentMethod.Text);
                     MessageBox.Show("Metode pembayaran berhasil ditambahkan.", "Information");
                 }
                 else

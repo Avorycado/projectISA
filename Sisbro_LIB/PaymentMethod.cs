@@ -87,10 +87,33 @@ namespace Sisbro_LIB
             return listPayment ;
         }
 
-        public static void Create(PaymentMethod pm, Koneksi cdb)
+        public static bool TambahData(int id, string nama)
         {
-            string sql = "insert into payment_method (nama) values ('" + pm.Nama.Replace("'", "\\'") + "')";
-            Koneksi.ExecuteDML(sql, cdb);
+            string sql = "INSERT INTO payment_method(idpayment_method, nama) values ('" + id + "', '" + nama + "')";
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
+        public static int GenerateIdProduct()
+        {
+            string sql = "SELECT MAX(idpayment_method) " +
+                         "FROM payment_method " + ";";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
         }
         #endregion
     }

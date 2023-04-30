@@ -402,6 +402,40 @@ namespace Project_ISA
 
         private void addPaymentMethodsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void menustripaccproduct_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void accProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpAdministrator == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormVerifikasi frm = new FormVerifikasi();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void addPaymentMethodsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             if (tmpAdministrator == null)
             {
                 MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
@@ -412,6 +446,28 @@ namespace Project_ISA
                 frm.Owner = this;
                 frm.ShowDialog();
             }
+        }
+
+        private void logOutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (tmpAdministrator != null)
+            {
+                tmpAdministrator = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+
+                labelUser.Text = "Admin: ";
+                labelStatus.Text = "Status: Not in Account";
+            }
+            else
+            {
+                MessageBox.Show("Akun anda tidak sedang Log In!");
+            }
+        }
+
+        private void exitToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

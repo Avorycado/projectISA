@@ -46,6 +46,10 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public override string ToString()
+        {
+            return Nama;
+        }
         public static List<Administrator> BacaData(string kriteria, string nilai)
         {
             string sql;

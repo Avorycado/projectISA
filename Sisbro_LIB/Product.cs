@@ -108,16 +108,26 @@ namespace Sisbro_LIB
             return result;
         }
 
-        public bool UbahData()
+        //public bool UbahData()
+        //{
+        //    string sql = "UPDATE product " +
+        //                 "SET " +
+        //                 "nama = '" + this.Nama.Replace("'", "\\'") + "', " +
+        //                 "harga = '" + this.Harga + "', " +
+        //                 "deskripsi = '" + this.Deskripsi.Replace("'", "\\'") + "', " +
+        //                 "jumlah = '" + this.Jumlah + "', " +
+        //                 "status = '" + this.Status.Replace("'", "\\'") + "', " +
+        //                 "WHERE idProduct = '" + this.IdProduct + "';";
+
+        //    bool result = Koneksi.ExecuteDML(sql);
+        //    return result;
+        //}
+        public bool UbahStatus()
         {
             string sql = "UPDATE product " +
                          "SET " +
-                         "nama = '" + this.Nama.Replace("'", "\\'") + "', " +
-                         "harga = '" + this.Harga + "', " +
-                         "deskripsi = '" + this.Deskripsi.Replace("'", "\\'") + "', " +
-                         "alamat = '" + this.Jumlah + "', " +
-                         "status = '" + this.Status + "','" +
-                         "WHERE idProduct = '" + this.IdProduct + "';";
+                         "status = '" + this.Status + "' " +
+                         "WHERE idproduct = '" + this.IdProduct + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;

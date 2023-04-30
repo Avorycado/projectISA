@@ -77,3 +77,5 @@ E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\ob
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormHistory.resources
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormVerifikasi.resources
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormAddPaymentMethods.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormAddPaymentMethods.resources
+E:\SEMESTER 4\INFORMATION SECURITY & ASSURANCE\project\projectISA\Project_ISA\obj\Debug\Project_ISA.FormVerifikasi.resources

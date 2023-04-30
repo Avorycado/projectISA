@@ -91,6 +91,11 @@ namespace Sisbro_LIB
                 return null;
             }
         }
+
+        public override string ToString()
+        {
+            return Nama;
+        }
         #endregion
     }
 }

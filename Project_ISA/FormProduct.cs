@@ -90,7 +90,7 @@ namespace Project_ISA
                             Label lbel = new Label();
                             lbel.Text = product[pmbt].Nama;
                             lbel.Location = new Point(41, pbox.Height + 20);
-                            lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
                             pnl.Controls.Add(lbel);
 
                             tableLayoutPanel1.Controls.Add(pnl, j, i);

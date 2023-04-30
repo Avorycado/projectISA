@@ -145,6 +145,26 @@ namespace Sisbro_LIB
                 return null;
             }
         }
+        public static int GenerateIdOrder()
+        {
+            string sql = "SELECT MAX(idorder) " +
+                         "FROM order " + ";";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
+        }
         #endregion
     }
 }

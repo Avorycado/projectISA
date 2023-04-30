@@ -19,7 +19,6 @@ namespace Project_ISA
         }
        
         public User user;
-        public PaymentMethod paymentMethod;
         public Sellers sellers;
         public double totalPrice;
         public string namaProduct;
@@ -32,11 +31,16 @@ namespace Project_ISA
             labelAlamat.Text = "Alamat Pengiriman: " + formUtama.tmpUser.Alamat;
             //labelInfoToko.Text = product.Sellers.Nama;
             //string payment = comboBoxMetodePembayaran.Text;
-            listPayment = PaymentMethod.BacaData("", "");
 
-            comboBoxMetodePembayaran.DataSource = listPayment;
-            comboBoxMetodePembayaran.DisplayMember = "nama";
-            comboBoxMetodePembayaran.DropDownStyle = ComboBoxStyle.DropDownList;
+            listPayment = PaymentMethod.BacaData("", "");
+            foreach(PaymentMethod pm in listPayment)
+            {
+                comboBoxMetodePembayaran.Items.Add(pm);
+                comboBoxMetodePembayaran.DisplayMember = "Nama";
+            }
+            //comboBoxMetodePembayaran.DataSource = listPayment;
+            //comboBoxMetodePembayaran.DisplayMember = "nama";
+            //comboBoxMetodePembayaran.DropDownStyle = ComboBoxStyle.DropDownList;
 
             
             //labelInfoToko.Text = sellers.Nama + "\n" + product.Nama + "\n" + product.Jumlah + " " + product.Harga;
@@ -44,15 +48,26 @@ namespace Project_ISA
 
         private void buttonCheckOut_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Orders order = new Orders(DateTime.Now, totalPrice,
-            //        comboBoxInfoPengiriman.Text, user,);
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            try
+            {
+                PaymentMethod paymentMethod = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
+                Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, totalPrice,
+                    comboBoxInfoPengiriman.Text, user, paymentMethod);
+
+                if (order.TambahData())
+                {
+                    MessageBox.Show("Data order berhasil untuk ditambahkan!");
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    throw new Exception("Gagal untuk menambahkan data!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void comboBoxInfoPengiriman_SelectedIndexChanged(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace Project_ISA
         private void FormProduct_Load(object sender, EventArgs e)
         {
             listProduct = Product.AmbilFoto();
-            MessageBox.Show(listProduct.Count().ToString());
+            //MessageBox.Show(listProduct.Count().ToString());
 
             //List<string> poto = Product.AmbilFoto();
 
@@ -71,27 +71,50 @@ namespace Project_ISA
 
                     if (pmbt < product.Count)
                     {
-                        MessageBox.Show(product[pmbt].Status.ToString());
+                        //MessageBox.Show(product[pmbt].Status.ToString());
                         if (product[pmbt].Status == "Verified")
                         {
                             Panel pnl = new Panel();
-                            pnl.Size = new Size(172, 225);
+                            pnl.Size = new Size(212, 171);
                             pnl.Anchor = AnchorStyles.Top;
-                            pnl.BackColor = Color.Red;
 
                             pbox = new PictureBox();
                             pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
-                            pbox.Size = new Size(90, 90);
-                            pbox.Location = new Point(41, 27);
+                            pbox.Size = new Size(202, 128);
+                            pbox.Location = new Point(5, 23);
                             pbox.SizeMode = PictureBoxSizeMode.StretchImage;
                             //pbox.Anchor = AnchorStyles.Top;
                             pnl.Controls.Add(pbox);
 
-                            Label lbel = new Label();
-                            lbel.Text = product[pmbt].Nama;
-                            lbel.Location = new Point(41, 7);
+                            Label nama = new Label();
+                            nama.Text = product[pmbt].Nama;
+                            nama.Location = new Point(5, 5);
                             //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
-                            pnl.Controls.Add(lbel);
+                            pnl.Controls.Add(nama);
+
+                            Label cart = new Label();
+                            cart.Text = "Add To Cart";
+                            cart.Location = new Point(5, 155);
+                            cart.Click += new EventHandler(Cart_Click);
+                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                            pnl.Controls.Add(cart);
+
+                            
+
+                            Label harga = new Label();
+                            harga.Text = product[pmbt].Harga.ToString();
+                            harga.Location = new Point(175, 5);
+                            harga.BringToFront();
+                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                            pnl.Controls.Add(harga);
+
+                            Label co = new Label();
+                            co.Text = "Check Out";
+                            co.Location = new Point(150, 155);
+                            co.Click += new EventHandler(Co_Click);
+                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                            pnl.Controls.Add(co);
+
 
                             tableLayoutPanel1.Controls.Add(pnl, j, i);
                         }
@@ -113,6 +136,27 @@ namespace Project_ISA
                 }
 
             }
+        }
+
+        private void Co_Click(object sender, EventArgs e)
+        {
+            FormUtama formUtama = (FormUtama)this.Owner;
+
+            FormOrder frm = new FormOrder();
+            frm.Owner = formUtama;
+            frm.ShowDialog();
+        }
+
+        private void Cart_Click(object sender, EventArgs e)
+        {
+            FormCart frm = new FormCart();
+            frm.Owner = this;
+            frm.ShowDialog();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

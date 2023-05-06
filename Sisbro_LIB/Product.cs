@@ -195,13 +195,13 @@ namespace Sisbro_LIB
 
         public static List<Product> AmbilFoto()
         {
-            //string sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, " +
-            //             "p.sellers_idsellers, p.administrator_idadministrator, p.foto_product, p.status " +
-            //             "FROM product p inner join category c on p.category_idcategory=c.idcategory " +
-            //             "inner join sellers s on p.sellers_idsellers = s.idsellers inner join administrator a " +
-            //             "on p.administrator_idadministrator = a.idadministrator ";
+            string sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, " +
+                         "p.sellers_idsellers, p.administrator_idadministrator, p.foto_product, p.status " +
+                         "FROM product p inner join category c on p.category_idcategory=c.idcategory " +
+                         "inner join sellers s on p.sellers_idsellers = s.idsellers inner join administrator a " +
+                         "on p.administrator_idadministrator = a.idadministrator "; 
 
-            string sql = "SELECT * FROM product ";
+            //string sql = "SELECT * FROM product ";
 
             //string hasil = "";
 

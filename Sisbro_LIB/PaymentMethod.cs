@@ -60,7 +60,7 @@ namespace Sisbro_LIB
 
         public static List<PaymentMethod> BacaData(string kriteria, string nilai)
         {
-            string sql;
+            string sql = "";
             if (kriteria == "")
             {
                 sql = "SELECT idpayment_method, nama " +

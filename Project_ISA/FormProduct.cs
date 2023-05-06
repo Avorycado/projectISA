@@ -21,15 +21,18 @@ namespace Project_ISA
         PictureBox pbox;
         Product p;
         public List<Product> listProduct = new List<Product>();
+        public int pmbt = 0;
+        public List<Product> product = Product.AmbilDataVerif();
+        List<Panel> listPanel = new List<Panel>();
 
         private void FormProduct_Load(object sender, EventArgs e)
         {
-            listProduct = Product.AmbilFoto();
+            listProduct = Product.AmbilDataVerif();
             //MessageBox.Show(listProduct.Count().ToString());
 
             //List<string> poto = Product.AmbilFoto();
 
-            List<Product> product = Product.AmbilFoto();
+            
 
             //pbox.Image = Image.FromFile(@"C:\Users\satya\Pictures\hitam.jpeg");
 
@@ -40,8 +43,8 @@ namespace Project_ISA
 
 
             int cols = 3; //Will come from database
-            int rows = 3;
-            //int rows = (int)Math.Round((double)poto.Count / cols); //Will come from database
+            //int rows = 3;
+            int rows = (int)Math.Ceiling((double)listProduct.Count / cols); //Will come from database
             int colWidth;
             int rowHeight;
 
@@ -53,6 +56,12 @@ namespace Project_ISA
             if (100 % rows != 0)
                 rowHeight--;
 
+            MessageBox.Show(rows.ToString());
+            int height = rows * 180;
+
+            TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();
+            tableLayoutPanel1.Parent = flowLayoutPanel1;
+            tableLayoutPanel1.Size = new Size(670, height);
 
             tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.ColumnStyles.Clear();
@@ -60,7 +69,7 @@ namespace Project_ISA
 
             tableLayoutPanel1.ColumnCount = cols;
 
-            int pmbt = 0;
+            
 
             for (int i = 0; i < rows; i++)
             {
@@ -71,78 +80,76 @@ namespace Project_ISA
 
                     if (pmbt < product.Count)
                     {
-                        //MessageBox.Show(product[pmbt].Status.ToString());
-                        if (product[pmbt].Status == "Verified")
-                        {
-                            Panel pnl = new Panel();
-                            pnl.Size = new Size(212, 171);
-                            pnl.Anchor = AnchorStyles.Top;
+                        Panel pnl = new Panel();
+                        pnl.Size = new Size(212, 171);
+                        pnl.Anchor = AnchorStyles.Top;
 
-                            pbox = new PictureBox();
-                            pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
-                            pbox.Size = new Size(202, 128);
-                            pbox.Location = new Point(5, 23);
-                            pbox.SizeMode = PictureBoxSizeMode.StretchImage;
-                            //pbox.Anchor = AnchorStyles.Top;
-                            pnl.Controls.Add(pbox);
-
-                            Label nama = new Label();
-                            nama.Text = product[pmbt].Nama;
-                            nama.Location = new Point(5, 5);
-                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
-                            pnl.Controls.Add(nama);
-
-                            Label cart = new Label();
-                            cart.Text = "Add To Cart";
-                            cart.Location = new Point(5, 155);
-                            cart.Click += new EventHandler(Cart_Click);
-                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
-                            pnl.Controls.Add(cart);
-
-                            
-
-                            Label harga = new Label();
-                            harga.Text = product[pmbt].Harga.ToString();
-                            harga.Location = new Point(175, 5);
-                            harga.BringToFront();
-                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
-                            pnl.Controls.Add(harga);
-
-                            Label co = new Label();
-                            co.Text = "Check Out";
-                            co.Location = new Point(150, 155);
-                            co.Click += new EventHandler(Co_Click);
-                            //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
-                            pnl.Controls.Add(co);
-
-
-                            tableLayoutPanel1.Controls.Add(pnl, j, i);
-                        }
-                        //pbox = new PictureBox();
-                        //pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
-                        //pbox.Size = new Size(172, 125);
-                        ////pbox.Dock = DockStyle.Fill;
+                        pbox = new PictureBox();
+                        pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
+                        pbox.Size = new Size(202, 128);
+                        pbox.Location = new Point(5, 23);
+                        pbox.SizeMode = PictureBoxSizeMode.StretchImage;
                         //pbox.Anchor = AnchorStyles.Top;
-                        //pbox.SizeMode = PictureBoxSizeMode.StretchImage;
-                        //tableLayoutPanel1.Controls.Add(pbox, j, i);
+                        pnl.Controls.Add(pbox);
 
-                        //Label productName = new Label();
-                        //productName.Text = product[pmbt].Nama;
-                        //productName.Anchor = AnchorStyles.Bottom;
-                        //tableLayoutPanel1.Controls.Add(productName, j, i);
+                        Label nama = new Label();
+                        nama.Text = product[pmbt].Nama;
+                        nama.Location = new Point(5, 5);
+                        //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                        pnl.Controls.Add(nama);
+
+                        Label cart = new Label();
+                        cart.Text = "Add To Cart";
+                        cart.Location = new Point(5, 155);
+                        cart.Click += new EventHandler(Cart_Click);
+                        //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                        pnl.Controls.Add(cart);
+
+                        Label harga = new Label();
+                        harga.Text = product[pmbt].Harga.ToString();
+                        harga.Location = new Point(175, 5);
+                        harga.BringToFront();
+                        //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                        pnl.Controls.Add(harga);
+
+                        Label co = new Label();
+                        co.Text = "Check Out";
+                        co.Location = new Point(150, 155);
+                        co.Name = listPanel.Count.ToString();
+                        co.Click += new EventHandler(Co_Click);
+                        //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
+                        pnl.Controls.Add(co);
+
+                        tableLayoutPanel1.Controls.Add(pnl, j, i);
+                        listPanel.Add(pnl);
+                        //MessageBox.Show(product[pmbt].Status.ToString());
+                        //if (product[pmbt].Status == "Verified")
+                        //{
+
+                        //}
                     }
                     pmbt++;
-
                 }
-
             }
+            //foreach (Control c in listPanel[0].Controls)
+            //{
+            //    if (c is Label)
+            //    {
+
+            //        MessageBox.Show(c.ToString());
+            //    }
+            //}
+            
         }
 
         private void Co_Click(object sender, EventArgs e)
         {
+            Label a = sender as Label;
+            MessageBox.Show(listProduct[int.Parse(a.Name)].Nama.ToString()) ;
+
             FormUtama formUtama = (FormUtama)this.Owner;
 
-            FormOrder frm = new FormOrder();
+            FormOrder frm = new FormOrder(listProduct[int.Parse(a.Name)]);
             frm.Owner = formUtama;
             frm.ShowDialog();
         }

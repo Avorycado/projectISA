@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxAlamat = new System.Windows.Forms.TextBox();
-            this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.buttonCheckOut = new System.Windows.Forms.Button();
             this.comboBoxMetodePembayaran = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,15 +37,14 @@
             this.labelInfoToko = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.listBoxOrder = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.HotPink;
-            this.panel1.Controls.Add(this.textBoxAlamat);
-            this.panel1.Controls.Add(this.dataGridViewOrder);
+            this.panel1.Controls.Add(this.listBoxOrder);
             this.panel1.Controls.Add(this.buttonCheckOut);
             this.panel1.Controls.Add(this.comboBoxMetodePembayaran);
             this.panel1.Controls.Add(this.label3);
@@ -60,26 +57,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 498);
             this.panel1.TabIndex = 6;
-            // 
-            // textBoxAlamat
-            // 
-            this.textBoxAlamat.Location = new System.Drawing.Point(151, 62);
-            this.textBoxAlamat.Multiline = true;
-            this.textBoxAlamat.Name = "textBoxAlamat";
-            this.textBoxAlamat.Size = new System.Drawing.Size(156, 58);
-            this.textBoxAlamat.TabIndex = 61;
-            // 
-            // dataGridViewOrder
-            // 
-            this.dataGridViewOrder.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewOrder.Location = new System.Drawing.Point(15, 264);
-            this.dataGridViewOrder.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewOrder.Name = "dataGridViewOrder";
-            this.dataGridViewOrder.RowHeadersWidth = 51;
-            this.dataGridViewOrder.RowTemplate.Height = 24;
-            this.dataGridViewOrder.Size = new System.Drawing.Size(290, 184);
-            this.dataGridViewOrder.TabIndex = 60;
             // 
             // buttonCheckOut
             // 
@@ -118,9 +95,7 @@
             // 
             this.comboBoxInfoPengiriman.FormattingEnabled = true;
             this.comboBoxInfoPengiriman.Items.AddRange(new object[] {
-            "JNE - Rp. 8000",
-            "JNT - Rp. 10.000",
-            "SiCepat - Rp. 12.000"});
+            "JNE - 15000"});
             this.comboBoxInfoPengiriman.Location = new System.Drawing.Point(120, 178);
             this.comboBoxInfoPengiriman.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxInfoPengiriman.Name = "comboBoxInfoPengiriman";
@@ -171,11 +146,19 @@
             this.label6.Location = new System.Drawing.Point(8, -6);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(304, 50);
+            this.label6.Size = new System.Drawing.Size(312, 50);
             this.label6.TabIndex = 50;
             this.label6.Text = "Order";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // listBoxOrder
+            // 
+            this.listBoxOrder.FormattingEnabled = true;
+            this.listBoxOrder.Location = new System.Drawing.Point(14, 260);
+            this.listBoxOrder.Name = "listBoxOrder";
+            this.listBoxOrder.Size = new System.Drawing.Size(293, 186);
+            this.listBoxOrder.TabIndex = 60;
             // 
             // FormOrder
             // 
@@ -189,7 +172,6 @@
             this.Load += new System.EventHandler(this.FormOrder_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,7 +187,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelInfoToko;
         private System.Windows.Forms.Button buttonCheckOut;
-        private System.Windows.Forms.DataGridView dataGridViewOrder;
-        private System.Windows.Forms.TextBox textBoxAlamat;
+        private System.Windows.Forms.ListBox listBoxOrder;
     }
 }

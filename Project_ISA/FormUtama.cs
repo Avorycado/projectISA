@@ -36,6 +36,8 @@ namespace Project_ISA
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
             }
 
+            
+
             menuStripUser.Visible = true;
             menuStripUser.Enabled = true;
 
@@ -293,8 +295,9 @@ namespace Project_ISA
                     }
                     else
                     {
-                        labelUser.Text = "Administrator: " + tmpAdministrator.Nama;
+                        labelUser.Text = "User: " + tmpAdministrator.Nama;
                         labelStatus.Text = "Status: Log In";
+                        MessageBox.Show(tmpAdministrator.ToString());
                     }
                 }
             }

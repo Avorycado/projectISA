@@ -82,14 +82,14 @@ namespace Project_ISA
                             pbox = new PictureBox();
                             pbox.Image = Image.FromFile(@"" + product[pmbt].Foto);
                             pbox.Size = new Size(90, 90);
-                            pbox.Location = new Point(41, 17);
+                            pbox.Location = new Point(41, 27);
                             pbox.SizeMode = PictureBoxSizeMode.StretchImage;
                             //pbox.Anchor = AnchorStyles.Top;
                             pnl.Controls.Add(pbox);
 
                             Label lbel = new Label();
                             lbel.Text = product[pmbt].Nama;
-                            lbel.Location = new Point(41, pbox.Height + 20);
+                            lbel.Location = new Point(41, 7);
                             //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
                             pnl.Controls.Add(lbel);
 

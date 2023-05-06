@@ -49,7 +49,10 @@ namespace Project_ISA
                                                                              "'?", "Konfirmasi Verifikasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (confirm == DialogResult.Yes)
                                 {
+                                    FormUtama formUtama = (FormUtama)this.Owner;
+
                                     product.Status = "Verified";
+                                    product.Administrator = formUtama.tmpAdministrator;
                                     if (product.UbahStatus())
                                     {
                                         MessageBox.Show("Data pengajuan product telah berhasil diverifikasi");
@@ -133,7 +136,7 @@ namespace Project_ISA
                 //                                    product.Jumlah, product.Category.Nama, product.Sellers.Nama,
                 //                                    product.Administrator.Nama, product.Foto, product.Status);
                 //}
-                if (dataGridViewVerifikasi.ColumnCount <= 11)
+                if (dataGridViewVerifikasi.ColumnCount <= 12)
                 {
                     DataGridViewButtonColumn buttonVerifikasi = new DataGridViewButtonColumn();
                     buttonVerifikasi.HeaderText = "Aksi";

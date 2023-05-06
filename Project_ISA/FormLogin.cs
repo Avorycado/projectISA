@@ -100,7 +100,7 @@ namespace Project_ISA
                         throw new Exception("Data pengguna tidak ditemukan");
                     }
                 }
-                else if(radioButtonSeller.Checked== true)
+                if(radioButtonSeller.Checked== true)
                 {
                     Sellers tmp = Sellers.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
@@ -110,6 +110,8 @@ namespace Project_ISA
                         form.tmpSellers = tmp;
                         form.FormUtama_Load(this, e);
 
+                        this.DialogResult = DialogResult.OK;
+
                         this.Close();
                     }
                     else
@@ -117,15 +119,16 @@ namespace Project_ISA
                         throw new Exception("Data pegawai tidak ditemukan");
                     }
                 }
-                else
+                if(radioButtonAdmin.Checked == true)
                 {
                     Administrator tmp = Administrator.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
-
                         FormUtama form = (FormUtama)this.Owner;
                         form.tmpAdministrator = tmp;
                         form.FormUtama_Load(this, e);
+
+                        this.DialogResult = DialogResult.OK;
 
                         this.Close();
                     }

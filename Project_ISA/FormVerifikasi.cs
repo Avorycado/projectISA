@@ -19,7 +19,7 @@ namespace Project_ISA
         }
         public List<Product> listProduct = new List<Product>();
         public List<Product> listProduct2 = new List<Product>();
-        public Product product;
+        //public Product product;
         private void dataGridViewVerifikasi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try

@@ -54,12 +54,12 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, u.iduser, p.idpayment_method " +
+                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method " +
                       "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" + ";";
             }
             else
             {
-                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, u.iduser, p.idpayment_method " +
+                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method " +
                       "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
@@ -124,7 +124,7 @@ namespace Sisbro_LIB
         public static Orders AmbilDataByKode(int idOrders)
         {
             string sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, u.iduser, p.idpayment_method " +
-                           "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" + ";";
+                          "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" + ";";
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
@@ -148,7 +148,7 @@ namespace Sisbro_LIB
         public static int GenerateIdOrder()
         {
             string sql = "SELECT MAX(idorder) " +
-                         "FROM order " + ";";
+                         "FROM orders " + ";";
 
             int hasilId = 0;
             MySqlDataReader hasil = Koneksi.AmbilData(sql);

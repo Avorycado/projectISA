@@ -14,28 +14,48 @@ namespace Project_ISA
     {
         FormUtama formUtama;
         public List<History> listHistory = new List<History>();
+        public List<Orders> listOrder = new List<Orders>();
         public FormHistory()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idHistory = int.Parse(dataGridView1.CurrentRow.Cells["idhistory"].Value.ToString());
-            int idUser = int.Parse(dataGridView1.CurrentRow.Cells["user_iduser"].Value.ToString());
-            int idOrder = int.Parse(dataGridView1.CurrentRow.Cells["order_idorder"].Value.ToString());
+            try
+            {
+                int idOrder = int.Parse(dataGridViewHistory.CurrentRow.Cells["order_idorder"].Value.ToString());
+                DateTime tanggal_order = (DateTime)dataGridViewHistory.CurrentRow.Cells["tanggal_order"].Value;
+                double totalPrice = double.Parse(dataGridViewHistory.CurrentRow.Cells["totalPrice"].Value.ToString());
+                string alamatPengiriman = dataGridViewHistory.CurrentRow.Cells["alamatPengiriman"].Value.ToString();
+                User user = (User)dataGridViewHistory.CurrentRow.Cells["user"].Value;
+                PaymentMethod paymentMethod= (PaymentMethod)dataGridViewHistory.CurrentRow.Cells["paymentmethod"].Value;
+                Orders orders = new Orders(idOrder, tanggal_order, totalPrice, alamatPengiriman, user, paymentMethod);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void FormHistory_Load(object sender, EventArgs e)
         {
             //formUtama= (FormUtama)this.MdiParent;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            listHistory = History.BacaData("", "");
+            dataGridViewHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listOrder = Orders.BacaData("","");
+            if(listOrder.Count > 0)
+            {
+                dataGridViewHistory.DataSource = listOrder;
+            }
+            else
+            {
+                dataGridViewHistory.DataSource = null;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonBack_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

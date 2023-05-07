@@ -22,6 +22,9 @@ namespace Project_ISA
         public Administrator tmpAdministrator = null;
 
         public Product tmpProduct = null;
+
+        
+
         public void FormUtama_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
@@ -29,58 +32,59 @@ namespace Project_ISA
             try
             {
                 Koneksi koneksi = new Koneksi(db.Default.DbServer, db.Default.DbName, db.Default.DbUsername, db.Default.DbPassword);
-                //labelUser.Text = tmpUser.Nama;
-                //labelStatus.Text = "Log In";
+                ////labeluser.text = tmpuser.nama;
+                ////labelstatus.text = "log in";
                 //MessageBox.Show("Koneksi Berhasil", "Informasi");
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Koneksi Gagal. Pesan Kesalahan : " + ex);
-            }
-
-            
-
-            menuStripUser.Visible = true;
-            menuStripUser.Enabled = true;
-
-            menuStripSellers.Visible = false;
-            menuStripSellers.Enabled = false;
-
-            menuStripAdmin.Visible = false;
-            menuStripAdmin.Enabled = false;
+            } 
 
             if (tmpSellers != null)
             {
-                menuStripUser.Visible = false;
-                menuStripUser.Enabled = false;
+                productsToolStripMenuItem.Visible = false;
+                accProductsToolStripMenuItem.Visible = false;
+                yourOrdersToolStripMenuItem.Visible = false;
+                cartsToolStripMenuItem.Visible = false;
+                historyOrdersToolStripMenuItem.Visible = false;
+                addPaymentMethodsToolStripMenuItem.Visible = false;
+                profileToolStripMenuItem.Visible = false;
 
-                menuStripAdmin.Visible = false;
-                menuStripAdmin.Enabled = false;
-
-                menuStripSellers.Visible = true;
-                menuStripSellers.Enabled = true;
+                addProductsToolStripMenuItem.Visible = true;
+                logInToolStripMenuItem.Visible = true;
+                logInToolStripMenuItem.Visible = true;
+                exitToolStripMenuItem.Visible = true;
             }
             else if(tmpAdministrator != null)
             {
-                menuStripUser.Visible = false;
-                menuStripUser.Enabled = false;
+                productsToolStripMenuItem.Visible = false;
+                addProductsToolStripMenuItem.Visible = false;
+                yourOrdersToolStripMenuItem.Visible = false;
+                cartsToolStripMenuItem.Visible = false;
+                historyOrdersToolStripMenuItem.Visible = false;
+                profileToolStripMenuItem.Visible = false;
 
-                menuStripSellers.Visible = false;
-                menuStripSellers.Enabled = false;
-
-                menuStripAdmin.Visible = true;
-                menuStripAdmin.Enabled = true;
+                accProductsToolStripMenuItem.Visible = true;
+                addPaymentMethodsToolStripMenuItem.Visible = true;
+                logInToolStripMenuItem.Visible = true;
+                logInToolStripMenuItem.Visible = true;
+                exitToolStripMenuItem.Visible = true;
             }
             else
             {
-                menuStripSellers.Visible = false;
-                menuStripSellers.Enabled = false;
+                addPaymentMethodsToolStripMenuItem.Visible = false;
+                addProductsToolStripMenuItem.Visible = false;
+                accProductsToolStripMenuItem.Visible = false;
 
-                menuStripAdmin.Visible = false;
-                menuStripAdmin.Enabled = false;
-
-                menuStripUser.Visible = true;
-                menuStripUser.Enabled = true;
+                historyOrdersToolStripMenuItem.Visible = true;
+                cartsToolStripMenuItem.Visible = true;
+                ordersToolStripMenuItem.Visible = true;
+                profileToolStripMenuItem.Visible = true;
+                productsToolStripMenuItem.Visible = true;
+                logInToolStripMenuItem.Visible = true;
+                logInToolStripMenuItem.Visible = true;
+                exitToolStripMenuItem.Visible = true;
             }
         }
 
@@ -197,62 +201,6 @@ namespace Project_ISA
             }
         }
 
-        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tmpUser == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormProduct frm = new FormProduct();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
-        private void cartToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tmpUser == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormCart frm = new FormCart();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
-        private void ordersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tmpUser == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormOrder frm = new FormOrder();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
-        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tmpUser == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormHistory frm = new FormHistory();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
         private void profileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tmpUser == null)
@@ -331,45 +279,37 @@ namespace Project_ISA
                 labelUser.Text = "User: ";
                 labelStatus.Text = "Status: Not in Account";
             }
+            else if (tmpSellers != null)
+            {
+                tmpSellers = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+                productsToolStripMenuItem.Visible = true;
+                historyOrdersToolStripMenuItem.Visible = true;
+                cartsToolStripMenuItem.Visible = true;
+                ordersToolStripMenuItem.Visible = true;
+                profileToolStripMenuItem.Visible = true;
+            }
+            else if(tmpAdministrator != null)
+            {
+                tmpAdministrator = null;
+                FormUtama_Load(this, e);
+                MessageBox.Show("Anda berhasil Log Out!");
+                productsToolStripMenuItem.Visible = true;
+                historyOrdersToolStripMenuItem.Visible = true;
+                cartsToolStripMenuItem.Visible = true;
+                ordersToolStripMenuItem.Visible = true;
+                profileToolStripMenuItem.Visible = true;
+            }
             else
             {
                 MessageBox.Show("Akun anda tidak sedang Log In!");
             }            
         }
-
-        private void labelUser_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-
+  
         private void toolStripMenuItemExit_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void toolStripMenuItemProduct_Click(object sender, EventArgs e)
-        {
-            if (tmpSellers == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormTambahProduct frm = new FormTambahProduct();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
         }
 
         private void toolSlripMenuItemLogOut_Click(object sender, EventArgs e)
@@ -395,64 +335,6 @@ namespace Project_ISA
             }
         }
 
-        private void menuStripSellers_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void labelSaldo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addPaymentMethodsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void menustripaccproduct_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void accProductToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (tmpAdministrator == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormVerifikasi frm = new FormVerifikasi();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
-        private void addPaymentMethodsToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            if (tmpAdministrator == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormAddPaymentMethods frm = new FormAddPaymentMethods();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
         private void logOutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (tmpAdministrator != null)
@@ -473,6 +355,114 @@ namespace Project_ISA
         private void exitToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItemProfile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yourOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormOrder frm = new FormOrder();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void productsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormProduct frm = new FormProduct();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void addProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpSellers == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormTambahProduct frm = new FormTambahProduct();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void cartsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormCart frm = new FormCart();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void historyOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpUser == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormHistory frm = new FormHistory();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void addPaymentMethodsToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (tmpAdministrator == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormAddPaymentMethods frm = new FormAddPaymentMethods();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void accProductsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpAdministrator == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormVerifikasi frm = new FormVerifikasi();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
         }
     }
 }

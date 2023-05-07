@@ -33,7 +33,7 @@ namespace Project_ISA
                         if(textBoxPassword.Text != null)
                         {
                             string username = textBoxUsername.Text;
-                            string password = Cryptography.EncryptAes(textBoxPassword.Text, username);
+                            //string password = Cryptography.EncryptAes(textBoxPassword.Text, username);
                         }
                         
                         User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,

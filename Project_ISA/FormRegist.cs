@@ -30,6 +30,12 @@ namespace Project_ISA
                 {
                     if (radioButtonPembeli.Checked == true)
                     {
+                        if(textBoxPassword.Text != null)
+                        {
+                            string username = textBoxUsername.Text;
+                            string password = Cryptography.EncryptAes(textBoxPassword.Text, username);
+                        }
+                        
                         User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
                                              textBoxPassword.Text, textBoxEmail.Text,
                                              int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0);

@@ -49,6 +49,7 @@
     <Compile Include="Administrator.cs" />
     <Compile Include="Cart.cs" />
     <Compile Include="Category.cs" />
+    <Compile Include="Cryptography.cs" />
     <Compile Include="History.cs" />
     <Compile Include="Koneksi.cs" />
     <Compile Include="Orders.cs" />

@@ -48,6 +48,11 @@ namespace Project_ISA
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelStatus = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
+            this.menuStripAdmin = new System.Windows.Forms.MenuStrip();
+            this.accProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPaymentMethodsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBoxCloth = new System.Windows.Forms.PictureBox();
             this.pictureBoxSkincare = new System.Windows.Forms.PictureBox();
             this.pictureBoxShoes = new System.Windows.Forms.PictureBox();
@@ -59,19 +64,14 @@ namespace Project_ISA
             this.toolStripMenuItemLogin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolSlripMenuItemLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStripAdmin = new System.Windows.Forms.MenuStrip();
-            this.accProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPaymentMethodsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripUser.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.menuStripAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSkincare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBag)).BeginInit();
             this.menuStripSellers.SuspendLayout();
-            this.menuStripAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -106,7 +106,7 @@ namespace Project_ISA
             this.menuStripUser.Name = "menuStripUser";
             this.menuStripUser.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStripUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStripUser.Size = new System.Drawing.Size(778, 36);
+            this.menuStripUser.Size = new System.Drawing.Size(781, 36);
             this.menuStripUser.TabIndex = 42;
             this.menuStripUser.Text = "menuStrip1";
             this.menuStripUser.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -290,6 +290,54 @@ namespace Project_ISA
             this.labelUser.Text = "user";
             this.labelUser.Click += new System.EventHandler(this.labelUser_Click);
             // 
+            // menuStripAdmin
+            // 
+            this.menuStripAdmin.BackColor = System.Drawing.Color.DeepPink;
+            this.menuStripAdmin.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStripAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accProductToolStripMenuItem,
+            this.addPaymentMethodsToolStripMenuItem1,
+            this.logOutToolStripMenuItem1,
+            this.exitToolStripMenuItem2});
+            this.menuStripAdmin.Location = new System.Drawing.Point(0, 194);
+            this.menuStripAdmin.Name = "menuStripAdmin";
+            this.menuStripAdmin.Size = new System.Drawing.Size(553, 36);
+            this.menuStripAdmin.TabIndex = 56;
+            this.menuStripAdmin.Text = "menuStrip1";
+            // 
+            // accProductToolStripMenuItem
+            // 
+            this.accProductToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accProductToolStripMenuItem.Name = "accProductToolStripMenuItem";
+            this.accProductToolStripMenuItem.Size = new System.Drawing.Size(140, 32);
+            this.accProductToolStripMenuItem.Text = "Acc Product";
+            this.accProductToolStripMenuItem.Click += new System.EventHandler(this.accProductToolStripMenuItem_Click);
+            // 
+            // addPaymentMethodsToolStripMenuItem1
+            // 
+            this.addPaymentMethodsToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPaymentMethodsToolStripMenuItem1.Name = "addPaymentMethodsToolStripMenuItem1";
+            this.addPaymentMethodsToolStripMenuItem1.Size = new System.Drawing.Size(242, 32);
+            this.addPaymentMethodsToolStripMenuItem1.Text = "Add Payment Methods";
+            this.addPaymentMethodsToolStripMenuItem1.Click += new System.EventHandler(this.addPaymentMethodsToolStripMenuItem1_Click);
+            // 
+            // logOutToolStripMenuItem1
+            // 
+            this.logOutToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
+            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(101, 32);
+            this.logOutToolStripMenuItem1.Text = "Log Out";
+            this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
+            // 
+            // exitToolStripMenuItem2
+            // 
+            this.exitToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
+            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(62, 32);
+            this.exitToolStripMenuItem2.Text = "Exit";
+            this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
+            // 
             // pictureBoxCloth
             // 
             this.pictureBoxCloth.BackgroundImage = global::Project_ISA.Properties.Resources.baju;
@@ -356,7 +404,7 @@ namespace Project_ISA
             this.menuStripSellers.Location = new System.Drawing.Point(0, 288);
             this.menuStripSellers.Name = "menuStripSellers";
             this.menuStripSellers.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStripSellers.Size = new System.Drawing.Size(778, 36);
+            this.menuStripSellers.Size = new System.Drawing.Size(781, 36);
             this.menuStripSellers.TabIndex = 55;
             this.menuStripSellers.Text = "menuStrip1";
             this.menuStripSellers.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripSellers_ItemClicked);
@@ -409,60 +457,12 @@ namespace Project_ISA
             this.toolStripMenuItemExit.Text = "Exit";
             this.toolStripMenuItemExit.Click += new System.EventHandler(this.toolStripMenuItemExit_Click);
             // 
-            // menuStripAdmin
-            // 
-            this.menuStripAdmin.BackColor = System.Drawing.Color.DeepPink;
-            this.menuStripAdmin.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStripAdmin.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStripAdmin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accProductToolStripMenuItem,
-            this.addPaymentMethodsToolStripMenuItem1,
-            this.logOutToolStripMenuItem1,
-            this.exitToolStripMenuItem2});
-            this.menuStripAdmin.Location = new System.Drawing.Point(0, 194);
-            this.menuStripAdmin.Name = "menuStripAdmin";
-            this.menuStripAdmin.Size = new System.Drawing.Size(553, 36);
-            this.menuStripAdmin.TabIndex = 56;
-            this.menuStripAdmin.Text = "menuStrip1";
-            // 
-            // accProductToolStripMenuItem
-            // 
-            this.accProductToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accProductToolStripMenuItem.Name = "accProductToolStripMenuItem";
-            this.accProductToolStripMenuItem.Size = new System.Drawing.Size(140, 32);
-            this.accProductToolStripMenuItem.Text = "Acc Product";
-            this.accProductToolStripMenuItem.Click += new System.EventHandler(this.accProductToolStripMenuItem_Click);
-            // 
-            // addPaymentMethodsToolStripMenuItem1
-            // 
-            this.addPaymentMethodsToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPaymentMethodsToolStripMenuItem1.Name = "addPaymentMethodsToolStripMenuItem1";
-            this.addPaymentMethodsToolStripMenuItem1.Size = new System.Drawing.Size(242, 32);
-            this.addPaymentMethodsToolStripMenuItem1.Text = "Add Payment Methods";
-            this.addPaymentMethodsToolStripMenuItem1.Click += new System.EventHandler(this.addPaymentMethodsToolStripMenuItem1_Click);
-            // 
-            // logOutToolStripMenuItem1
-            // 
-            this.logOutToolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logOutToolStripMenuItem1.Name = "logOutToolStripMenuItem1";
-            this.logOutToolStripMenuItem1.Size = new System.Drawing.Size(101, 32);
-            this.logOutToolStripMenuItem1.Text = "Log Out";
-            this.logOutToolStripMenuItem1.Click += new System.EventHandler(this.logOutToolStripMenuItem1_Click);
-            // 
-            // exitToolStripMenuItem2
-            // 
-            this.exitToolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitToolStripMenuItem2.Name = "exitToolStripMenuItem2";
-            this.exitToolStripMenuItem2.Size = new System.Drawing.Size(62, 32);
-            this.exitToolStripMenuItem2.Text = "Exit";
-            this.exitToolStripMenuItem2.Click += new System.EventHandler(this.exitToolStripMenuItem2_Click);
-            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(778, 360);
+            this.ClientSize = new System.Drawing.Size(781, 360);
             this.Controls.Add(this.menuStripSellers);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStripUser);
@@ -477,14 +477,14 @@ namespace Project_ISA
             this.menuStripUser.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.menuStripAdmin.ResumeLayout(false);
+            this.menuStripAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSkincare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBag)).EndInit();
             this.menuStripSellers.ResumeLayout(false);
             this.menuStripSellers.PerformLayout();
-            this.menuStripAdmin.ResumeLayout(false);
-            this.menuStripAdmin.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

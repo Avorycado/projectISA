@@ -145,7 +145,7 @@ namespace Project_ISA
         private void Co_Click(object sender, EventArgs e)
         {
             Label a = sender as Label;
-            MessageBox.Show(listProduct[int.Parse(a.Name)].Nama.ToString()) ;
+            MessageBox.Show(listProduct[int.Parse(a.Name)].Nama.ToString());
 
             FormUtama formUtama = (FormUtama)this.Owner;
 

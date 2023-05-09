@@ -16,5 +16,10 @@ namespace Project_ISA
         {
             InitializeComponent();
         }
+
+        private void FormCart_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

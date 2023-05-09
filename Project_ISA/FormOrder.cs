@@ -58,18 +58,18 @@ namespace Project_ISA
                 FormUtama formUtama = (FormUtama)this.Owner;
 
                 PaymentMethod paymentMethod = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
-                Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, totalPrice, comboBoxInfoPengiriman.Text, formUtama.tmpUser, paymentMethod);
+                //Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, totalPrice, comboBoxInfoPengiriman.Text, formUtama.tmpUser, paymentMethod, product.IdProduct);
 
-                if (order.TambahData())
-                {
-                    MessageBox.Show("Data order berhasil untuk ditambahkan!");
-                    listBoxOrder.Items.Add(product);
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    throw new Exception("Gagal untuk menambahkan data!");
-                }
+                //if (order.TambahData())
+                //{
+                //    MessageBox.Show("Data order berhasil untuk ditambahkan!");
+                //    listBoxOrder.Items.Add(product);
+                //    this.DialogResult = DialogResult.OK;
+                //}
+                //else
+                //{
+                //    throw new Exception("Gagal untuk menambahkan data!");
+                //}
             }
             catch (Exception ex)
             {
@@ -79,12 +79,12 @@ namespace Project_ISA
 
         private void comboBoxInfoPengiriman_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string pengirimanDipilih = (string)comboBoxInfoPengiriman.SelectedItem;
+            
         }
 
         private void comboBoxMetodePembayaran_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PaymentMethod pembayaranDipilih = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
+            
         }
 
         private void labelAlamat_Click(object sender, EventArgs e)

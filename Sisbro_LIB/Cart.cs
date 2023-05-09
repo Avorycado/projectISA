@@ -10,7 +10,8 @@ namespace Sisbro_LIB
     public class Cart
     {
         #region Data Member
-        private Product product;
+        private int idCart;
+        private User user;
         private Orders orders;
         private int jumlahBarang;
         #endregion

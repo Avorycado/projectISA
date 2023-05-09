@@ -30,7 +30,8 @@ namespace Project_ISA
                 string alamatPengiriman = dataGridViewHistory.CurrentRow.Cells["alamatPengiriman"].Value.ToString();
                 User user = (User)dataGridViewHistory.CurrentRow.Cells["user"].Value;
                 PaymentMethod paymentMethod= (PaymentMethod)dataGridViewHistory.CurrentRow.Cells["paymentmethod"].Value;
-                Orders orders = new Orders(idOrder, tanggal_order, totalPrice, alamatPengiriman, user, paymentMethod);
+                Product product = (Product)dataGridViewHistory.CurrentRow.Cells["product"].Value;
+                Orders orders = new Orders(idOrder, tanggal_order, totalPrice, alamatPengiriman, user, paymentMethod, product);
             }
             catch(Exception ex)
             {

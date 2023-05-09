@@ -16,10 +16,11 @@ namespace Sisbro_LIB
         private string alamatPengiriman;
         private User user;
         private PaymentMethod paymentMethod;
+        private Product product;
         #endregion
 
         #region Constructors
-        public Orders(int idOrders, DateTime tanggalOrder, double totalPrice, string alamatPengiriman, User user, PaymentMethod paymentMethod)
+        public Orders(int idOrders, DateTime tanggalOrder, double totalPrice, string alamatPengiriman, User user, PaymentMethod paymentMethod, Product product)
         {
             this.IdOrders = idOrders;
             this.TanggalOrder = tanggalOrder;
@@ -27,6 +28,7 @@ namespace Sisbro_LIB
             this.AlamatPengiriman = alamatPengiriman;
             this.User = user;
             this.PaymentMethod = paymentMethod;
+            Product = product;
         }
 
         public Orders(DateTime tanggalOrder, double totalPrice, string alamatPengiriman, User user, PaymentMethod paymentMethod)
@@ -46,6 +48,7 @@ namespace Sisbro_LIB
         public string AlamatPengiriman { get => alamatPengiriman; set => alamatPengiriman = value; }
         public User User { get => user; set => user = value; }
         public PaymentMethod PaymentMethod { get => paymentMethod; set => paymentMethod = value; }
+        public Product Product { get => product; set => product = value; }
         #endregion
 
         #region Method
@@ -54,13 +57,13 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method " +
-                      "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" + ";";
+                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method, o.product_idproduct " +
+                      "FROM `order` o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method INNER JOIN product po ON o.product_idproduct = po.idproduct" + ";";
             }
             else
             {
-                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method " +
-                      "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" +
+                sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method, o.product_idproduct " +
+                      "FROM `order` o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method INNER JOIN product po ON o.product_idproduct = po.idproduct" +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
 
@@ -72,6 +75,7 @@ namespace Sisbro_LIB
             {
                 User user = User.AmbilDataByKode(hasil.GetValue(0).ToString());
                 PaymentMethod paymentMethod = PaymentMethod.AmbilDataByKode(hasil.GetValue(0).ToString());
+                Product product = Product.AmbilDataByKode(int.Parse(hasil.GetValue(6).ToString()));
                 //baca data dr MySqlDataReader dan simpan di objek
                 //Orders orders = new Orders(int.Parse(hasil.GetValue(0).ToString()),
                 //    (DateTime)hasil.GetValue(1),
@@ -81,20 +85,21 @@ namespace Sisbro_LIB
                                 double.Parse(hasil.GetValue(2).ToString()), 
                                 hasil.GetValue(3).ToString(), 
                                 user, 
-                                paymentMethod);
+                                paymentMethod, product);
                 listOrders.Add(orders);
             }
             return listOrders;
         }
         public bool TambahData()
         {
-            string sql = "INSERT INTO orders(idOrder, tanggal_order, total_price, alamat_pengiriman, user_iduser, payment_method_idpayment_method) VALUES ('" +
+            string sql = "INSERT INTO `order`(idOrder, tanggal_order, total_price, alamat_pengiriman, user_iduser, payment_method_idpayment_method, product_idproduct) VALUES ('" +
                          this.IdOrders + "', '" +
                          this.TanggalOrder.ToString("yyyy-MM-dd hh-mm-ss") + "', '" +
                          this.TotalPrice + "', '" +
                          this.AlamatPengiriman + "', '" +
                          this.User.IdUser + "', '" +
-                         this.PaymentMethod.IdPaymentMethod + "');";
+                         this.PaymentMethod.IdPaymentMethod + "', '" +
+                         this.Product.IdProduct + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -116,15 +121,15 @@ namespace Sisbro_LIB
 
         public bool HapusData()
         {
-            string sql = "DELETE FROM orders WHERE idOrder='" + this.IdOrders + "'";
+            string sql = "DELETE FROM `order` WHERE idOrder='" + this.IdOrders + "'";
             bool result = Koneksi.ExecuteDML(sql);
             return true;
         }
 
         public static Orders AmbilDataByKode(int idOrders)
         {
-            string sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, u.iduser, p.idpayment_method " +
-                          "FROM orders o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method" + ";";
+            string sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, u.iduser, p.idpayment_method, o.product_idproduct " +
+                          "FROM `order` o INNER JOIN user u ON o.user_iduser=u.iduser INNER JOIN payment_method p ON o.payment_method_idpayment_method=p.idpayment_method INNER JOIN product po ON o.product_idproduct = po.idproduct" + ";";
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
@@ -132,12 +137,14 @@ namespace Sisbro_LIB
             {
                 User user = User.AmbilDataByKode(hasil.GetValue(0).ToString());
                 PaymentMethod paymentMethod = PaymentMethod.AmbilDataByKode(hasil.GetValue(0).ToString());
+                Product product = Product.AmbilDataByKode(int.Parse(hasil.GetValue(6).ToString()));
                 Orders orders = new Orders(int.Parse(hasil.GetValue(0).ToString()),
                                 (DateTime)hasil.GetValue(1),
                                 double.Parse(hasil.GetValue(2).ToString()),
                                 hasil.GetValue(3).ToString(),
                                 user,
-                                paymentMethod);
+                                paymentMethod,
+                                product);
                 return orders;
             }
             else
@@ -147,8 +154,7 @@ namespace Sisbro_LIB
         }
         public static int GenerateIdOrder()
         {
-            string sql = "SELECT MAX(idorder) " +
-                         "FROM orders " + ";";
+            string sql = "SELECT MAX(idorder) FROM `order`;";
 
             int hasilId = 0;
             MySqlDataReader hasil = Koneksi.AmbilData(sql);

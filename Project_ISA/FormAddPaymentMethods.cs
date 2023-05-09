@@ -27,6 +27,7 @@ namespace Project_ISA
                     int id = PaymentMethod.GenerateIdProduct();
                     PaymentMethod.TambahData(id, textBoxPaymentMethod.Text);
                     MessageBox.Show("Metode pembayaran berhasil ditambahkan.", "Information");
+                    textBoxPaymentMethod.Text = "";
                 }
                 else
                 {

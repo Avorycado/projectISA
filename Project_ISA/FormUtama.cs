@@ -472,5 +472,19 @@ namespace Project_ISA
         {
 
         }
+
+        private void addCategiryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tmpAdministrator == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormAddCategory frm = new FormAddCategory();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
     }
 }

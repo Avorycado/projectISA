@@ -62,11 +62,11 @@ namespace Sisbro_LIB
             return listCategory;
         }
 
-        public bool TambahData()
+        public static bool TambahData(int id, string nama)
         {
             string sql = "INSERT INTO category(idCategory, nama) VALUES ('" +
-                         this.IdCategory + "', '" +
-                         this.Nama + ";";
+                         id + "', '" +
+                         nama + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -95,6 +95,27 @@ namespace Sisbro_LIB
         public override string ToString()
         {
             return Nama;
+        }
+
+        public static int GenerateIdCategory()
+        {
+            string sql = "SELECT MAX(idcategory) " +
+                         "FROM category " + ";";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
         }
         #endregion
     }

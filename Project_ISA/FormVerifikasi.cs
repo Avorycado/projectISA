@@ -143,7 +143,7 @@ namespace Project_ISA
                 //                                    product.Jumlah, product.Category.Nama, product.Sellers.Nama,
                 //                                    product.Administrator.Nama, product.Foto, product.Status);
                 //}
-                if (dataGridViewVerifikasi.ColumnCount <= 12)
+                if (dataGridViewVerifikasi.ColumnCount <= 11)
                 {
                     DataGridViewButtonColumn buttonVerifikasi = new DataGridViewButtonColumn();
                     buttonVerifikasi.HeaderText = "Aksi";

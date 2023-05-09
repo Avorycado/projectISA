@@ -79,6 +79,7 @@ namespace Project_ISA
                 addProductsToolStripMenuItem.Visible = false;
                 accProductsToolStripMenuItem.Visible = false;
 
+                productsToolStripMenuItem1.Visible = true;
                 historyOrdersToolStripMenuItem.Visible = true;
                 cartsToolStripMenuItem.Visible = true;
                 ordersToolStripMenuItem.Visible = true;
@@ -465,6 +466,11 @@ namespace Project_ISA
                 frm.Owner = this;
                 frm.ShowDialog();
             }
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

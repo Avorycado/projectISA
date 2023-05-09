@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBoxOrder = new System.Windows.Forms.ListBox();
             this.buttonCheckOut = new System.Windows.Forms.Button();
             this.comboBoxMetodePembayaran = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.labelInfoToko = new System.Windows.Forms.Label();
             this.labelAlamat = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBoxOrder = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 498);
             this.panel1.TabIndex = 6;
+            // 
+            // listBoxOrder
+            // 
+            this.listBoxOrder.FormattingEnabled = true;
+            this.listBoxOrder.Location = new System.Drawing.Point(14, 260);
+            this.listBoxOrder.Name = "listBoxOrder";
+            this.listBoxOrder.Size = new System.Drawing.Size(293, 186);
+            this.listBoxOrder.TabIndex = 60;
             // 
             // buttonCheckOut
             // 
@@ -151,14 +159,6 @@
             this.label6.Text = "Order";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // listBoxOrder
-            // 
-            this.listBoxOrder.FormattingEnabled = true;
-            this.listBoxOrder.Location = new System.Drawing.Point(14, 260);
-            this.listBoxOrder.Name = "listBoxOrder";
-            this.listBoxOrder.Size = new System.Drawing.Size(293, 186);
-            this.listBoxOrder.TabIndex = 60;
             // 
             // FormOrder
             // 

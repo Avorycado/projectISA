@@ -17,3 +17,4 @@ C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.cspro
 C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.CopyComplete
 C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.dll
 C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.pdb
+C:\Users\satya\Documents\GitHub\projectISA\Sisbro_LIB\obj\Debug\Sisbro_LIB.csproj.AssemblyReference.cache

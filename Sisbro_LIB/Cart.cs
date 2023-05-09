@@ -12,23 +12,25 @@ namespace Sisbro_LIB
         #region Data Member
         private int idCart;
         private User user;
-        private Orders orders;
+        private Product product;
         private int jumlahBarang;
         #endregion
 
         #region Constructors
-        public Cart(Product product, Orders orders, int jumlahBarang)
+        public Cart(int idCart, User user, Product product, int jumlahBarang)
         {
-            this.Product = product;
-            this.Orders = orders;
-            this.JumlahBarang = jumlahBarang;
+            IdCart = idCart;
+            User = user;
+            Product = product;
+            JumlahBarang = jumlahBarang;
         }
         #endregion
 
 
         #region Properties
-        public Product Product { get => Product; set => Product = value; }
-        public Orders Orders { get => Orders; set => Orders = value; }
+        public int IdCart { get => idCart; set => idCart = value; }
+        public User User { get => user; set => user = value; }
+        public Product Product { get => product; set => product = value; }
         public int JumlahBarang { get => jumlahBarang; set => jumlahBarang = value; }
         #endregion
 
@@ -38,13 +40,13 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT c.product_idproduct, c.order_idorder, jumlahBarang " +
-                      "FROM cart c inner join product p on c.product_idproduct=p.productid inner join order o on c.order_idorder=o.orderid ";
+                sql = "SELECT c.idcart, c.user_iduser, c.product_idproduct, c.jumlah " +
+                      "FROM cart c inner join product p on c.product_idproduct=p.idproduct inner join user u on c.user_iduser=u.iduser";
             }
             else
             {
-                sql = "SELECT c.product_idproduct, c.order_idorder, jumlahBarang " +
-                      "FROM cart c inner join product p on c.product_idproduct=p.productid inner join order o on c.order_idorder=o.orderid " +
+                sql = "SELECT c.idcart, c.user_iduser, c.product_idproduct, c.jumlah " +
+                      "FROM cart c inner join product p on c.product_idproduct=p.idproduct inner join user u on c.user_iduser=u.iduser " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
 
@@ -54,19 +56,20 @@ namespace Sisbro_LIB
             List<Cart> listCart = new List<Cart>();
             while (hasil.Read() == true) //selama masih ada data
             {
-                Product product = Product.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
-                Orders orders = Orders.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Product product = Product.AmbilDataByKode(int.Parse(hasil.GetValue(2).ToString()));
+                User user = User.AmbilDataByKode(hasil.GetString(1));
                 //baca data dr MySqlDataReader dan simpan di objek
-                Cart cart = new Cart(product, orders, int.Parse(hasil.GetValue(2).ToString()));
+                Cart cart = new Cart(int.Parse(hasil.GetValue(0).ToString()), user, product, int.Parse(hasil.GetValue(3).ToString()));
                 listCart.Add(cart);
             }
             return listCart;
         }
         public bool TambahData()
         {
-            string sql = "INSERT INTO cart(product_idproduct, order_idorder, jumlahBarang) VALUES ('" +
+            string sql = "INSERT INTO cart(idcart, user_iduser, product_idproduct, jumlah) VALUES ('" +
+                         this.IdCart + "', '" +
+                         this.User.IdUser+ "', '" +
                          this.Product.IdProduct + "', '" +
-                         this.Orders.IdOrders + "', '" +
                          this.JumlahBarang + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
@@ -77,7 +80,7 @@ namespace Sisbro_LIB
         {
             string sql = "UPDATE cart " +
                          "SET " +
-                         "jumlahBarang = '" + this.JumlahBarang + "';";
+                         "jumlah = '" + this.JumlahBarang + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -88,6 +91,26 @@ namespace Sisbro_LIB
             string sql = "DELETE FROM cart WHERE idProduct='" + this.Product.IdProduct + "'";
             bool result = Koneksi.ExecuteDML(sql);
             return true;
+        }
+
+        public static int GenerateIdCard()
+        {
+            string sql = "SELECT MAX(idcart) FROM cart;";
+
+            int hasilId = 0;
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            if (hasil.Read())
+            {
+                if (hasil.GetValue(0).ToString() != "")
+                {
+                    hasilId = int.Parse(hasil.GetValue(0).ToString()) + 1;
+                }
+                else
+                {
+                    hasilId = 1;
+                }
+            }
+            return hasilId;
         }
         #endregion
     }

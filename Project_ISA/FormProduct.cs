@@ -101,6 +101,7 @@ namespace Project_ISA
                         Label cart = new Label();
                         cart.Text = "Add To Cart";
                         cart.Location = new Point(5, 155);
+                        cart.Name = listPanel.Count.ToString();
                         cart.Click += new EventHandler(Cart_Click);
                         //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
                         pnl.Controls.Add(cart);
@@ -156,9 +157,28 @@ namespace Project_ISA
 
         private void Cart_Click(object sender, EventArgs e)
         {
-            FormCart frm = new FormCart();
-            frm.Owner = this;
-            frm.ShowDialog();
+            Label a = sender as Label;
+            FormUtama formUtama = (FormUtama)this.Owner;
+
+            int id = Cart.GenerateIdCard();
+
+            Cart cart = new Cart(id, formUtama.tmpUser, listProduct[int.Parse(a.Name)], 1);
+
+            if (cart.TambahData())
+            {
+                DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                if (hasil == DialogResult.OK)
+                {
+                    this.Close();
+                }
+            }
+            else
+            {
+                throw new Exception("Tidak dapat menambahkan data");
+            }
+            //FormCart frm = new FormCart();
+            //frm.Owner = this;
+            //frm.ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

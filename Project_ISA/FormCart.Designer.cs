@@ -52,6 +52,7 @@
             this.buttonExit.Size = new System.Drawing.Size(50, 50);
             this.buttonExit.TabIndex = 90;
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // FormCart
             // 

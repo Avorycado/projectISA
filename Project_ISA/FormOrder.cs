@@ -26,7 +26,6 @@ namespace Project_ISA
 
         public User user;
         public Sellers sellers;
-        public double totalPrice;
         public string namaProduct;
         public Product product;
         public List<PaymentMethod> listPayment = new List<PaymentMethod>();
@@ -64,8 +63,9 @@ namespace Project_ISA
                 PaymentMethod paymentMethod = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
 
                 //Product product2 = Product.AmbilDataByKode(product.IdProduct);
+                double total = product.Harga + 15000;
 
-                Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, totalPrice, comboBoxInfoPengiriman.Text, formUtama.tmpUser, paymentMethod, product);
+                Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, total, comboBoxInfoPengiriman.Text, formUtama.tmpUser, paymentMethod, product);
 
                 if (order.TambahData())
                 {

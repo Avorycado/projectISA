@@ -152,9 +152,9 @@ namespace Sisbro_LIB
            
             if (hasil.Read())
             {
-                Category kategori = Category.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
-                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
-                Administrator admin = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Category kategori = Category.AmbilDataByKode(int.Parse(hasil.GetValue(5).ToString()));
+                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(6).ToString()));
+                Administrator admin = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(7).ToString()));
 
                 Product produk = new Product(int.Parse(hasil.GetValue(0).ToString()),
                                                  hasil.GetValue(1).ToString(),

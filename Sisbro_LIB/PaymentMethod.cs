@@ -38,6 +38,10 @@ namespace Sisbro_LIB
         #endregion
 
         #region Method
+        public override string ToString()
+        {
+            return Nama;
+        }
         public static PaymentMethod AmbilDataByKode(string idPaymentMethod)
         {
             string sql = "SELECT idpayment_method, nama " +

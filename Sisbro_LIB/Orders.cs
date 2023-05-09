@@ -76,7 +76,8 @@ namespace Sisbro_LIB
                                 double.Parse(hasil.GetValue(2).ToString()), 
                                 hasil.GetValue(3).ToString(), 
                                 user, 
-                                paymentMethod, product);
+                                paymentMethod, 
+                                product);
                 listOrders.Add(orders);
             }
             return listOrders;
@@ -96,6 +97,34 @@ namespace Sisbro_LIB
             return result;
         }
 
+        public static List<Orders> AmbilData()
+        {
+            string sql = "SELECT o.idorder, o.tanggal_order, o.total_price, o.alamat_pengiriman, o.user_iduser, o.payment_method_idpayment_method, o.product_idproduct FROM `order` o " +
+                "INNER JOIN user u ON o.user_iduser = u.iduser INNER JOIN payment_method pm ON o.payment_method_idpayment_method = pm.idpayment_method INNER JOIN product p ON o.product_idproduct = p.idproduct;";
+
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+
+            //buat list untuk menampung data
+            List<Orders> listOrders = new List<Orders>();
+            while (hasil.Read() == true) //selama masih ada data
+            {
+                User user = User.AmbilDataByKode(hasil.GetValue(4).ToString());
+                PaymentMethod paymentMethod = PaymentMethod.AmbilDataByKode(hasil.GetString(5));
+                Product product = Product.AmbilDataByKode((int)hasil.GetValue(6));
+                //baca data dr MySqlDataReader dan simpan di objek
+                //Orders orders = new Orders(int.Parse(hasil.GetValue(0).ToString()),
+                //    (DateTime)hasil.GetValue(1),
+                //    double.Parse(hasil.GetValue(2).ToString(), hasil.GetValue(3).ToString(), user, paymentMethod));
+                listOrders.Add(new Orders(int.Parse(hasil.GetValue(0).ToString()),
+                                (DateTime)hasil.GetValue(1),
+                                double.Parse(hasil.GetValue(2).ToString()),
+                                hasil.GetValue(3).ToString(),
+                                user,
+                                paymentMethod,
+                                product));
+            }
+            return listOrders;
+        }
         //public bool UbahData()
         //{
         //    string sql = "UPDATE orders " +

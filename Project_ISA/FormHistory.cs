@@ -24,12 +24,12 @@ namespace Project_ISA
         {
             try
             {
-                int idOrder = int.Parse(dataGridViewHistory.CurrentRow.Cells["order_idorder"].Value.ToString());
-                DateTime tanggal_order = (DateTime)dataGridViewHistory.CurrentRow.Cells["tanggal_order"].Value;
+                int idOrder = int.Parse(dataGridViewHistory.CurrentRow.Cells["idOrders"].Value.ToString());
+                DateTime tanggal_order = (DateTime)dataGridViewHistory.CurrentRow.Cells["tanggalOrder"].Value;
                 double totalPrice = double.Parse(dataGridViewHistory.CurrentRow.Cells["totalPrice"].Value.ToString());
                 string alamatPengiriman = dataGridViewHistory.CurrentRow.Cells["alamatPengiriman"].Value.ToString();
                 User user = (User)dataGridViewHistory.CurrentRow.Cells["user"].Value;
-                PaymentMethod paymentMethod= (PaymentMethod)dataGridViewHistory.CurrentRow.Cells["paymentmethod"].Value;
+                PaymentMethod paymentMethod= (PaymentMethod)dataGridViewHistory.CurrentRow.Cells["paymentMethod"].Value;
                 Product product = (Product)dataGridViewHistory.CurrentRow.Cells["product"].Value;
                 Orders orders = new Orders(idOrder, tanggal_order, totalPrice, alamatPengiriman, user, paymentMethod, product);
             }
@@ -42,9 +42,15 @@ namespace Project_ISA
         private void FormHistory_Load(object sender, EventArgs e)
         {
             //formUtama= (FormUtama)this.MdiParent;
-            dataGridViewHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            listOrder = Orders.BacaData("","");
-            if(listOrder.Count > 0)
+            //dataGridViewHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listOrder = Orders.AmbilData();
+            //MessageBox.Show(listOrder[1].Product.Nama.ToString());
+
+            foreach(Orders o in listOrder)
+            {
+                MessageBox.Show(o.Product.ToString());
+            }
+            if (listOrder.Count > 0)
             {
                 dataGridViewHistory.DataSource = listOrder;
             }

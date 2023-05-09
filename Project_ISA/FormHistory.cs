@@ -46,10 +46,6 @@ namespace Project_ISA
             listOrder = Orders.AmbilData();
             //MessageBox.Show(listOrder[1].Product.Nama.ToString());
 
-            foreach(Orders o in listOrder)
-            {
-                MessageBox.Show(o.Product.ToString());
-            }
             if (listOrder.Count > 0)
             {
                 dataGridViewHistory.DataSource = listOrder;

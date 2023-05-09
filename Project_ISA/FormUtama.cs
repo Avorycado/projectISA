@@ -250,7 +250,7 @@ namespace Project_ISA
                     {
                         labelUser.Text = "User: " + tmpAdministrator.Nama;
                         labelStatus.Text = "Status: Log In";
-                        MessageBox.Show(tmpAdministrator.ToString());
+                        //MessageBox.Show(tmpAdministrator.ToString());
                     }
                 }
             }

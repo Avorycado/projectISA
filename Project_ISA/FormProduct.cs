@@ -56,7 +56,7 @@ namespace Project_ISA
             if (100 % rows != 0)
                 rowHeight--;
 
-            MessageBox.Show(rows.ToString());
+            //MessageBox.Show(rows.ToString());
             int height = rows * 180;
 
             TableLayoutPanel tableLayoutPanel1 = new TableLayoutPanel();

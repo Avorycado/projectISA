@@ -36,7 +36,7 @@ namespace Project_ISA
                     pictureBox1.BackgroundImage = Image.FromFile(file);
                     pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
 
-                    MessageBox.Show(foto);
+                    //MessageBox.Show(foto);
                 }
                 catch (IOException)
                 {

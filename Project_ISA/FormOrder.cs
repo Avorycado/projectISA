@@ -61,7 +61,7 @@ namespace Project_ISA
                 FormUtama formUtama = (FormUtama)this.Owner;
 
                 PaymentMethod paymentMethod = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
-                MessageBox.Show(paymentMethod.ToString());
+                //MessageBox.Show(paymentMethod.ToString());
                 //Product product2 = Product.AmbilDataByKode(product.IdProduct);
                 double total = product.Harga + 15000;
 

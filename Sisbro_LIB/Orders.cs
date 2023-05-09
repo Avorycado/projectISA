@@ -28,16 +28,7 @@ namespace Sisbro_LIB
             this.AlamatPengiriman = alamatPengiriman;
             this.User = user;
             this.PaymentMethod = paymentMethod;
-            Product = product;
-        }
-
-        public Orders(DateTime tanggalOrder, double totalPrice, string alamatPengiriman, User user, PaymentMethod paymentMethod)
-        {
-            this.TanggalOrder = tanggalOrder;
-            this.TotalPrice = totalPrice;
-            this.AlamatPengiriman = alamatPengiriman;
-            this.User = user;
-            this.PaymentMethod = paymentMethod;
+            this.Product = product;
         }
         #endregion
 
@@ -73,8 +64,8 @@ namespace Sisbro_LIB
             List<Orders> listOrders = new List<Orders>();
             while (hasil.Read() == true) //selama masih ada data
             {
-                User user = User.AmbilDataByKode(hasil.GetValue(0).ToString());
-                PaymentMethod paymentMethod = PaymentMethod.AmbilDataByKode(hasil.GetValue(0).ToString());
+                User user = User.AmbilDataByKode(hasil.GetValue(4).ToString());
+                PaymentMethod paymentMethod = PaymentMethod.AmbilDataByKode(hasil.GetValue(5).ToString());
                 Product product = Product.AmbilDataByKode(int.Parse(hasil.GetValue(6).ToString()));
                 //baca data dr MySqlDataReader dan simpan di objek
                 //Orders orders = new Orders(int.Parse(hasil.GetValue(0).ToString()),

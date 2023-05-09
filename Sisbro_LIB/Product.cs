@@ -148,28 +148,32 @@ namespace Sisbro_LIB
                          "WHERE idproduct = '" + idproduct + "'";
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
-            while(hasil.Read() == true)
+
+           
+            if (hasil.Read())
             {
-                Category kategori = Category.AmbilDataByKode(int.Parse(hasil.GetValue(5).ToString()));
-                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(6).ToString()));
-                Administrator admin = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(7).ToString()));
-                if (hasil.Read())
-                {
-                    Product produk = new Product(int.Parse(hasil.GetValue(0).ToString()),
-                                                     hasil.GetValue(1).ToString(),
-                                                     double.Parse(hasil.GetValue(2).ToString()),
-                                                     hasil.GetValue(3).ToString(),
-                                                     int.Parse(hasil.GetValue(4).ToString()),
-                                                     kategori, sellers, admin, hasil.GetValue(8).ToString(), 
-                                                     hasil.GetValue(9).ToString());
-                    return produk;
-                }
-                else
-                {
-                    return null;
-                }
+                Category kategori = Category.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+                Administrator admin = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(0).ToString()));
+
+                Product produk = new Product(int.Parse(hasil.GetValue(0).ToString()),
+                                                 hasil.GetValue(1).ToString(),
+                                                 double.Parse(hasil.GetValue(2).ToString()),
+                                                 hasil.GetValue(3).ToString(),
+                                                 int.Parse(hasil.GetValue(4).ToString()),
+                                                 kategori, sellers, admin, hasil.GetValue(8).ToString(),
+                                                 hasil.GetValue(9).ToString());
+                return produk;
             }
-            return null;
+            else
+            {
+                return null;
+            }
+            //while(hasil.Read() == true)
+            //{
+
+            //}
+            //return null;
         }
 
         public static int GenerateIdProduct()

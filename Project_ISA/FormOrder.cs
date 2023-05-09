@@ -41,6 +41,10 @@ namespace Project_ISA
             //labelInfoToko.Text = formUtama.tmpProduct.Sellers.Nama;
             //string payment = comboBoxMetodePembayaran.Text;
 
+            listBoxOrder.Items.Add(product.IdProduct);
+
+            
+
             listPayment = PaymentMethod.BacaData("", "");
 
             comboBoxMetodePembayaran.DataSource = listPayment;
@@ -58,18 +62,22 @@ namespace Project_ISA
                 FormUtama formUtama = (FormUtama)this.Owner;
 
                 PaymentMethod paymentMethod = (PaymentMethod)comboBoxMetodePembayaran.SelectedItem;
-                //Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, totalPrice, comboBoxInfoPengiriman.Text, formUtama.tmpUser, paymentMethod, product.IdProduct);
 
-                //if (order.TambahData())
-                //{
-                //    MessageBox.Show("Data order berhasil untuk ditambahkan!");
-                //    listBoxOrder.Items.Add(product);
-                //    this.DialogResult = DialogResult.OK;
-                //}
-                //else
-                //{
-                //    throw new Exception("Gagal untuk menambahkan data!");
-                //}
+                //Product product2 = Product.AmbilDataByKode(product.IdProduct);
+
+                Orders order = new Orders(Orders.GenerateIdOrder(), DateTime.Now, totalPrice, comboBoxInfoPengiriman.Text, formUtama.tmpUser, paymentMethod, product);
+
+                if (order.TambahData())
+                {
+                    MessageBox.Show("Data order berhasil untuk ditambahkan!");
+                    listBoxOrder.Items.Add(product);
+                    this.DialogResult = DialogResult.OK;
+
+                }
+                else
+                {
+                    throw new Exception("Gagal untuk menambahkan data!");
+                }
             }
             catch (Exception ex)
             {

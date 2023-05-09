@@ -43,7 +43,8 @@ namespace Project_ISA
 
             if (tmpSellers != null)
             {
-                productsToolStripMenuItem.Visible = false;
+                productsToolStripMenuItem.Visible = true;
+                productsToolStripMenuItem1.Visible = false;
                 accProductsToolStripMenuItem.Visible = false;
                 yourOrdersToolStripMenuItem.Visible = false;
                 cartsToolStripMenuItem.Visible = false;
@@ -58,7 +59,8 @@ namespace Project_ISA
             }
             else if(tmpAdministrator != null)
             {
-                productsToolStripMenuItem.Visible = false;
+                productsToolStripMenuItem.Visible = true;
+                productsToolStripMenuItem1.Visible = false;
                 addProductsToolStripMenuItem.Visible = false;
                 yourOrdersToolStripMenuItem.Visible = false;
                 cartsToolStripMenuItem.Visible = false;
@@ -284,7 +286,7 @@ namespace Project_ISA
                 tmpSellers = null;
                 FormUtama_Load(this, e);
                 MessageBox.Show("Anda berhasil Log Out!");
-                productsToolStripMenuItem.Visible = true;
+                addProductsToolStripMenuItem.Visible = true;
                 historyOrdersToolStripMenuItem.Visible = true;
                 cartsToolStripMenuItem.Visible = true;
                 ordersToolStripMenuItem.Visible = true;
@@ -295,7 +297,7 @@ namespace Project_ISA
                 tmpAdministrator = null;
                 FormUtama_Load(this, e);
                 MessageBox.Show("Anda berhasil Log Out!");
-                productsToolStripMenuItem.Visible = true;
+                accProductsToolStripMenuItem.Visible = true;
                 historyOrdersToolStripMenuItem.Visible = true;
                 cartsToolStripMenuItem.Visible = true;
                 ordersToolStripMenuItem.Visible = true;

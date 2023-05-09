@@ -40,6 +40,9 @@ namespace Project_ISA
             this.cartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yourOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPaymentMethodsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPaymentMethodsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.profileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logInToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +60,6 @@ namespace Project_ISA
             this.pictureBoxSkincare = new System.Windows.Forms.PictureBox();
             this.pictureBoxShoes = new System.Windows.Forms.PictureBox();
             this.pictureBoxBag = new System.Windows.Forms.PictureBox();
-            this.addCategiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripUser.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCloth)).BeginInit();
@@ -74,10 +76,11 @@ namespace Project_ISA
             this.label2.Location = new System.Drawing.Point(-6, -1);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(777, 46);
+            this.label2.Size = new System.Drawing.Size(703, 46);
             this.label2.TabIndex = 41;
             this.label2.Text = "Sisbro Online Shop";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // menuStripUser
             // 
@@ -89,7 +92,7 @@ namespace Project_ISA
             this.productsToolStripMenuItem,
             this.ordersToolStripMenuItem,
             this.addPaymentMethodsToolStripMenuItem,
-            this.addCategiryToolStripMenuItem,
+            this.updatePasswordToolStripMenuItem,
             this.profileToolStripMenuItem,
             this.logInToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -100,7 +103,7 @@ namespace Project_ISA
             this.menuStripUser.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStripUser.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.menuStripUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStripUser.Size = new System.Drawing.Size(771, 29);
+            this.menuStripUser.Size = new System.Drawing.Size(697, 29);
             this.menuStripUser.TabIndex = 42;
             this.menuStripUser.Text = "menuStrip1";
             // 
@@ -117,7 +120,6 @@ namespace Project_ISA
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
             this.productsToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
             this.productsToolStripMenuItem.Text = "Products";
-            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // accProductsToolStripMenuItem
             // 
@@ -174,11 +176,35 @@ namespace Project_ISA
             // 
             // addPaymentMethodsToolStripMenuItem
             // 
+            this.addPaymentMethodsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCategoryToolStripMenuItem,
+            this.addPaymentMethodsToolStripMenuItem1});
             this.addPaymentMethodsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.addPaymentMethodsToolStripMenuItem.Name = "addPaymentMethodsToolStripMenuItem";
-            this.addPaymentMethodsToolStripMenuItem.Size = new System.Drawing.Size(196, 25);
-            this.addPaymentMethodsToolStripMenuItem.Text = "Add Payment Methods";
-            this.addPaymentMethodsToolStripMenuItem.Click += new System.EventHandler(this.addPaymentMethodsToolStripMenuItem_Click_1);
+            this.addPaymentMethodsToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+            this.addPaymentMethodsToolStripMenuItem.Text = "Settings";
+            // 
+            // addCategoryToolStripMenuItem
+            // 
+            this.addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
+            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.addCategoryToolStripMenuItem.Text = "Add Category";
+            this.addCategoryToolStripMenuItem.Click += new System.EventHandler(this.addCategoryToolStripMenuItem_Click);
+            // 
+            // addPaymentMethodsToolStripMenuItem1
+            // 
+            this.addPaymentMethodsToolStripMenuItem1.Name = "addPaymentMethodsToolStripMenuItem1";
+            this.addPaymentMethodsToolStripMenuItem1.Size = new System.Drawing.Size(254, 26);
+            this.addPaymentMethodsToolStripMenuItem1.Text = "Add Payment Methods";
+            this.addPaymentMethodsToolStripMenuItem1.Click += new System.EventHandler(this.addPaymentMethodsToolStripMenuItem1_Click);
+            // 
+            // updatePasswordToolStripMenuItem
+            // 
+            this.updatePasswordToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.updatePasswordToolStripMenuItem.Name = "updatePasswordToolStripMenuItem";
+            this.updatePasswordToolStripMenuItem.Size = new System.Drawing.Size(154, 25);
+            this.updatePasswordToolStripMenuItem.Text = "Update Password";
+            this.updatePasswordToolStripMenuItem.Click += new System.EventHandler(this.updatePasswordToolStripMenuItem_Click);
             // 
             // profileToolStripMenuItem
             // 
@@ -215,7 +241,7 @@ namespace Project_ISA
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 44);
+            this.label1.Location = new System.Drawing.Point(22, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 43;
@@ -224,7 +250,7 @@ namespace Project_ISA
             // labelCloth
             // 
             this.labelCloth.AutoSize = true;
-            this.labelCloth.Location = new System.Drawing.Point(60, 151);
+            this.labelCloth.Location = new System.Drawing.Point(22, 157);
             this.labelCloth.Name = "labelCloth";
             this.labelCloth.Size = new System.Drawing.Size(31, 13);
             this.labelCloth.TabIndex = 46;
@@ -234,7 +260,7 @@ namespace Project_ISA
             // labelShoes
             // 
             this.labelShoes.AutoSize = true;
-            this.labelShoes.Location = new System.Drawing.Point(240, 151);
+            this.labelShoes.Location = new System.Drawing.Point(202, 157);
             this.labelShoes.Name = "labelShoes";
             this.labelShoes.Size = new System.Drawing.Size(37, 13);
             this.labelShoes.TabIndex = 49;
@@ -244,7 +270,7 @@ namespace Project_ISA
             // labelBag
             // 
             this.labelBag.AutoSize = true;
-            this.labelBag.Location = new System.Drawing.Point(403, 151);
+            this.labelBag.Location = new System.Drawing.Point(365, 157);
             this.labelBag.Name = "labelBag";
             this.labelBag.Size = new System.Drawing.Size(26, 13);
             this.labelBag.TabIndex = 50;
@@ -254,7 +280,7 @@ namespace Project_ISA
             // labelSkincare
             // 
             this.labelSkincare.AutoSize = true;
-            this.labelSkincare.Location = new System.Drawing.Point(571, 151);
+            this.labelSkincare.Location = new System.Drawing.Point(533, 157);
             this.labelSkincare.Name = "labelSkincare";
             this.labelSkincare.Size = new System.Drawing.Size(49, 13);
             this.labelSkincare.TabIndex = 52;
@@ -266,7 +292,7 @@ namespace Project_ISA
             this.labelSaldo.BackColor = System.Drawing.Color.Pink;
             this.labelSaldo.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSaldo.ForeColor = System.Drawing.Color.Black;
-            this.labelSaldo.Location = new System.Drawing.Point(263, -2);
+            this.labelSaldo.Location = new System.Drawing.Point(224, -2);
             this.labelSaldo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSaldo.Name = "labelSaldo";
             this.labelSaldo.Size = new System.Drawing.Size(234, 28);
@@ -290,9 +316,9 @@ namespace Project_ISA
             this.panel1.Controls.Add(this.labelShoes);
             this.panel1.Controls.Add(this.pictureBoxBag);
             this.panel1.Location = new System.Drawing.Point(0, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 214);
+            this.panel1.Size = new System.Drawing.Size(697, 214);
             this.panel1.TabIndex = 54;
             // 
             // labelStatus
@@ -317,7 +343,7 @@ namespace Project_ISA
             // 
             this.pictureBoxCloth.BackgroundImage = global::Project_ISA.Properties.Resources.baju;
             this.pictureBoxCloth.Image = global::Project_ISA.Properties.Resources.baju;
-            this.pictureBoxCloth.Location = new System.Drawing.Point(63, 69);
+            this.pictureBoxCloth.Location = new System.Drawing.Point(25, 75);
             this.pictureBoxCloth.Name = "pictureBoxCloth";
             this.pictureBoxCloth.Size = new System.Drawing.Size(157, 79);
             this.pictureBoxCloth.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -328,7 +354,7 @@ namespace Project_ISA
             // pictureBoxSkincare
             // 
             this.pictureBoxSkincare.Image = global::Project_ISA.Properties.Resources.skincare;
-            this.pictureBoxSkincare.Location = new System.Drawing.Point(574, 69);
+            this.pictureBoxSkincare.Location = new System.Drawing.Point(536, 75);
             this.pictureBoxSkincare.Name = "pictureBoxSkincare";
             this.pictureBoxSkincare.Size = new System.Drawing.Size(149, 79);
             this.pictureBoxSkincare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -339,7 +365,7 @@ namespace Project_ISA
             // pictureBoxShoes
             // 
             this.pictureBoxShoes.Image = global::Project_ISA.Properties.Resources.sepatu;
-            this.pictureBoxShoes.Location = new System.Drawing.Point(243, 69);
+            this.pictureBoxShoes.Location = new System.Drawing.Point(201, 75);
             this.pictureBoxShoes.Name = "pictureBoxShoes";
             this.pictureBoxShoes.Size = new System.Drawing.Size(146, 79);
             this.pictureBoxShoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -350,7 +376,7 @@ namespace Project_ISA
             // pictureBoxBag
             // 
             this.pictureBoxBag.Image = global::Project_ISA.Properties.Resources.bag_removebg_preview__1_;
-            this.pictureBoxBag.Location = new System.Drawing.Point(406, 69);
+            this.pictureBoxBag.Location = new System.Drawing.Point(368, 75);
             this.pictureBoxBag.Name = "pictureBoxBag";
             this.pictureBoxBag.Size = new System.Drawing.Size(153, 79);
             this.pictureBoxBag.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -358,26 +384,18 @@ namespace Project_ISA
             this.pictureBoxBag.TabStop = false;
             this.pictureBoxBag.Click += new System.EventHandler(this.pictureBoxBag_Click);
             // 
-            // addCategiryToolStripMenuItem
-            // 
-            this.addCategiryToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.addCategiryToolStripMenuItem.Name = "addCategiryToolStripMenuItem";
-            this.addCategiryToolStripMenuItem.Size = new System.Drawing.Size(127, 25);
-            this.addCategiryToolStripMenuItem.Text = "Add Category";
-            this.addCategiryToolStripMenuItem.Click += new System.EventHandler(this.addCategiryToolStripMenuItem_Click);
-            // 
             // FormUtama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(771, 292);
+            this.ClientSize = new System.Drawing.Size(697, 292);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStripUser);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStripUser;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormUtama";
             this.Text = "FormUtama";
             this.Load += new System.EventHandler(this.FormUtama_Load);
@@ -424,6 +442,8 @@ namespace Project_ISA
         private System.Windows.Forms.ToolStripMenuItem cartsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem yourOrdersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPaymentMethodsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addCategiryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updatePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCategoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPaymentMethodsToolStripMenuItem1;
     }
 }

@@ -138,6 +138,12 @@
     <Compile Include="FormTambahProduct.Designer.cs">
       <DependentUpon>FormTambahProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdatePassword.Designer.cs">
+      <DependentUpon>FormUpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahProduct.resx">
       <DependentUpon>FormTambahProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdatePassword.resx">
+      <DependentUpon>FormUpdatePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>

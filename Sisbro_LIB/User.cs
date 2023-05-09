@@ -18,7 +18,7 @@ namespace Sisbro_LIB
         private string alamat;
         private int saldo;
         #endregion
-        #region Properties
+        #region Constractor
         public User(int idUser, string nama, string password, string email, int noHp, string alamat, int saldo)
         {
             IdUser = idUser;
@@ -30,15 +30,18 @@ namespace Sisbro_LIB
             Saldo = saldo;
         }
         #endregion
-        #region Constructors
+        #region Properties
         public int IdUser { get => idUser; set => idUser = value; }
         public string Nama { get => nama; set => nama = value; }
         public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
         public int NoHp { get => noHp; set => noHp = value; }
         public string Alamat { get => alamat; set => alamat = value; }
-        public int Saldo { get => saldo; set => saldo = value; } 
+        public int Saldo { get => saldo; set => saldo = value; }
         #endregion
+
+
+
 
         #region Method
         public static int GenerateIdUser()
@@ -104,27 +107,12 @@ namespace Sisbro_LIB
         {
             string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat, saldo) VALUES ('" +
                          this.IdUser + "', '" +
-                         this.Nama.Replace("'", "\\'") + "', SHA2('" +
-                         this.Password.Replace("'", "\\'") + "', 512), '" +
+                         this.Nama.Replace("'", "\\'") + "', '" +
+                         this.Password.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
                          this.Alamat.Replace("'", "\\'") + "', '" +
                          this.Saldo + "');";
-
-            bool result = Koneksi.ExecuteDML(sql);
-            return result;
-        }
-
-        public bool UbahData()
-        {
-            string sql = "UPDATE user " +
-                         "SET " +
-                         "nama = '" + this.Nama.Replace("'", "\\'") + "', " +
-                         "email = '" + this.Email.Replace("'", "\\'") + "', " +
-                         "no_telepon = '" + this.NoHp + "', " +
-                         "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
-                         "saldo = '" + this.Saldo + "'," +
-                         "WHERE idUser = '" + this.IdUser + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -137,14 +125,14 @@ namespace Sisbro_LIB
             return true;
         }
 
-        public bool UbahPassword(string password)
-        {
-            string sql = "UPDATE user " +
-                         "SET password = SHA2('" + password.Replace("'", "\\'") + "', 512) " +
-                         "WHERE idUser = '" + this.IdUser + "';";
-            bool result = Koneksi.ExecuteDML(sql);
-            return result;
-        }
+        //public bool UbahPassword(string password)
+        //{
+        //    string sql = "UPDATE user " +
+        //                 "SET password = SHA2('" + password.Replace("'", "\\'") + "', 512) " +
+        //                 "WHERE idUser = '" + this.IdUser + "';";
+        //    bool result = Koneksi.ExecuteDML(sql);
+        //    return result;
+        //}
 
         public static User AmbilDataByKode(string idUser)
         {
@@ -197,7 +185,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql += " WHERE nama ='" + userName + "' AND password = SHA2('" + password + "', 512);";
+                sql += " WHERE nama ='" + userName  + "';";
             }
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);
@@ -214,6 +202,23 @@ namespace Sisbro_LIB
                 return result;
             }
             return null;
+        }
+
+        public bool Update(User user)
+        {
+            string sql = "UPDATE user " +
+                         "SET " +
+                         "iduser = '" + this.IdUser + "', " +
+                         "nama = '" + this.Nama.Replace("'", "\\'") + "', " +
+                         "password = '" + this.Password.Replace("'", "\\'") + "', " +
+                         "email = '" + this.Email.Replace("'", "\\'") + "', " +
+                         "no_hp = '" + this.NoHp + "', " +
+                         "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
+                         "saldo = '" + this.Saldo + "' " +
+                         "WHERE iduser = '" + this.IdUser + "';";
+
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
         }
         #endregion
     }

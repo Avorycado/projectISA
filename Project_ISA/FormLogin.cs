@@ -82,18 +82,24 @@ namespace Project_ISA
 
                 if (radioButtonUser.Checked == true)
                 {
+                   
                     User tmp = User.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
-                        FormUtama form = (FormUtama)this.Owner;
-                        //FormUtama form = new FormUtama();
-                        //form.ShowDialog();
-                        form.tmpUser = tmp;
-                        form.FormUtama_Load(this, e);
+                        string hasilDecryptUser = Cryptography.DecryptStringAES(tmp.Password , "sisbro");
+                        if (Cryptography.SHA512(textBoxPassword.Text) == hasilDecryptUser)
+                        {
+                            FormUtama form = (FormUtama)this.Owner;
+                            //FormUtama form = new FormUtama();
+                            //form.ShowDialog();
+                            form.tmpUser = tmp;
+                            form.hasilDecrypt = hasilDecryptUser;
+                            form.FormUtama_Load(this, e);
+                            MessageBox.Show("Login Berhasil. Selamat datang di Aplikasi SisBro.", "Information");
 
-                        this.DialogResult = DialogResult.OK;
-
-                        this.Close();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -105,18 +111,24 @@ namespace Project_ISA
                     Sellers tmp = Sellers.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
+                        string hasilDecryptSeller = Cryptography.DecryptStringAES(tmp.Password, "sisbro");
+                        if (Cryptography.SHA512(textBoxPassword.Text) == hasilDecryptSeller)
+                        {
+                            FormUtama form = (FormUtama)this.Owner;
+                            //FormUtama form = new FormUtama();
+                            //form.ShowDialog();
+                            form.tmpSellers = tmp;
+                            form.hasilDecrypt = hasilDecryptSeller;
+                            form.FormUtama_Load(this, e);
+                            MessageBox.Show("Login Berhasil. Selamat datang di Aplikasi SisBro.", "Information");
 
-                        FormUtama form = (FormUtama)this.Owner;
-                        form.tmpSellers = tmp;
-                        form.FormUtama_Load(this, e);
-
-                        this.DialogResult = DialogResult.OK;
-
-                        this.Close();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        throw new Exception("Data pegawai tidak ditemukan");
+                        throw new Exception("Data seller tidak ditemukan");
                     }
                 }
                 if(radioButtonAdmin.Checked == true)
@@ -124,13 +136,20 @@ namespace Project_ISA
                     Administrator tmp = Administrator.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
-                        FormUtama form = (FormUtama)this.Owner;
-                        form.tmpAdministrator = tmp;
-                        form.FormUtama_Load(this, e);
+                        string hasilDecryptAdmin = Cryptography.DecryptStringAES(tmp.Password, "sisbro");
+                        if (Cryptography.SHA512(textBoxPassword.Text) == hasilDecryptAdmin)
+                        {
+                            FormUtama form = (FormUtama)this.Owner;
+                            //FormUtama form = new FormUtama();
+                            //form.ShowDialog();
+                            form.tmpAdministrator = tmp;
+                            form.hasilDecrypt = hasilDecryptAdmin;
+                            form.FormUtama_Load(this, e);
+                            MessageBox.Show("Login Berhasil. Selamat datang di Aplikasi SisBro.", "Information");
 
-                        this.DialogResult = DialogResult.OK;
-
-                        this.Close();
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
                     }
                     else
                     {

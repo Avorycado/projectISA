@@ -101,5 +101,10 @@ namespace Project_ISA
                 throw new Exception(x.Message);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

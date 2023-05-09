@@ -116,22 +116,24 @@ namespace Sisbro_LIB
                          this.nama.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
-                         this.Alamat.Replace("'", "\\'") + "', SHA2('" +
-                         this.Password.Replace("'", "\\'") + "', 512));";
+                         this.Alamat.Replace("'", "\\'") + "', '" +
+                         this.Password.Replace("'", "\\'") + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
         }
 
-        public bool UbahData()
+        public bool UbahData(Sellers seller)
         {
             string sql = "UPDATE sellers " +
                          "SET " +
+                         "idsellers = '" + this.IdSeller + "', " +
                          "nama = '" + this.Nama.Replace("'", "\\'") + "', " +
                          "email = '" + this.Email.Replace("'", "\\'") + "', " +
                          "no_telepon = '" + this.NoHp + "', " +
                          "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
-                         "WHERE idUser = '" + this.IdSeller + "';";
+                         "password = '" + this.Password.Replace("'", "\\'") + "', " +
+                         "WHERE idsellers = '" + this.IdSeller + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -144,14 +146,14 @@ namespace Sisbro_LIB
             return true;
         }
 
-        public bool UbahPassword(string password)
-        {
-            string sql = "UPDATE sellers " +
-                         "SET password = SHA2('" + password.Replace("'", "\\'") + "', 512) " +
-                         "WHERE idUser = '" + this.IdSeller + "';";
-            bool result = Koneksi.ExecuteDML(sql);
-            return result;
-        }
+        //public bool UbahPassword(string password)
+        //{
+        //    string sql = "UPDATE sellers " +
+        //                 "SET password = SHA2('" + password.Replace("'", "\\'") + "', 512) " +
+        //                 "WHERE idUser = '" + this.IdSeller + "';";
+        //    bool result = Koneksi.ExecuteDML(sql);
+        //    return result;
+        //}
 
         public static Sellers AmbilDataByKode(int idSeller)
         {
@@ -176,23 +178,25 @@ namespace Sisbro_LIB
                 return null;
             }
         }
-        public static bool CekPassword(Sellers sellers, string password)
-        {
-            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password" +
-                         "FROM sellers " +
-                         "WHERE idSellers = '" + sellers.IdSeller + "' AND password = SHA2('" + password + "', 512);";
+        //public static bool CekPassword(Sellers sellers, string password)
+        //{
+        //    string sql = "SELECT idSellers, nama, email, no_hp, alamat, password" +
+        //                 "FROM sellers " +
+        //                 "WHERE idSellers = '" + sellers.IdSeller + "' AND password = SHA2('" + password + "', 512);";
 
-            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+        //    MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
-            if (hasil.Read() == true)
-            {
-                return true;
-            }
-            return false;
-        }
+        //    if (hasil.Read() == true)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
         public static Sellers CekLogin(string userName, string password)
         {
+            
+            
             string sql = "SELECT idSellers, nama, email, no_hp, alamat, password FROM sellers ";
 
             if (userName == "" || password == "")
@@ -201,7 +205,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql += " WHERE nama ='" + userName + "' AND password = SHA2('" + password + "', 512);";
+                sql += " WHERE nama ='" + userName + "';";
             }
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);

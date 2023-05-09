@@ -88,8 +88,8 @@ namespace Sisbro_LIB
                          this.IdAdministrator + "', '" +
                          this.Nama.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
-                         this.NoHp +  "', SHA2('" +
-                         this.Password.Replace("'", "\\'") + "', 512));";
+                         this.NoHp +  "', '" +
+                         this.Password.Replace("'", "\\'") + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -114,14 +114,14 @@ namespace Sisbro_LIB
             return true;
         }
 
-        public bool UbahPassword(string password)
-        {
-            string sql = "UPDATE administrator " +
-                         "SET password = SHA2('" + password.Replace("'", "\\'") + "', 512) " +
-                         "WHERE idAdministrator = '" + this.IdAdministrator + "';";
-            bool result = Koneksi.ExecuteDML(sql);
-            return result;
-        }
+        //public bool UbahPassword(string password)
+        //{
+        //    string sql = "UPDATE administrator " +
+        //                 "SET password = SHA2('" + password.Replace("'", "\\'") + "', 512) " +
+        //                 "WHERE idAdministrator = '" + this.IdAdministrator + "';";
+        //    bool result = Koneksi.ExecuteDML(sql);
+        //    return result;
+        //}
 
         public static Administrator AmbilDataByKode(int idadministrator)
         {
@@ -145,20 +145,20 @@ namespace Sisbro_LIB
                 return null;
             }
         }
-        public static bool CekPassword(Administrator administrator, string password)
-        {
-            string sql = "SELECT idAdministrator, nama, email, no_hp, password" +
-                         "FROM administrator " +
-                         "WHERE idAdministrator = '" + administrator.IdAdministrator + "' AND password = SHA2('" + password + "', 512);";
+        //public static bool CekPassword(Administrator administrator, string password)
+        //{
+        //    string sql = "SELECT idAdministrator, nama, email, no_hp, password" +
+        //                 "FROM administrator " +
+        //                 "WHERE idAdministrator = '" + administrator.IdAdministrator + "' AND password = SHA2('" + password + "', 512);";
 
-            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+        //    MySqlDataReader hasil = Koneksi.AmbilData(sql);
 
-            if (hasil.Read() == true)
-            {
-                return true;
-            }
-            return false;
-        }
+        //    if (hasil.Read() == true)
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
 
         public static Administrator CekLogin(string userName, string password)
         {
@@ -171,7 +171,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql += " WHERE nama ='" + userName + "' AND password = SHA2('" + password + "', 512);";
+                sql += " WHERE nama ='" + userName + "',;";
             }
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);

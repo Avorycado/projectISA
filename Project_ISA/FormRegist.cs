@@ -13,6 +13,8 @@ namespace Project_ISA
 {
     public partial class FormRegist : Form
     {
+        public User tmpUser = null;
+        public Sellers tmpSellers = null;
         public FormRegist()
         {
             InitializeComponent();
@@ -33,40 +35,38 @@ namespace Project_ISA
                         if(textBoxPassword.Text != null)
                         {
                             string username = textBoxUsername.Text;
-                            //string password = Cryptography.EncryptAes(textBoxPassword.Text, username);
-                        }
-                        
-                        User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
-                                             textBoxPassword.Text, textBoxEmail.Text,
+                            string text = Cryptography.SHA512(textBoxPassword.Text);
+                            string key = "sisbro";
+                            string hasilAES = Cryptography.EncryptStringAES(text, key);
+                            User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
+                                             hasilAES, textBoxEmail.Text,
                                              int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0);
-                        //user.IdUser = int.Parse(textBoxId.Text);
-                        //user.Nama = textBoxUsername.Text;
-                        //user.Password = textBoxPassword.Text;
-                        //user.Email = textBoxEmail.Text;
-                        //user.NoHp = int.Parse(textBoxNoTelp.Text);
-                        //user.Alamat = textBoxAlamat.Text;
 
-                        if (user.TambahData())
-                        {
-                            DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
-                            if (hasil == DialogResult.OK)
+                            if (user.TambahData())
                             {
-                                this.Close();
+                                DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                                if (hasil == DialogResult.OK)
+                                {
+                                    this.Close();
+                                }
                             }
-                        }
-                        else
-                        {
-                            throw new Exception("Tidak dapat menambahkan data");
+                            else
+                            {
+                                throw new Exception("Tidak dapat menambahkan data");
+                            }
                         }
                     }
                     else if(radioButtonPenjual.Checked == true)
                     {
+                        string text = Cryptography.SHA512(textBoxPassword.Text);
+                        string key = "sisbro";
+                        string hasilAES = Cryptography.EncryptStringAES(text, key);
                         Sellers seller = new Sellers(int.Parse(textBoxId.Text), 
                                                     textBoxUsername.Text, 
                                                     textBoxEmail.Text, 
                                                     int.Parse(textBoxNoTelp.Text),
                                                     textBoxAlamat.Text, 
-                                                    textBoxPassword.Text);
+                                                    hasilAES);
 
                         if (seller.TambahData())
                         {
@@ -84,11 +84,14 @@ namespace Project_ISA
                     }
                     else
                     {
+                        string text = Cryptography.SHA512(textBoxPassword.Text);
+                        string key = "sisbro";
+                        string hasilAES = Cryptography.EncryptStringAES(text, key);
                         Administrator administrator = new Administrator(int.Parse(textBoxId.Text), 
                                                                         textBoxUsername.Text, 
                                                                         textBoxEmail.Text, 
                                                                         int.Parse(textBoxNoTelp.Text), 
-                                                                        textBoxPassword.Text);
+                                                                        hasilAES);
                         if (administrator.TambahData())
                         {
                             DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);

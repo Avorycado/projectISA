@@ -23,10 +23,11 @@ namespace Project_ISA
 
         public Product tmpProduct = null;
 
-        
+        public string hasilDecrypt = "";
 
         public void FormUtama_Load(object sender, EventArgs e)
         {
+            
             //this.WindowState = FormWindowState.Maximized;
             this.IsMdiContainer = true;
             try
@@ -52,6 +53,7 @@ namespace Project_ISA
                 addPaymentMethodsToolStripMenuItem.Visible = false;
                 profileToolStripMenuItem.Visible = false;
 
+                updatePasswordToolStripMenuItem.Visible = true;
                 addProductsToolStripMenuItem.Visible = true;
                 logInToolStripMenuItem.Visible = true;
                 logInToolStripMenuItem.Visible = true;
@@ -66,6 +68,7 @@ namespace Project_ISA
                 cartsToolStripMenuItem.Visible = false;
                 historyOrdersToolStripMenuItem.Visible = false;
                 profileToolStripMenuItem.Visible = false;
+                updatePasswordToolStripMenuItem.Visible = false;
 
                 accProductsToolStripMenuItem.Visible = true;
                 addPaymentMethodsToolStripMenuItem.Visible = true;
@@ -79,6 +82,7 @@ namespace Project_ISA
                 addProductsToolStripMenuItem.Visible = false;
                 accProductsToolStripMenuItem.Visible = false;
 
+                updatePasswordToolStripMenuItem.Visible = true;
                 productsToolStripMenuItem1.Visible = true;
                 historyOrdersToolStripMenuItem.Visible = true;
                 cartsToolStripMenuItem.Visible = true;
@@ -360,16 +364,6 @@ namespace Project_ISA
             Close();
         }
 
-        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItemProfile_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void yourOrdersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tmpUser == null)
@@ -440,20 +434,6 @@ namespace Project_ISA
             }
         }
 
-        private void addPaymentMethodsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            if (tmpAdministrator == null)
-            {
-                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
-            }
-            else
-            {
-                FormAddPaymentMethods frm = new FormAddPaymentMethods();
-                frm.Owner = this;
-                frm.ShowDialog();
-            }
-        }
-
         private void accProductsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tmpAdministrator == null)
@@ -468,12 +448,38 @@ namespace Project_ISA
             }
         }
 
-        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void updatePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (tmpSellers != null || tmpUser != null )
+            {
+                FormUpdatePassword frm = new FormUpdatePassword();
+                frm.hasilDecrypt = hasilDecrypt;
+                frm.user = tmpUser;
+                frm.seller = tmpSellers;
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Log In terlebih dahulu untuk melanjutkan pembelian!");
+            }
         }
 
-        private void addCategiryToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addPaymentMethodsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (tmpAdministrator == null)
+            {
+                MessageBox.Show("Login terlebih dahulu untuk melanjutkan pembelian!");
+            }
+            else
+            {
+                FormAddPaymentMethods frm = new FormAddPaymentMethods();
+                frm.Owner = this;
+                frm.ShowDialog();
+            }
+        }
+
+        private void addCategoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (tmpAdministrator == null)
             {
@@ -485,6 +491,11 @@ namespace Project_ISA
                 frm.Owner = this;
                 frm.ShowDialog();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

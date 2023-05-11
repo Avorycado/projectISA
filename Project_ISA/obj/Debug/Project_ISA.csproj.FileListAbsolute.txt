@@ -84,3 +84,4 @@ C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\pr
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormAddCategory.resources
 C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormAddCategory.resources
 C:\Tugas kuliah\semester 4\Information Security & Assurance\projectOnlineShop\projectISA\Project_ISA\obj\Debug\Project_ISA.FormUpdatePassword.resources
+C:\Users\satya\Documents\GitHub\projectISA\Project_ISA\obj\Debug\Project_ISA.FormUpdatePassword.resources

@@ -40,7 +40,7 @@ namespace Project_ISA
                             string hasilAES = Cryptography.EncryptStringAES(text, key);
                             User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
                                              hasilAES, textBoxEmail.Text,
-                                             int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0);
+                                             int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0, null);
 
                             if (user.TambahData())
                             {

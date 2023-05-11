@@ -17,9 +17,10 @@ namespace Sisbro_LIB
         private int noHp;
         private string alamat;
         private int saldo;
+        private string foto;
         #endregion
         #region Constractor
-        public User(int idUser, string nama, string password, string email, int noHp, string alamat, int saldo)
+        public User(int idUser, string nama, string password, string email, int noHp, string alamat, int saldo, string foto)
         {
             IdUser = idUser;
             Nama = nama;
@@ -28,6 +29,7 @@ namespace Sisbro_LIB
             NoHp = noHp;
             Alamat = alamat;
             Saldo = saldo;
+            Foto = foto;
         }
         #endregion
         #region Properties
@@ -38,6 +40,7 @@ namespace Sisbro_LIB
         public int NoHp { get => noHp; set => noHp = value; }
         public string Alamat { get => alamat; set => alamat = value; }
         public int Saldo { get => saldo; set => saldo = value; }
+        public string Foto { get => foto; set => foto = value; }
         #endregion
 
 
@@ -74,12 +77,12 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo " +
+                sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo, foto_profil " +
                       "FROM user ";
             }
             else
             {
-                sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo " +
+                sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo, foto_profil " +
                       "FROM user " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
@@ -97,7 +100,8 @@ namespace Sisbro_LIB
                                     hasil.GetValue(3).ToString(),
                                     int.Parse(hasil.GetValue(4).ToString()),
                                     hasil.GetValue(5).ToString(),
-                                    int.Parse(hasil.GetValue(6).ToString()));
+                                    int.Parse(hasil.GetValue(6).ToString()),
+                                    hasil.GetValue(7).ToString());
                 listUser.Add(user);
             }
             return listUser;
@@ -105,14 +109,15 @@ namespace Sisbro_LIB
 
         public bool TambahData()
         {
-            string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat, saldo) VALUES ('" +
+            string sql = "INSERT INTO user(idUser, nama, password, email, no_hp, alamat, saldo, foto_profil) VALUES ('" +
                          this.IdUser + "', '" +
                          this.Nama.Replace("'", "\\'") + "', '" +
                          this.Password.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
                          this.Alamat.Replace("'", "\\'") + "', '" +
-                         this.Saldo + "');";
+                         this.Saldo + "', '" + 
+                         this.Foto + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -136,7 +141,7 @@ namespace Sisbro_LIB
 
         public static User AmbilDataByKode(string idUser)
         {
-            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo " +
+            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo, foto_profil " +
                          "FROM user " +
                          "WHERE idUser = '" + idUser + "'";
 
@@ -145,12 +150,13 @@ namespace Sisbro_LIB
             if (hasil.Read())
             {
                 User user = new User(int.Parse(hasil.GetValue(0).ToString()),
-                                        hasil.GetValue(1).ToString(),
-                                        hasil.GetValue(2).ToString(),
-                                        hasil.GetValue(3).ToString(),
-                                        int.Parse(hasil.GetValue(4).ToString()),
-                                        hasil.GetValue(5).ToString(),
-                                        int.Parse(hasil.GetValue(6).ToString()));
+                                    hasil.GetValue(1).ToString(),
+                                    hasil.GetValue(2).ToString(),
+                                    hasil.GetValue(3).ToString(),
+                                    int.Parse(hasil.GetValue(4).ToString()),
+                                    hasil.GetValue(5).ToString(),
+                                    int.Parse(hasil.GetValue(6).ToString()),
+                                    hasil.GetValue(7).ToString());
                 return user;
             }
             else
@@ -161,7 +167,7 @@ namespace Sisbro_LIB
 
         public static bool CekPassword(User user, string password)
         {
-            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo" +
+            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo, foto_profil" +
                          "FROM user " +
                          "WHERE idUser = '" + user.IdUser + "' AND password = SHA2('" + password + "', 512);";
 
@@ -176,7 +182,7 @@ namespace Sisbro_LIB
 
         public static User CekLogin(string userName, string password)
         {
-            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo "
+            string sql = "SELECT idUser, nama, password, email, no_hp, alamat, saldo, foto_profil "
                           + " FROM user ";
 
             if (userName == "" || password == "")
@@ -193,12 +199,13 @@ namespace Sisbro_LIB
             while (hasil.Read() == true)
             {
                 User result = new User(int.Parse(hasil.GetValue(0).ToString()),
-                                        hasil.GetValue(1).ToString(),
-                                        hasil.GetValue(2).ToString(),
-                                        hasil.GetValue(3).ToString(),
-                                        int.Parse(hasil.GetValue(4).ToString()),
-                                        hasil.GetValue(5).ToString(),
-                                        int.Parse(hasil.GetValue(6).ToString()));
+                                    hasil.GetValue(1).ToString(),
+                                    hasil.GetValue(2).ToString(),
+                                    hasil.GetValue(3).ToString(),
+                                    int.Parse(hasil.GetValue(4).ToString()),
+                                    hasil.GetValue(5).ToString(),
+                                    int.Parse(hasil.GetValue(6).ToString()),
+                                    hasil.GetValue(7).ToString());
                 return result;
             }
             return null;
@@ -215,8 +222,17 @@ namespace Sisbro_LIB
                          "no_hp = '" + this.NoHp + "', " +
                          "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
                          "saldo = '" + this.Saldo + "' " +
+                         "foto_profil = '" + this.Foto.Replace(@"\", @"\\") + "' " +
                          "WHERE iduser = '" + this.IdUser + "';";
 
+            bool result = Koneksi.ExecuteDML(sql);
+            return result;
+        }
+
+        public bool UpdateFoto()
+        {
+            string sql = "UPDATE user SET foto_profil = '" + this.Foto.Replace(@"\", @"\\") + 
+                "' WHERE iduser = '" + this.IdUser + "';";
             bool result = Koneksi.ExecuteDML(sql);
             return result;
         }

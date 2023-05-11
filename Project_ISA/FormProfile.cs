@@ -19,7 +19,6 @@ namespace Project_ISA
             InitializeComponent();
         }
 
-        public User user;
 
         public void FormProfile_Load(object sender, EventArgs e)
         {
@@ -29,10 +28,22 @@ namespace Project_ISA
             labelEmail.Text = "Email: " + fu.tmpUser.Email;
             labelNoTelp.Text = "No. Telepon: " + fu.tmpUser.NoHp;
             labelAlamat.Text = "Alamat: " + fu.tmpUser.Alamat;
+
+            if(fu.tmpUser.Foto != "")
+            {
+                pictureBox1.BackgroundImage = Image.FromFile(fu.tmpUser.Foto);
+                pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            else
+            {
+                pictureBox1.BackgroundImage = null;
+            }
         }
 
         private void buttonProfile_Click(object sender, EventArgs e)
         {
+            FormUtama fu = (FormUtama)this.Owner;
+
             int size = -1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             DialogResult result = openFileDialog1.ShowDialog();
@@ -45,6 +56,12 @@ namespace Project_ISA
                     size = text.Length;
                     pictureBox1.BackgroundImage = Image.FromFile(file);
                     pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+
+                    fu.tmpUser.Foto = file;
+                    if (fu.tmpUser.UpdateFoto())
+                    {
+                        MessageBox.Show("Foto Profile berhasil di update.");
+                    }
                 }
                 catch (IOException)
                 {

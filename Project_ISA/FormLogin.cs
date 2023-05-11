@@ -86,6 +86,7 @@ namespace Project_ISA
                     User tmp = User.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
+                        MessageBox.Show(tmp.Password.Length.ToString());
                         string hasilDecryptUser = Cryptography.DecryptStringAES(tmp.Password , "sisbro");
                         if (Cryptography.SHA512(textBoxPassword.Text) == hasilDecryptUser)
                         {

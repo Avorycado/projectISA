@@ -40,7 +40,7 @@ namespace Project_ISA
                         //Convert resultAES to stegano
                         
 
-                        user = new User(user.IdUser, user.Nama, resultAES, user.Email, user.NoHp, user.Alamat, user.Saldo);
+                        user = new User(user.IdUser, user.Nama, resultAES, user.Email, user.NoHp, user.Alamat, user.Saldo, user.Foto);
                         user.Update(user);
                         MessageBox.Show("Update Succesfull");
                     }

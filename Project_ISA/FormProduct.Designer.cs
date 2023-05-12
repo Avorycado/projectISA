@@ -29,51 +29,55 @@ namespace Project_ISA
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonExit = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelClose = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // buttonExit
-            // 
-            this.buttonExit.BackColor = System.Drawing.Color.LavenderBlush;
-            this.buttonExit.BackgroundImage = global::Project_ISA.Properties.Resources._261420_200;
-            this.buttonExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.buttonExit.Location = new System.Drawing.Point(652, 5);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(50, 50);
-            this.buttonExit.TabIndex = 88;
-            this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 61);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 75);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(690, 538);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(920, 662);
             this.flowLayoutPanel1.TabIndex = 89;
             this.flowLayoutPanel1.WrapContents = false;
             // 
+            // labelClose
+            // 
+            this.labelClose.AutoSize = true;
+            this.labelClose.BackColor = System.Drawing.Color.HotPink;
+            this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClose.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.labelClose.Location = new System.Drawing.Point(910, 9);
+            this.labelClose.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelClose.Name = "labelClose";
+            this.labelClose.Size = new System.Drawing.Size(26, 25);
+            this.labelClose.TabIndex = 90;
+            this.labelClose.Text = "X";
+            this.labelClose.Click += new System.EventHandler(this.labelClose_Click_1);
+            // 
             // FormProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(714, 602);
+            this.ClientSize = new System.Drawing.Size(952, 741);
+            this.Controls.Add(this.labelClose);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.buttonExit);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormProduct";
             this.Text = "FormProduct";
             this.Load += new System.EventHandler(this.FormProduct_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label labelClose;
     }
 }

@@ -42,9 +42,9 @@ namespace Project_ISA
             this.label1.Location = new System.Drawing.Point(17, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 24);
+            this.label1.Size = new System.Drawing.Size(177, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "HISTORY PESANAN";
+            this.label1.Text = "HISTORY ORDER";
             // 
             // dataGridViewHistory
             // 
@@ -54,7 +54,7 @@ namespace Project_ISA
             this.dataGridViewHistory.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewHistory.Name = "dataGridViewHistory";
             this.dataGridViewHistory.RowHeadersWidth = 51;
-            this.dataGridViewHistory.Size = new System.Drawing.Size(787, 276);
+            this.dataGridViewHistory.Size = new System.Drawing.Size(935, 276);
             this.dataGridViewHistory.TabIndex = 1;
             this.dataGridViewHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHistory_CellContentClick);
             // 
@@ -75,7 +75,7 @@ namespace Project_ISA
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepPink;
-            this.ClientSize = new System.Drawing.Size(824, 378);
+            this.ClientSize = new System.Drawing.Size(980, 378);
             this.ControlBox = false;
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.dataGridViewHistory);

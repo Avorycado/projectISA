@@ -181,7 +181,7 @@ namespace Project_ISA
             //frm.ShowDialog();
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void labelClose_Click_1(object sender, EventArgs e)
         {
             Close();
         }

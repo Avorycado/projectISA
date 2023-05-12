@@ -95,7 +95,7 @@ namespace Project_ISA
                         MemoryStream ms1 = new MemoryStream(img);
                         Bitmap test = new Bitmap(ms1);
 
-                        string pass = Steganography.extractText(pict);
+                        string pass = Steganography.extractText(test);
 
                         MessageBox.Show(pass.ToString());
 

@@ -78,6 +78,7 @@ namespace Project_ISA
                     {
                         if(file != "")
                         {
+                            string username = textBoxUsername.Text;
                             string text = Cryptography.SHA512(textBoxPassword.Text);
                             string key = "sisbro";
 

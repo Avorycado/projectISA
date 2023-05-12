@@ -122,7 +122,8 @@ namespace Sisbro_LIB
                          this.Email.Replace("'", "\\'") + "', '" +
                          this.NoHp + "', '" +
                          this.Alamat.Replace("'", "\\'") + "', '" +
-                         this.Password.Replace("'", "\\'") + "');";
+                         this.Password.Replace("'", "\\'") + "', '" +
+                         this.Foto.Replace(@"\", @"\\") + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;
@@ -204,7 +205,7 @@ namespace Sisbro_LIB
         {
             
             
-            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password FROM sellers ";
+            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password, foto_toko FROM sellers ";
 
             if (userName == "" || password == "")
             {

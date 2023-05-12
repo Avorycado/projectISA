@@ -171,7 +171,7 @@ namespace Sisbro_LIB
             }
             else
             {
-                sql += " WHERE nama ='" + userName + "',;";
+                sql += " WHERE nama ='" + userName + "';";
             }
 
             MySqlDataReader hasil = Koneksi.AmbilData(sql);

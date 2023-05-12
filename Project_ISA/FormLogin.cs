@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,12 +83,25 @@ namespace Project_ISA
 
                 if (radioButtonUser.Checked == true)
                 {
-                   
                     User tmp = User.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
-                        MessageBox.Show(tmp.Password.Length.ToString());
-                        string hasilDecryptUser = Cryptography.DecryptStringAES(tmp.Password , "sisbro");
+                        Bitmap pict = new Bitmap(@"C:\xampp\htdocs\img\" + tmp.IdUser + ".png");
+
+                        MemoryStream ms = new MemoryStream();
+                        byte[] img = ms.GetBuffer();
+                        ImageConverter imgCon = new ImageConverter();
+                        img = (byte[])imgCon.ConvertTo(pict, typeof(byte[]));
+                        MemoryStream ms1 = new MemoryStream(img);
+                        Bitmap test = new Bitmap(ms1);
+
+                        string pass = Steganography.extractText(test);
+
+                        MessageBox.Show(pass.ToString());
+
+                        //MessageBox.Show(tmp.Password.Length.ToString());
+                        string hasilDecryptUser = Cryptography.DecryptStringAES(pass , "sisbro");
+
                         if (Cryptography.SHA512(textBoxPassword.Text) == hasilDecryptUser)
                         {
                             FormUtama form = (FormUtama)this.Owner;

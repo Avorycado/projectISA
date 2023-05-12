@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace Project_ISA
     {
         public User tmpUser = null;
         public Sellers tmpSellers = null;
+        string foto = "";
+        string file = "";
         public FormRegist()
         {
             InitializeComponent();
@@ -34,25 +37,40 @@ namespace Project_ISA
                     {
                         if(textBoxPassword.Text != null)
                         {
-                            string username = textBoxUsername.Text;
-                            string text = Cryptography.SHA512(textBoxPassword.Text);
-                            string key = "sisbro";
-                            string hasilAES = Cryptography.EncryptStringAES(text, key);
-                            User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
-                                             hasilAES, textBoxEmail.Text,
-                                             int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0, null);
-
-                            if (user.TambahData())
+                            if(file != "")
                             {
-                                DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
-                                if (hasil == DialogResult.OK)
+                                string username = textBoxUsername.Text;
+                                string text = Cryptography.SHA512(textBoxPassword.Text);
+                                string key = "sisbro";
+
+                                Bitmap pict = new Bitmap(file);
+
+                                string hasilAES = Cryptography.EncryptStringAES(text, key);
+                                Bitmap bmp = Steganography.embedText(hasilAES, pict);
+
+                                User user = new User(int.Parse(textBoxId.Text), textBoxUsername.Text,
+                                                 hasilAES, textBoxEmail.Text,
+                                                 int.Parse(textBoxNoTelp.Text), textBoxAlamat.Text, 0, file);
+
+                                
+                                pict.Save(@"C:\xampp\htdocs\img\" + textBoxId.Text + ".png");
+
+                                if (user.TambahData())
                                 {
-                                    this.Close();
+                                    DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                                    if (hasil == DialogResult.OK)
+                                    {
+                                        this.Close();
+                                    }
+                                }
+                                else
+                                {
+                                    throw new Exception("Tidak dapat menambahkan data");
                                 }
                             }
                             else
                             {
-                                throw new Exception("Tidak dapat menambahkan data");
+                                throw new Exception("Foto Profile tidak boleh kosong.");
                             }
                         }
                     }
@@ -211,6 +229,50 @@ namespace Project_ISA
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonProfile_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idBaru = Administrator.GenerateIdAdmin();
+                textBoxId.Text = idBaru.ToString();
+
+                textBoxId.Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            int size = -1;
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                file = openFileDialog1.FileName;
+                try
+                {
+                    string text = File.ReadAllText(file);
+                    size = text.Length;
+                    pictureBox1.BackgroundImage = Image.FromFile(file);
+                    pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+
+                    MessageBox.Show(file);
+
+                    foto = file;
+                }
+                catch (IOException)
+                {
+                }
+            }
         }
     }
 }

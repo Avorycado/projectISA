@@ -117,7 +117,7 @@ namespace Sisbro_LIB
                          this.NoHp + "', '" +
                          this.Alamat.Replace("'", "\\'") + "', '" +
                          this.Saldo + "', '" + 
-                         this.Foto + "');";
+                         this.Foto.Replace(@"\", @"\\") + "');";
 
             bool result = Koneksi.ExecuteDML(sql);
             return result;

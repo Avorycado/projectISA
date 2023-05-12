@@ -36,7 +36,6 @@ namespace Project_ISA
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.radioButtonAdmin = new System.Windows.Forms.RadioButton();
             this.radioButtonPenjual = new System.Windows.Forms.RadioButton();
             this.radioButtonPembeli = new System.Windows.Forms.RadioButton();
             this.textBoxId = new System.Windows.Forms.TextBox();
@@ -47,22 +46,29 @@ namespace Project_ISA
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DeepPink;
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.labelClose);
             this.panel1.Controls.Add(this.checkBoxAgree);
             this.panel1.Controls.Add(this.buttonSignUp);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 2);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 498);
+            this.panel1.Size = new System.Drawing.Size(802, 501);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -72,7 +78,7 @@ namespace Project_ISA
             this.labelClose.BackColor = System.Drawing.Color.HotPink;
             this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClose.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.labelClose.Location = new System.Drawing.Point(741, 13);
+            this.labelClose.Location = new System.Drawing.Point(768, 13);
             this.labelClose.Name = "labelClose";
             this.labelClose.Size = new System.Drawing.Size(20, 20);
             this.labelClose.TabIndex = 6;
@@ -84,7 +90,7 @@ namespace Project_ISA
             this.checkBoxAgree.AutoSize = true;
             this.checkBoxAgree.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.checkBoxAgree.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.checkBoxAgree.Location = new System.Drawing.Point(429, 277);
+            this.checkBoxAgree.Location = new System.Drawing.Point(457, 408);
             this.checkBoxAgree.Name = "checkBoxAgree";
             this.checkBoxAgree.Size = new System.Drawing.Size(186, 17);
             this.checkBoxAgree.TabIndex = 5;
@@ -95,7 +101,7 @@ namespace Project_ISA
             // 
             this.buttonSignUp.BackColor = System.Drawing.Color.White;
             this.buttonSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignUp.Location = new System.Drawing.Point(429, 300);
+            this.buttonSignUp.Location = new System.Drawing.Point(457, 431);
             this.buttonSignUp.Name = "buttonSignUp";
             this.buttonSignUp.Size = new System.Drawing.Size(262, 40);
             this.buttonSignUp.TabIndex = 4;
@@ -108,7 +114,7 @@ namespace Project_ISA
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label3.Location = new System.Drawing.Point(425, 223);
+            this.label3.Location = new System.Drawing.Point(453, 354);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(227, 13);
             this.label3.TabIndex = 3;
@@ -119,7 +125,7 @@ namespace Project_ISA
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.label2.Location = new System.Drawing.Point(422, 139);
+            this.label2.Location = new System.Drawing.Point(450, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(275, 58);
             this.label2.TabIndex = 2;
@@ -128,7 +134,7 @@ namespace Project_ISA
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.HotPink;
-            this.panel2.Controls.Add(this.radioButtonAdmin);
+            this.panel2.Controls.Add(this.radioButton1);
             this.panel2.Controls.Add(this.radioButtonPenjual);
             this.panel2.Controls.Add(this.radioButtonPembeli);
             this.panel2.Controls.Add(this.textBoxId);
@@ -144,24 +150,11 @@ namespace Project_ISA
             this.panel2.Size = new System.Drawing.Size(370, 472);
             this.panel2.TabIndex = 1;
             // 
-            // radioButtonAdmin
-            // 
-            this.radioButtonAdmin.AutoSize = true;
-            this.radioButtonAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButtonAdmin.Location = new System.Drawing.Point(256, 93);
-            this.radioButtonAdmin.Name = "radioButtonAdmin";
-            this.radioButtonAdmin.Size = new System.Drawing.Size(121, 24);
-            this.radioButtonAdmin.TabIndex = 11;
-            this.radioButtonAdmin.TabStop = true;
-            this.radioButtonAdmin.Text = "Administartor";
-            this.radioButtonAdmin.UseVisualStyleBackColor = true;
-            this.radioButtonAdmin.CheckedChanged += new System.EventHandler(this.radioButtonAdmin_CheckedChanged);
-            // 
             // radioButtonPenjual
             // 
             this.radioButtonPenjual.AutoSize = true;
             this.radioButtonPenjual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButtonPenjual.Location = new System.Drawing.Point(143, 93);
+            this.radioButtonPenjual.Location = new System.Drawing.Point(123, 90);
             this.radioButtonPenjual.Name = "radioButtonPenjual";
             this.radioButtonPenjual.Size = new System.Drawing.Size(79, 24);
             this.radioButtonPenjual.TabIndex = 8;
@@ -174,7 +167,7 @@ namespace Project_ISA
             // 
             this.radioButtonPembeli.AutoSize = true;
             this.radioButtonPembeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.radioButtonPembeli.Location = new System.Drawing.Point(26, 93);
+            this.radioButtonPembeli.Location = new System.Drawing.Point(6, 90);
             this.radioButtonPembeli.Name = "radioButtonPembeli";
             this.radioButtonPembeli.Size = new System.Drawing.Size(83, 24);
             this.radioButtonPembeli.TabIndex = 9;
@@ -278,6 +271,51 @@ namespace Project_ISA
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign Up";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.HotPink;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Location = new System.Drawing.Point(471, 48);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(224, 207);
+            this.panel3.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::Project_ISA.Properties.Resources.avoserum_removebg_preview;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(34, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(159, 119);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButton1.Location = new System.Drawing.Point(232, 90);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(72, 24);
+            this.radioButton1.TabIndex = 10;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Admin";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(55, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 24);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Foto Profile";
+            // 
             // FormRegist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,6 +330,9 @@ namespace Project_ISA
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,6 +356,9 @@ namespace Project_ISA
         private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.RadioButton radioButtonPenjual;
         private System.Windows.Forms.RadioButton radioButtonPembeli;
-        private System.Windows.Forms.RadioButton radioButtonAdmin;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label label4;
     }
 }

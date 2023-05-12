@@ -57,6 +57,9 @@ namespace Project_ISA
                     pictureBox1.BackgroundImage = Image.FromFile(file);
                     pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
 
+                    Bitmap pict = new Bitmap(file);
+                    pict.Save(@"C:\xampp\htdocs\img\" + fu.tmpUser.IdUser.ToString() + ".png");
+
                     fu.tmpUser.Foto = file;
                     if (fu.tmpUser.UpdateFoto())
                     {

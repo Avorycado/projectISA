@@ -77,5 +77,21 @@ namespace Project_ISA
         {
 
         }
+
+        private void checkBoxShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxShowPassword.Checked)
+            {
+                textBoxOldPassword.PasswordChar = '\0';
+                textBoxNewPassword.PasswordChar = '\0';
+                textBoxRetypePassword.PasswordChar = '\0';
+            }
+            else
+            {
+                textBoxOldPassword.PasswordChar = '*';
+                textBoxNewPassword.PasswordChar = '*';
+                textBoxRetypePassword.PasswordChar = '*';
+            }
+        }
     }
 }

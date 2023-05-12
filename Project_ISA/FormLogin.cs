@@ -97,7 +97,7 @@ namespace Project_ISA
 
                         string pass = Steganography.extractText(test);
 
-                        MessageBox.Show(pass.ToString());
+                        //MessageBox.Show(pass.ToString());
 
                         //MessageBox.Show(tmp.Password.Length.ToString());
                         string hasilDecryptUser = Cryptography.DecryptStringAES(pass , "sisbro");

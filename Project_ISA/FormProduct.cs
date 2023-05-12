@@ -108,7 +108,7 @@ namespace Project_ISA
 
                         Label harga = new Label();
                         harga.Text = product[pmbt].Harga.ToString();
-                        harga.Location = new Point(175, 5);
+                        harga.Location = new Point(168, 5);
                         harga.BringToFront();
                         //lbel.Font = new Font(new FontFamily("Poppins"), lbel.Font.Size * 1.1f);
                         pnl.Controls.Add(harga);

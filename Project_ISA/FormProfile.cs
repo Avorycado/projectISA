@@ -46,6 +46,7 @@ namespace Project_ISA
 
             int size = -1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Image Files|*.png";
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -58,7 +59,7 @@ namespace Project_ISA
                     pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
 
                     Bitmap pict = new Bitmap(file);
-                    pict.Save(@"C:\xampp\htdocs\img\" + fu.tmpUser.IdUser.ToString() + ".png");
+                    pict.Save(@"C:\xampp\htdocs\img\" + fu.tmpUser.IdUser + ".png");
 
                     fu.tmpUser.Foto = file;
                     if (fu.tmpUser.UpdateFoto())

@@ -24,13 +24,33 @@ namespace Project_ISA
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
+            FormUtama fu = (FormUtama)this.Owner;
             if (Cryptography.SHA512(textBoxOldPassword.Text) == hasilDecrypt)
             {
                 if (textBoxNewPassword.Text == textBoxRetypePassword.Text)
                 {
                     if (user != null)
                     {
+                        //Convert new password to SHA512
+                        string resultSHA = Cryptography.SHA512(textBoxNewPassword.Text);
 
+                        //Convert SHA512 to encrypt
+                        string resultAES = Cryptography.EncryptStringAES(resultSHA, "sisbro");
+
+
+                        //Convert resultAES to stegano
+                        string file = fu.tmpUser.Foto;
+                        Bitmap pict = new Bitmap(file);
+                        Bitmap bmp = Steganography.embedText(resultAES, pict);
+                        
+
+                        user = new User(user.IdUser, user.Nama, resultAES, user.Email, user.NoHp, user.Alamat, user.Saldo, user.Foto);
+                        user.Update(user);
+                        MessageBox.Show("Update Succesfull");
+                        pict.Save(@"C:\xampp\htdocs\img\" + fu.tmpUser.IdUser.ToString() + ".png");
+                    }
+                    else
+                    {
                         //Convert new password to SHA512
                         string resultSHA = Cryptography.SHA512(textBoxNewPassword.Text);
 
@@ -38,28 +58,16 @@ namespace Project_ISA
                         string resultAES = Cryptography.EncryptStringAES(resultSHA, "sisbro");
 
                         //Convert resultAES to stegano
-                        
-
-                        user = new User(user.IdUser, user.Nama, resultAES, user.Email, user.NoHp, user.Alamat, user.Saldo, user.Foto);
-                        user.Update(user);
-                        MessageBox.Show("Update Succesfull");
-                    }
-                    else
-                    {
-                       
-
-                        //Convert new password to SHA512
-                        string resultSHA = Cryptography.SHA512(textBoxNewPassword.Text);
-
-                        //Convert SHA512 to encrypt
-                        string resultAES = Cryptography.EncryptStringAES(resultSHA, "sisbro");
-
+                        string file = fu.tmpSellers.Foto;
+                        Bitmap pict = new Bitmap(file);
+                        Bitmap bmp = Steganography.embedText(resultAES, pict);
                         
 
                         seller = new Sellers(seller.IdSeller, seller.Nama, seller.Email, seller.NoHp, seller.Alamat, 
-                            seller.Password, seller.Foto);
+                            resultAES, seller.Foto);
                         seller.UbahData(seller);
                         MessageBox.Show("Update Succesfull");
+                        pict.Save(@"C:\xampp\htdocs\img\" + fu.tmpSellers.IdSeller + ".png");
                     }
                 }
                 else

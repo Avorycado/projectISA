@@ -104,7 +104,7 @@ namespace Sisbro_LIB
                          this.Jumlah + "', '" +
                          this.Category.IdCategory + "', '" +
                          this.Sellers.IdSeller + "', '" +
-                         null + "', '" +
+                         1 + "', '" +
                          this.Foto.Replace(@"\", @"\\") + "', '"+
                          this.Status+ "');";
 

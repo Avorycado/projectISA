@@ -271,6 +271,7 @@ namespace Project_ISA
         {
             int size = -1;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Image Files|*.png";
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {

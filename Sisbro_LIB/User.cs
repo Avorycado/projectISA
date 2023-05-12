@@ -221,7 +221,7 @@ namespace Sisbro_LIB
                          "email = '" + this.Email.Replace("'", "\\'") + "', " +
                          "no_hp = '" + this.NoHp + "', " +
                          "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
-                         "saldo = '" + this.Saldo + "' " +
+                         "saldo = '" + this.Saldo + "', " +
                          "foto_profil = '" + this.Foto.Replace(@"\", @"\\") + "' " +
                          "WHERE iduser = '" + this.IdUser + "';";
 

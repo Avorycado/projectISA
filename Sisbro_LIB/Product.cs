@@ -288,6 +288,50 @@ namespace Sisbro_LIB
             //}
             return arr;
         }
+
+        public static List<Product> AmbilDataUnverif()
+        {
+            string sql = "SELECT p.idproduct, p.nama, p.harga, p.deskripsi, p.jumlah, p.category_idcategory, " +
+                         "p.sellers_idsellers, p.administrator_idadministrator, p.foto_product, p.status " +
+                         "FROM product p inner join category c on p.category_idcategory=c.idcategory " +
+                         "inner join sellers s on p.sellers_idsellers = s.idsellers inner join administrator a " +
+                         "on p.administrator_idadministrator = a.idadministrator WHERE p.status = 'Unverified'";
+
+            //string sql = "SELECT * FROM product ";
+
+            //string hasil = "";
+
+            List<Product> arr = new List<Product>();
+
+            MySqlDataReader hasil = Koneksi.AmbilData(sql);
+            while (hasil.Read())
+            {
+                Category category = Category.AmbilDataByKode(int.Parse(hasil.GetValue(5).ToString()));
+                Sellers sellers = Sellers.AmbilDataByKode(int.Parse(hasil.GetValue(6).ToString()));
+                Administrator administrator = Administrator.AmbilDataByKode(int.Parse(hasil.GetValue(7).ToString()));
+                arr.Add(new Product(int.Parse(hasil.GetValue(0).ToString()),
+                                                hasil.GetValue(1).ToString(),
+                                                double.Parse(hasil.GetValue(2).ToString()),
+                                                hasil.GetValue(3).ToString(),
+                                                int.Parse(hasil.GetValue(4).ToString()),
+                                                category,
+                                                sellers,
+                                                administrator, hasil.GetValue(8).ToString(),
+                                                hasil.GetValue(9).ToString()));
+            }
+            //if (result.Read())
+            //{
+            //    if (result.GetValue(0).ToString() != "")
+            //    {
+            //        hasil = result.GetValue(0).ToString();
+            //    }
+            //    else
+            //    {
+            //        hasil = "";
+            //    }
+            //}
+            return arr;
+        }
         #endregion
     }
 }

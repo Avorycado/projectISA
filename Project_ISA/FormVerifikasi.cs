@@ -56,8 +56,8 @@ namespace Project_ISA
                                     if (product.UbahStatus())
                                     {
                                         MessageBox.Show("Data pengajuan product telah berhasil diverifikasi");
-                                        RefreshTable();
-                                        //this.FormVerifikasi_Load(sender, e);
+                                        //RefreshTable();
+                                        this.FormVerifikasi_Load(sender, e);
                                     }
                                 }
                             }
@@ -110,22 +110,20 @@ namespace Project_ISA
 
         public void RefreshTable()
         {
-            listProduct2.Clear();
-            listProduct = Product.AmbilFoto();
-            foreach (Product product in listProduct)
+            listProduct = Product.AmbilDataUnverif();
+            //foreach (Product product in listProduct)
+            //{
+            //    if (listProduct.Count > 0)
+            //    {
+            //        if (product.Status == "Unverified")
+            //        {
+            //            listProduct2.Add(product);
+            //        }
+            //    }
+            //}
+            if (listProduct.Count > 0)
             {
-                if (listProduct.Count > 0)
-                {
-                    if (product.Status == "Unverified")
-                    {
-                        listProduct2.Add(product);
-                    }
-                }
-            }
-
-            if (listProduct2.Count > 0)
-            {
-                dataGridViewVerifikasi.DataSource = listProduct2;
+                dataGridViewVerifikasi.DataSource = listProduct;
                 //dataGridViewVerifikasi.Columns.Add("idProduct", "Id Product");
                 //dataGridViewVerifikasi.Columns.Add("nama", "Nama");
                 //dataGridViewVerifikasi.Columns.Add("harga", "Harga");

@@ -76,28 +76,44 @@ namespace Project_ISA
                     }
                     else if(radioButtonPenjual.Checked == true)
                     {
-                        string text = Cryptography.SHA512(textBoxPassword.Text);
-                        string key = "sisbro";
-                        string hasilAES = Cryptography.EncryptStringAES(text, key);
-                        Sellers seller = new Sellers(int.Parse(textBoxId.Text), 
-                                                    textBoxUsername.Text, 
-                                                    textBoxEmail.Text, 
-                                                    int.Parse(textBoxNoTelp.Text),
-                                                    textBoxAlamat.Text, 
-                                                    hasilAES);
-
-                        if (seller.TambahData())
+                        if(file != "")
                         {
-                            DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
-                            if (hasil == DialogResult.OK)
+                            string text = Cryptography.SHA512(textBoxPassword.Text);
+                            string key = "sisbro";
+
+                            Bitmap pict = new Bitmap(file);
+
+                            string hasilAES = Cryptography.EncryptStringAES(text, key);
+                            Bitmap bmp = Steganography.embedText(hasilAES, pict);
+
+                            Sellers seller = new Sellers(int.Parse(textBoxId.Text),
+                                                        textBoxUsername.Text,
+                                                        textBoxEmail.Text,
+                                                        int.Parse(textBoxNoTelp.Text),
+                                                        textBoxAlamat.Text,
+                                                        hasilAES,
+                                                        file);
+
+                            pict.Save(@"C:\xampp\htdocs\img\" + textBoxId.Text + ".png");
+
+                            if (seller.TambahData())
                             {
-                                this.Close();
+                                DialogResult hasil = MessageBox.Show("Data berhasil disimpan", "Konfirmasi", MessageBoxButtons.OK);
+                                if (hasil == DialogResult.OK)
+                                {
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("Tidak dapat menambahkan data");
                             }
                         }
                         else
                         {
-                            throw new Exception("Tidak dapat menambahkan data");
+                            throw new Exception("Foto Profile tidak boleh kosong.");
                         }
+                        
 
                     }
                     else

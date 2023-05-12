@@ -95,7 +95,7 @@ namespace Project_ISA
                         MemoryStream ms1 = new MemoryStream(img);
                         Bitmap test = new Bitmap(ms1);
 
-                        string pass = Steganography.extractText(test);
+                        string pass = Steganography.extractText(pict);
 
                         MessageBox.Show(pass.ToString());
 
@@ -126,7 +126,21 @@ namespace Project_ISA
                     Sellers tmp = Sellers.CekLogin(textBoxUsername.Text, textBoxPassword.Text);
                     if (tmp != null)
                     {
+                        Bitmap pict = new Bitmap(@"C:\xampp\htdocs\img\" + tmp.IdSeller + ".png");
+
+                        MemoryStream ms = new MemoryStream();
+                        byte[] img = ms.GetBuffer();
+                        ImageConverter imgCon = new ImageConverter();
+                        img = (byte[])imgCon.ConvertTo(pict, typeof(byte[]));
+                        MemoryStream ms1 = new MemoryStream(img);
+                        Bitmap test = new Bitmap(ms1);
+
+                        string pass = Steganography.extractText(test);
+
+                        MessageBox.Show(pass.ToString());
+
                         string hasilDecryptSeller = Cryptography.DecryptStringAES(tmp.Password, "sisbro");
+
                         if (Cryptography.SHA512(textBoxPassword.Text) == hasilDecryptSeller)
                         {
                             FormUtama form = (FormUtama)this.Owner;

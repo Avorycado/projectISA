@@ -16,6 +16,7 @@ namespace Sisbro_LIB
         private int noHp;
         private string alamat;
         private string password;
+        private string foto;
         #endregion
 
         #region Constructors
@@ -27,8 +28,9 @@ namespace Sisbro_LIB
             NoHp = 0;
             Alamat = "";
             Password = "";
+            Foto = "";
         }
-        public Sellers(int idSeller, string nama, string email, int noHp, string alamat, string password)
+        public Sellers(int idSeller, string nama, string email, int noHp, string alamat, string password, string foto)
         {
             this.IdSeller = idSeller;
             this.Nama = nama;
@@ -36,6 +38,7 @@ namespace Sisbro_LIB
             this.NoHp = noHp;
             this.Alamat = alamat;
             this.Password = password;
+            this.Foto = foto;
         }
         #endregion
 
@@ -46,6 +49,7 @@ namespace Sisbro_LIB
         public int NoHp { get => noHp; set => noHp = value; }
         public string Alamat { get => alamat; set => alamat = value; }
         public string Password { get => password; set => password = value; }
+        public string Foto { get => foto; set => foto = value; }
         #endregion
 
         #region Method
@@ -80,12 +84,12 @@ namespace Sisbro_LIB
             string sql;
             if (kriteria == "")
             {
-                sql = "SELECT idSellers, nama, email, no_hp, alamat, password " +
+                sql = "SELECT idSellers, nama, email, no_hp, alamat, password, foto_toko " +
                       "FROM sellers ";
             }
             else
             {
-                sql = "SELECT idSellers, nama, email, no_hp, alamat, password " +
+                sql = "SELECT idSellers, nama, email, no_hp, alamat, password, foto_toko " +
                       "FROM sellers " +
                       "WHERE " + kriteria + " like '%" + nilai + "%'";
             }
@@ -102,7 +106,8 @@ namespace Sisbro_LIB
                     hasil.GetValue(2).ToString(),
                     int.Parse(hasil.GetValue(3).ToString()),
                     hasil.GetValue(4).ToString(),
-                    hasil.GetValue(5).ToString());
+                    hasil.GetValue(5).ToString(),
+                    hasil.GetValue(6).ToString());
 
                 listSellers.Add(sellers);
             }
@@ -111,7 +116,7 @@ namespace Sisbro_LIB
 
         public bool TambahData()
         {
-            string sql = "INSERT INTO sellers(idSellers, nama, email, no_hp, alamat, password) VALUES ('" +
+            string sql = "INSERT INTO sellers(idSellers, nama, email, no_hp, alamat, password, foto_toko) VALUES ('" +
                          this.IdSeller + "', '" +
                          this.nama.Replace("'", "\\'") + "', '" +
                          this.Email.Replace("'", "\\'") + "', '" +
@@ -133,6 +138,7 @@ namespace Sisbro_LIB
                          "no_telepon = '" + this.NoHp + "', " +
                          "alamat = '" + this.Alamat.Replace("'", "\\'") + "', " +
                          "password = '" + this.Password.Replace("'", "\\'") + "', " +
+                         "foto_toko = '" + this.Foto.Replace(@"\", @"\\") + "' " +
                          "WHERE idsellers = '" + this.IdSeller + "';";
 
             bool result = Koneksi.ExecuteDML(sql);
@@ -157,7 +163,7 @@ namespace Sisbro_LIB
 
         public static Sellers AmbilDataByKode(int idSeller)
         {
-            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password " +
+            string sql = "SELECT idSellers, nama, email, no_hp, alamat, password, foto_toko " +
                          "FROM sellers " +
                          "WHERE idSellers = '" + idSeller + "'";
 
@@ -170,7 +176,8 @@ namespace Sisbro_LIB
                                         hasil.GetValue(2).ToString(),
                                         int.Parse(hasil.GetValue(3).ToString()),
                                         hasil.GetValue(4).ToString(),
-                                        hasil.GetValue(5).ToString());
+                                        hasil.GetValue(5).ToString(),
+                                        hasil.GetValue(6).ToString());
                 return sellers;
             }
             else
@@ -217,7 +224,8 @@ namespace Sisbro_LIB
                     hasil.GetValue(2).ToString(),
                     int.Parse(hasil.GetValue(3).ToString()),
                     hasil.GetValue(4).ToString(),
-                    hasil.GetValue(5).ToString());
+                    hasil.GetValue(5).ToString(),
+                    hasil.GetValue(6).ToString());
                 return result;
             }
             return null;
@@ -237,7 +245,8 @@ namespace Sisbro_LIB
                                         hasil.GetValue(2).ToString(),
                                         int.Parse(hasil.GetValue(3).ToString()),
                                         hasil.GetValue(4).ToString(),
-                                        hasil.GetValue(5).ToString());
+                                        hasil.GetValue(5).ToString(),
+                                        hasil.GetValue(6).ToString());
                 return seller;
             }
             else

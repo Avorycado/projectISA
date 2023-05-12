@@ -56,7 +56,8 @@ namespace Project_ISA
 
                         
 
-                        seller = new Sellers(seller.IdSeller, seller.Nama, seller.Email, seller.NoHp, seller.Alamat, seller.Password);
+                        seller = new Sellers(seller.IdSeller, seller.Nama, seller.Email, seller.NoHp, seller.Alamat, 
+                            seller.Password, seller.Foto);
                         seller.UbahData(seller);
                         MessageBox.Show("Update Succesfull");
                     }
